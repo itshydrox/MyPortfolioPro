@@ -1,50 +1,84 @@
-import { SkillCategory } from '../types';
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaJava,
+  FaHtml5,
+  FaJs,
+  FaGitAlt,
+  FaDatabase,
+  FaVuejs,
+  FaPhp,
+} from 'react-icons/fa';
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiExpress,
+  SiOracle,
+  SiAndroidstudio,
+  SiAdobeillustrator,
+  SiDavinciresolve,
+} from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
+import { IconType } from 'react-icons';
+
+interface Skill {
+  name: string;
+  level: number;
+  icon: IconType;
+}
+
+interface SkillCategory {
+  name: string;
+  skills: Skill[];
+}
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Frontend',
+    name: "Frontend Development",
     skills: [
-      { name: 'React', level: 95 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'JavaScript', level: 95 },
-      { name: 'HTML/CSS', level: 95 },
-      { name: 'Tailwind CSS', level: 90 },
-      { name: 'Redux', level: 85 },
-      { name: 'Next.js', level: 85 },
-      { name: 'Vue.js', level: 75 },
+      { name: "React", level: 80, icon: FaReact },
+      { name: "Vue.js", level: 85, icon: FaVuejs },
+      { name: "JavaScript", level: 90, icon: FaJs },
+      { name: "Tailwind CSS", level: 85, icon: SiTailwindcss },
+      { name: "TypeScript", level: 80, icon: SiTypescript },
+      { name: "HTML & CSS", level: 95, icon: FaHtml5 },
     ],
   },
   {
-    name: 'Backend',
+    name: "Backend Development",
     skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Express', level: 85 },
-      { name: 'RESTful APIs', level: 90 },
-      { name: 'GraphQL', level: 80 },
-      { name: 'Python', level: 75 },
-      { name: 'Java', level: 70 },
-      { name: 'PHP', level: 65 },
+      { name: "Node.js", level: 85, icon: FaNodeJs },
+      { name: "Express.js", level: 75, icon: SiExpress },
+      { name: "Java", level: 80, icon: FaJava },
+      { name: "PHP", level: 75, icon: FaPhp },
+      { name: "Python", level: 70, icon: FaPython },
+      
     ],
   },
   {
-    name: 'Database',
+    name: "Tools",
     skills: [
-      { name: 'MongoDB', level: 85 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'MySQL', level: 80 },
-      { name: 'Firebase', level: 85 },
-      { name: 'Redis', level: 70 },
+      { name: "Git", level: 90, icon: FaGitAlt },
+      { name: "Android Studio", level: 80, icon: SiAndroidstudio },
+      { name: "Visual Studio Code", level: 90, icon: VscCode },
+      { name: "Adobe Illustrator", level: 70, icon: SiAdobeillustrator },
+      { name: "Davinci Resolve", level: 70, icon: SiDavinciresolve },
+
     ],
   },
   {
-    name: 'DevOps & Tools',
+    name: "Database & Infrastructure",
     skills: [
-      { name: 'Git', level: 90 },
-      { name: 'Docker', level: 80 },
-      { name: 'AWS', level: 75 },
-      { name: 'CI/CD', level: 80 },
-      { name: 'Jest', level: 85 },
-      { name: 'Webpack', level: 75 },
+      { name: "MongoDB", level: 80, icon: SiMongodb },
+      { name: "MySQL", level: 80, icon: SiMysql },
+      { name: "Oracle", level: 70, icon: SiOracle },
+      { name: "PostgreSQL", level: 75, icon: SiPostgresql },
+      { name: "Database Design", level: 85, icon: FaDatabase },
+
     ],
   },
 ];

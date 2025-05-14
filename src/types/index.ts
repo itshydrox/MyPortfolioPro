@@ -29,4 +29,14 @@ export interface ExperienceType {
   technologies: string[];
 }
 
+export interface StudyType {
+  id: number;
+  degree: string;
+  institution: string;
+  period: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+}
+
 export type ThemeMode = 'light' | 'dark';
