@@ -3,9 +3,9 @@ import { StudyType } from '../types';
 export const studies: StudyType[] = [
   {
     id: 1,
-    degree: 'Master in Computer Science',
-    institution: 'Example University',
-    period: '2020 - 2022',
+    degree: 'Grado superior en desarrollo de aplicaciones multi plataformas',
+    institution: 'Centro de estudios Ceinmark, Bilbao',
+    period: '2024 - 2025',
     description: 'Specialized in Software Engineering and Artificial Intelligence. Developed advanced skills in machine learning and distributed systems.',
     achievements: [
       'Graduated with honors - GPA 3.9/4.0',
@@ -17,9 +17,9 @@ export const studies: StudyType[] = [
   },
   {
     id: 2,
-    degree: 'Bachelor in Software Engineering',
-    institution: 'Tech Institute',
-    period: '2016 - 2020',
+    degree: 'Grado superior en desarrollo de aplicaciones web',
+    institution: 'Centro de estudios Ceinmark, Bilbao',
+    period: '2022 - 2024',
     description: 'Comprehensive study of software development principles, algorithms, and modern programming practices. Focus on web technologies and software architecture.',
     achievements: [
       'Dean\'s List for all semesters',
@@ -31,9 +31,9 @@ export const studies: StudyType[] = [
   },
   {
     id: 3,
-    degree: 'Web Development Bootcamp',
-    institution: 'Code Academy',
-    period: '2015 - 2016',
+    degree: 'Selectividad de la modalidad de Ciencias',
+    institution: 'Instituto Internacional Princesa, Granada',
+    period: '2020 - 2021',
     description: 'Intensive program covering full-stack web development. Learned modern frameworks and best practices for web application development.',
     achievements: [
       'Built 5 full-stack applications',

@@ -87,7 +87,7 @@ const Studies: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-400 dark:from-indigo-400 dark:to-purple-300 bg-clip-text text-transparent"
+                  className="text-2xl w-2/3 font-bold bg-gradient-to-r from-indigo-600 to-purple-400 dark:from-indigo-400 dark:to-purple-300 bg-clip-text text-transparent"
                 >
                   {study.degree}
                 </motion.h3>
