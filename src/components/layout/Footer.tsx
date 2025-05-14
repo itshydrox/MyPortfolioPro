@@ -95,24 +95,24 @@ const Footer: React.FC = () => {
             <address className="not-italic space-y-4">
               <div className={`flex items-center space-x-3 text-gray-600 dark:text-gray-400 transform transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
                 <MapPin size={18} className="text-blue-600 dark:text-blue-400" />
-                <p>Bilbao, Spain</p>
+                <p>San Francisco, CA</p>
               </div>
               <div className={`flex items-center space-x-3 transform transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`} style={{ transitionDelay: '700ms' }}>
                 <Mail size={18} className="text-blue-600 dark:text-blue-400" />
                 <a 
-                  href="mailto:idrissimou3ad@gmail.com"
+                  href="mailto:contact@example.com"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                 >
-                  idrissimou3ad@gmail.com
+                  contact@example.com
                 </a>
               </div>
               <div className={`flex items-center space-x-3 transform transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`} style={{ transitionDelay: '800ms' }}>
                 <Phone size={18} className="text-blue-600 dark:text-blue-400" />
                 <a 
-                  href="tel:+34 643 753 339"
+                  href="tel:+11234567890"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                 >
-                  +34 643 753 339
+                  (123) 456-7890
                 </a>
               </div>
             </address>
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
 
         <div className={`mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-700/50 text-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
           <p className="text-gray-600 dark:text-gray-400">
-            © {currentYear} MouadPortfolio. All rights reserved.
+            © {currentYear} DevPortfolio. All rights reserved.
           </p>
         </div>
 

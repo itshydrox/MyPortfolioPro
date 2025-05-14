@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
               {t('hero.greeting')} <span className="select-none bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">Mouad Idrissi</span>
             </h1>
             
-            <div className="h-8 md:h-10 mb-4 mt-6">
+            <div className="h-8 md:h-10 mb-6">
               <h2 className="select-none text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300">
                 {t('hero.im')}{' '}
                 <span className="select-none text-blue-600 dark:text-blue-400 inline-block">
@@ -154,7 +154,7 @@ const Hero: React.FC = () => {
               </h2>
             </div>
             
-            <p className={`select-none text-lg text-gray-600 dark:text-gray-400 mb-8 max-w mx-auto md:mx-0 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <p className={`select-none text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('hero.description')}
             </p>
             
@@ -179,7 +179,7 @@ const Hero: React.FC = () => {
             
             <div className={`mt-8 flex items-center justify-center md:justify-start space-x-6 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <a 
-                href="https://github.com/itshydrox" 
+                href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
@@ -188,7 +188,7 @@ const Hero: React.FC = () => {
                 <Github size={24} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/mouad-idrissi/" 
+                href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
@@ -197,7 +197,7 @@ const Hero: React.FC = () => {
                 <Linkedin size={24} />
               </a>
               <a 
-                href="mailto:idrissimou3ad@gmail.com"
+                href="mailto:contact@example.com"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
                 aria-label="Email"
               >

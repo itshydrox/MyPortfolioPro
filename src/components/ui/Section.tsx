@@ -18,9 +18,9 @@ const Section: React.FC<SectionProps> = ({
   return (
     <section 
       id={id} 
-      className={`select-none py-16 md:py-24 transition-colors ${className}`}
+      className={`select-none overflow-hidden py-16 md:py-24 transition-colors ${className}`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 max-w-[100vw]">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {title}

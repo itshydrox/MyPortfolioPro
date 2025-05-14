@@ -86,14 +86,6 @@ const About: React.FC = () => {
             <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('about.description3')}
             </p>
-
-            <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              {t('about.description4')}
-            </p>
-
-            <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              {t('about.description5')}
-            </p>
           </div>
           
           <div className={`flex flex-wrap gap-4 pt-4 transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>

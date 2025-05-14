@@ -27,7 +27,7 @@ const translations = {
     'hero.roles.react': 'React Specialist',
     'hero.roles.nodejs': 'Node.js Engineer',
     'hero.roles.problem': 'Problem Solver',
-    'hero.description': 'Motivated and adaptable, with important skills developed during my studies and experiences in the development of websites, Android applications and desktop programs. My real perspective is focused on locating and seizing opportunities for expansion and progress in this sector, with the firm intention of offering relevant value to any project or company in which I cooperate.',
+    'hero.description': 'I build exceptional digital experiences that combine elegant design with powerful functionality. Specializing in full-stack development with a focus on React, Vue.js , Node.js, and modern web technologies.',
     'hero.cta.work': 'View My Work',
     'hero.cta.contact': 'Get In Touch',
 
@@ -35,11 +35,9 @@ const translations = {
     'about.title': 'About Me',
     'about.subtitle': 'Get to know more about me and what I do',
     'about.heading': 'Full Stack Developer with a passion for creating exceptional digital experiences',
-    'about.description1': 'I am a Full-Stack developer of web and cross-platform applications with a solid background and experience.',
-    'about.description2': 'My interest in technology and software development has motivated me to specialize in the design and creation of web, mobile and desktop applications, using modern technologies such as React.js Vue.js, Nuxt.js, Tailwind CSS, Bootstrap and Android Studio with Java.',
-    'about.description3': 'Throughout my career, I have been involved in significant projects for entities such as Renfe, Basque Government, Avilés City Council and the Port Authority of Avilés, Fresmak, where I contributed to develop digital platforms and design modern interfaces that improve the user experience.',
-    'about.description4': 'In addition to my work experience, I have worked independently, developing custom websites with WordPress and WooCommerce, always trying to provide modern websites that meet the particular needs of each client. My ability to manage projects, meet deadlines and adapt to client suggestions has allowed me to deliver outstanding ones.',
-    'about.description5': 'I am constantly looking for opportunities to grow and gain knowledge, with the goal of bringing value to every project I am involved in and learning new technologies.',
+    'about.description1': 'With over 6 years of experience in web development, I specialize in building modern, responsive web applications using React, Node.js, and other cutting-edge technologies. My approach combines clean, efficient code with thoughtful user experience design.',
+    'about.description2': 'I\'ve worked with startups and established companies across various industries, helping them solve complex problems and deliver high-quality digital products. My background in both frontend and backend development allows me to understand the full development lifecycle and create seamless, integrated solutions.',
+    'about.description3': 'When I\'m not coding, you\'ll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and community engagement.',
     'about.cta.contact': 'Contact Me',
     'about.cta.resume': 'Download Resume',
 
@@ -58,7 +56,7 @@ const translations = {
     'services.performance.desc': 'Enhancing application speed and efficiency through code optimization and best practices.',
 
     // Skills Section
-    'skills.title': 'Lenguages & Frameworks',
+    'skills.title': 'Skills & Expertise',
     'skills.subtitle': 'A comprehensive overview of my technical skills and proficiency levels',
 
     // Projects Section
@@ -108,7 +106,7 @@ const translations = {
     'hero.roles.react': 'Especialista en React',
     'hero.roles.nodejs': 'Ingeniero Node.js',
     'hero.roles.problem': 'Solucionador de Problemas',
-    'hero.description': 'Motivado y adaptable, con importantes competencias desarrolladas durante mis estudios y experiencias en el desarrollo de páginas web, aplicaciones para Android y programas de escritorio. Mi perspectiva real se enfoca en localizar y aprovechar oportunidades de expansión y progreso en este sector, con la firme intención de ofrecer un valor relevante a cualquier proyecto o empresa en la que coopere.',
+    'hero.description': 'Construyo experiencias digitales excepcionales que combinan diseño elegante con funcionalidad potente. Me especializo en desarrollo full-stack con enfoque en React, Vue.js, Node.js y tecnologías web modernas.',
     'hero.cta.work': 'Ver mi Trabajo',
     'hero.cta.contact': 'Contactar',
 
@@ -116,11 +114,9 @@ const translations = {
     'about.title': 'Sobre Mí',
     'about.subtitle': 'Conoce más sobre mí y lo que hago',
     'about.heading': 'Desarrollador Full Stack apasionado por crear experiencias digitales excepcionales',
-    'about.description1': 'Soy un desarrollador Full-Stack de aplicaciones web y multiplataforma con una sólida formación y experiencia.',
-    'about.description2': 'Mi interés por la tecnología y el desarrollo de software me ha motivado a especializarme en el diseño y creación de aplicaciones web, móviles y de escritorio, utilizando tecnologías modernas como React.js, Vue.js, Node.js, Tailwind CSS, Bootstrap y Android Studio con Java.',
-    'about.description3': 'A lo largo de mi trayectoria, he podido involucrarme en proyectos significativos para entidades como Renfe, Gobierno Vasco, el Ayuntamiento de Avilés y la Autoridad Portuaria de Avilés, Fresmak, donde contribuí a desarrollar de plataformas digitales y a diseñar interfaces modernas que mejoren la experiencia del usuario.',
-    'about.description4': 'Además de mi experiencia laboral, he trabajado de forma independiente, desarrollando sitios web personalizados con WordPress y WooCommerce, siempre intentando brindar sitios web modernos que cubren las necesidades particulares de cada cliente. Mi capacidad para gestionar proyectos, cumplir con los plazos y adaptarme a las sugerencias de los clientes me ha permitido ofrecer sobresalientes.',
-    'about.description5': 'Constantemente busco oportunidades para crecer y obtener conocimientos , con el objetivo de aportar valor a cada proyecto en el que participo y aprender nuevas tecnologías.',
+    'about.description1': 'Con más de 6 años de experiencia en desarrollo web, me especializo en construir aplicaciones web modernas y responsivas utilizando React, Node.js y otras tecnologías de vanguardia. Mi enfoque combina código limpio y eficiente con un diseño de experiencia de usuario bien pensado.',
+    'about.description2': 'He trabajado con startups y empresas establecidas en varias industrias, ayudándoles a resolver problemas complejos y entregar productos digitales de alta calidad. Mi experiencia tanto en desarrollo frontend como backend me permite entender el ciclo completo de desarrollo y crear soluciones integradas sin problemas.',
+    'about.description3': 'Cuando no estoy programando, me encontrarás explorando nuevas tecnologías, contribuyendo a proyectos de código abierto o compartiendo mi conocimiento a través de publicaciones en blog y participación en la comunidad.',
     'about.cta.contact': 'Contáctame',
     'about.cta.resume': 'Descargar CV',
 
@@ -139,7 +135,7 @@ const translations = {
     'services.performance.desc': 'Mejora de la velocidad y eficiencia de las aplicaciones mediante optimización de código y mejores prácticas.',
 
     // Skills Section
-    'skills.title': 'Lenguages y Frameworks',
+    'skills.title': 'Habilidades y Experiencia',
     'skills.subtitle': 'Una visión completa de mis habilidades técnicas y niveles de competencia',
 
     // Projects Section
