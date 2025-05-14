@@ -54,21 +54,21 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: t('contact.email'),
-      value: 'contact@example.com',
-      href: 'mailto:contact@example.com',
+      value: 'idrissimou3ad@gmail.com',
+      href: 'mailto:idrissimou3ad@gmail.com',
       gradient: 'from-blue-600 to-cyan-500'
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: t('contact.phone'),
-      value: '(123) 456-7890',
-      href: 'tel:+11234567890',
+      value: '+34 643 753 339',
+      href: 'tel:+34 643 753 339',
       gradient: 'from-purple-600 to-blue-500'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: t('contact.location'),
-      value: 'San Francisco, CA',
+      value: 'Bilbao, Spain',
       gradient: 'from-red-600 to-pink-500'
     }
   ];

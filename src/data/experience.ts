@@ -3,37 +3,36 @@ import { ExperienceType } from '../types';
 export const experiences: ExperienceType[] = [
   {
     id: 1,
-    role: 'Senior Full Stack Developer',
-    company: 'TechInnovate Solutions',
-    period: 'Jan 2022 - Present',
-    description: 'Lead development of enterprise applications using React, Node.js, and AWS. Implemented microservices architecture and CI/CD pipelines. Mentored junior developers and conducted code reviews.',
+    role: 'Junior Full Stack Developer',
+    company: 'D&A Innovative Systems SL',
+    period: 'Feb 2025 - Present',
+    description: 'Creación de sitios web y plataformas digitales para empresas destacadas como Renfe, el Ayuntamiento de Avilés, la Autoridad Portuaria de Avilés , Fresmak y Mapner. Implementación de soluciones con Vue.Js, React.Js, Node.Js , Bootstrap, JavaScript, TailwindCSS , HTML , CSS, asegurando una experiencia óptima y adaptada a las necesidades del cliente, incluyendo la localización y visualización de datos de trenes, máquinas y dispositivos.',
     achievements: [
-      'Reduced application load time by 40% through optimized code and asset delivery',
-      'Led migration from monolith to microservices architecture',
-      'Implemented automated testing that increased code coverage to 90%',
-      'Streamlined deployment process, reducing release time by 60%'
+      'Diseño y Prototipado: Elaboración de prototipos y diseños personalizados para ofrecer a las empresas opciones alineadas con sus objetivos y requerimientos',
+      'Trabajo en Equipo: Colaboración con equipos multidisciplinares de ingenieros Back-End y Front-End en el desarrollo de proyectos estratégicos, garantizando eficiencia y calidad en cada fase del proceso.',
+      'Personalización y Adaptabilidad: Escucha activa y adaptación a los comentarios del equipo y clientes para optimizar los proyectos web y asegurar que cumplen con sus expectativas y necesidades.',
     ],
     technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'MongoDB', 'Docker', 'Kubernetes']
   },
   {
     id: 2,
-    role: 'Full Stack Developer',
-    company: 'DataViz Platforms',
-    period: 'Mar 2020 - Dec 2021',
-    description: 'Developed data visualization dashboards and reporting tools for financial clients. Built RESTful APIs and implemented real-time data processing using WebSockets.',
+    role: 'Junior Full Stack Developer',
+    company: 'Shackleton SL',
+    period: 'Feb 2024 - Jun 2024',
+    description: 'Desarrollo de sitios web para la empresa usando HTML, CSS, JavaScript y Bootstrap, adaptándolos a las necesidades y gustos de la empresa.',
     achievements: [
-      'Created interactive visualizations used by 50+ enterprise clients',
-      'Implemented real-time data processing reducing latency by 65%',
-      'Designed and built a component library used across multiple projects',
-      'Optimized database queries, improving report generation speed by 30%'
+      'Diseño: Realización de varios prototipos y diseños para que la empresa pueda elegir el que mejor se ajuste a sus ideas.',
+      'Trabajo en equipo: Colaboración con un diseñador digital y un programador Android para hacer que el sitio web y la aplicación móvil fueran compatibles.',
+      'Personalización: Escucha y adaptación a los comentarios del grupo para modificar un sitio web que cumple con sus expectativas.',
+
     ],
     technologies: ['JavaScript', 'React', 'D3.js', 'Node.js', 'PostgreSQL', 'Express', 'Redis']
   },
   {
     id: 3,
-    role: 'Frontend Developer',
-    company: 'Web Creations Agency',
-    period: 'Jun 2018 - Feb 2020',
+    role: 'Freelance Full Stack Developer',
+    company: 'Fivver',
+    period: 'Jun 2022 - Feb 2024',
     description: 'Developed responsive websites and applications for clients across various industries. Collaborated with designers and back-end developers to deliver complete web solutions.',
     achievements: [
       'Built 15+ client websites with responsive designs',
@@ -45,16 +44,16 @@ export const experiences: ExperienceType[] = [
   },
   {
     id: 4,
-    role: 'Junior Web Developer',
-    company: 'Digital Frontiers',
-    period: 'Sep 2016 - May 2018',
-    description: 'Assisted in the development of web applications and e-commerce solutions. Performed bug fixes and implemented new features based on client requirements.',
+    role: 'Freelance Full Stack Developer',
+    company: 'Upwork',
+    period: 'Jun 2022 - Feb 2024',
+    description: 'Developed responsive websites and applications for clients across various industries. Collaborated with designers and back-end developers to deliver complete web solutions.',
     achievements: [
-      'Contributed to 5 major website launches',
-      'Developed custom WordPress plugins for client-specific needs',
-      'Implemented e-commerce integrations with payment gateways',
-      'Created automated reporting tools for marketing team'
+      'Built 15+ client websites with responsive designs',
+      'Increased site performance scores by an average of 25 points on Lighthouse',
+      'Implemented accessibility standards across all projects',
+      'Reduced development time by creating reusable component library'
     ],
-    technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'WordPress', 'MySQL']
-  }
+    technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'SCSS', 'Webpack', 'Jest']
+  },
 ];
