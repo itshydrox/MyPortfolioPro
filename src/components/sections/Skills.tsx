@@ -51,9 +51,21 @@ const Skills: React.FC = () => {
                   >
                     <div className="flex justify-between items-center mb-1.5 group/skill">
                       <div className="flex items-center gap-2">
-                        <div className="p-1.5 rounded-lg bg-gradient-to-br from-blue-500/10 to-cyan-500/10 dark:from-blue-400/10 dark:to-cyan-400/10 group-hover/skill:from-blue-500/20 group-hover/skill:to-cyan-500/20 transition-all duration-300">
-                          <span className="text-blue-600 dark:text-blue-400 transform transition-transform duration-300 group-hover/skill:scale-110">
-                            {React.createElement(skill.icon, { size: 20 })}
+                        <div className="relative p-2 rounded-xl bg-white dark:bg-gray-900 shadow-lg group-hover/skill:shadow-xl 
+                          transition-all duration-300 transform group-hover/skill:scale-110 group-hover/skill:-rotate-3
+                          hover:shadow-[0_8px_20px_-6px_rgba(79,209,197,0.5)] dark:hover:shadow-[0_8px_20px_-6px_rgba(79,209,197,0.3)]
+                          before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-white/40 before:to-transparent before:opacity-0 
+                          before:transition-opacity before:duration-300 group-hover/skill:before:opacity-100
+                          border border-gray-100 dark:border-gray-700"
+                        >
+                          <span className="relative z-10 transform transition-transform duration-300">
+                            <img 
+                              src={skill.iconUrl} 
+                              alt={skill.name}
+                              className="w-6 h-6 transition-all duration-300"
+                              width={24}
+                              height={24}
+                            />
                           </span>
                         </div>
                         <span className="text-base font-medium text-gray-900 dark:text-white transition-colors duration-300 group-hover/skill:text-blue-600 dark:group-hover/skill:text-blue-400">
@@ -66,7 +78,7 @@ const Skills: React.FC = () => {
                     </div>
                     <div className="h-2 bg-gray-200/50 dark:bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm relative">
                       <div
-                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-500 dark:to-cyan-400 rounded-full transition-all duration-1000 ease-out"
+                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-500 dark:to-cyan-400 rounded-full transition-all duration-1000 ease-out shadow-lg"
                         style={{ 
                           width: isVisible ? `${skill.level}%` : '0%',
                           transitionDelay: `${(categoryIndex * 200) + (skillIndex * 100) + 300}ms`

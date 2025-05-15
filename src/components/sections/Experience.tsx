@@ -67,7 +67,7 @@ const Experience: React.FC = () => {
                 className={`absolute -top-3 -left-3 md:-top-3 
                   ${index % 2 === 0 ? 'md:-right-3 md:left-auto' : 'md:-left-3'}
                   flex items-center justify-center z-10`}
-              >
+          >
                 <div className="relative">
                   {/* Outer glow effect */}
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 blur-md opacity-40" />

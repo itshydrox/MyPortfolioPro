@@ -18,13 +18,13 @@ const App: React.FC = () => {
         <div className="min-h-screen overflow-x-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
           <Header />
           <main className="overflow-x-hidden">
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
             <Studies />
-            <Experience />
-            <Contact />
+        <Experience />
+        <Contact />
           </main>
           <Footer />
         </div>

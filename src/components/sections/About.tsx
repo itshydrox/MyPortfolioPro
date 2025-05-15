@@ -120,24 +120,14 @@ const About: React.FC = () => {
               </span>
             </Button>
             <Button 
-              href="/MouadIdrissiCV.pdf" 
+              href="#projects" 
               variant="outline"
               className="group hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-500/50 transition-all duration-300"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.preventDefault();
-                // Create a temporary link element
-                const link = document.createElement('a');
-                link.href = '/MouadIdrissiCV.pdf';
-                link.download = 'MouadIdrissiCV.pdf'; // Set the download attribute
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
             >
               <span className="flex items-center gap-2">
-                {t('about.cta.resume')}
+                {t('hero.cta.work')}
                 <svg 
-                  className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-y-1" 
+                  className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -146,7 +136,7 @@ const About: React.FC = () => {
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
                     strokeWidth={2} 
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" 
+                    d="M13 7l5 5m0 0l-5 5m5-5H6" 
                   />
                 </svg>
               </span>

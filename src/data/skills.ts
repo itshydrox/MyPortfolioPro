@@ -1,34 +1,7 @@
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaJava,
-  FaHtml5,
-  FaJs,
-  FaGitAlt,
-  FaDatabase,
-  FaVuejs,
-  FaPhp,
-} from 'react-icons/fa';
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiMongodb,
-  SiPostgresql,
-  SiMysql,
-  SiExpress,
-  SiOracle,
-  SiAndroidstudio,
-  SiAdobeillustrator,
-  SiDavinciresolve,
-} from 'react-icons/si';
-import { VscCode } from 'react-icons/vsc';
-import { IconType } from 'react-icons';
-
 interface Skill {
   name: string;
   level: number;
-  icon: IconType;
+  iconUrl: string;
 }
 
 interface SkillCategory {
@@ -40,45 +13,131 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Frontend Development",
     skills: [
-      { name: "React", level: 80, icon: FaReact },
-      { name: "Vue.js", level: 85, icon: FaVuejs },
-      { name: "JavaScript", level: 90, icon: FaJs },
-      { name: "Tailwind CSS", level: 85, icon: SiTailwindcss },
-      { name: "TypeScript", level: 80, icon: SiTypescript },
-      { name: "HTML & CSS", level: 95, icon: FaHtml5 },
+      { 
+        name: "React", 
+        level: 80, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+      },
+      { 
+        name: "Vue.js", 
+        level: 85, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg"
+      },
+      { 
+        name: "JavaScript", 
+        level: 90, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+      },
+      { 
+        name: "Tailwind CSS", 
+        level: 85, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
+      },
+      { 
+        name: "TypeScript", 
+        level: 80, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+      },
+      { 
+        name: "HTML & CSS", 
+        level: 95, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+      },
     ],
   },
   {
     name: "Backend Development",
     skills: [
-      { name: "Node.js", level: 85, icon: FaNodeJs },
-      { name: "Express.js", level: 75, icon: SiExpress },
-      { name: "Java", level: 80, icon: FaJava },
-      { name: "PHP", level: 75, icon: FaPhp },
-      { name: "Python", level: 70, icon: FaPython },
-      
+      { 
+        name: "Node.js", 
+        level: 85, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+      },
+      { 
+        name: "Express.js", 
+        level: 75, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+      },
+      { 
+        name: "Java", 
+        level: 80, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+      },
+      { 
+        name: "PHP", 
+        level: 75, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+      },
+      { 
+        name: "Python", 
+        level: 70, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+      },
+      { 
+        name: "Django", 
+        level: 70, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"
+      },
     ],
   },
   {
     name: "Tools",
     skills: [
-      { name: "Git", level: 90, icon: FaGitAlt },
-      { name: "Android Studio", level: 80, icon: SiAndroidstudio },
-      { name: "Visual Studio Code", level: 90, icon: VscCode },
-      { name: "Adobe Illustrator", level: 70, icon: SiAdobeillustrator },
-      { name: "Davinci Resolve", level: 70, icon: SiDavinciresolve },
-
+      { 
+        name: "Git", 
+        level: 90, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+      },
+      { 
+        name: "Android Studio", 
+        level: 80, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg"
+      },
+      { 
+        name: "Visual Studio Code", 
+        level: 90, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
+      },
+      { 
+        name: "Adobe Illustrator", 
+        level: 70, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/illustrator/illustrator-plain.svg"
+      },
+      { 
+        name: "Davinci Resolve", 
+        level: 70, 
+        iconUrl: "https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg"
+      },
     ],
   },
   {
     name: "Database & Infrastructure",
     skills: [
-      { name: "MongoDB", level: 80, icon: SiMongodb },
-      { name: "MySQL", level: 80, icon: SiMysql },
-      { name: "Oracle", level: 70, icon: SiOracle },
-      { name: "PostgreSQL", level: 75, icon: SiPostgresql },
-      { name: "Database Design", level: 85, icon: FaDatabase },
-
+      { 
+        name: "MongoDB", 
+        level: 80, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+      },
+      { 
+        name: "MySQL", 
+        level: 80, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+      },
+      { 
+        name: "Oracle", 
+        level: 70, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg"
+      },
+      { 
+        name: "PostgreSQL", 
+        level: 75, 
+        iconUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"
+      },
+      { 
+        name: "Database Design", 
+        level: 85, 
+        iconUrl: "https://api.iconify.design/mdi:database.svg?color=%234169e1"
+      },
     ],
   },
 ];
