@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
-import { Mail, Phone, MapPin, Send, Loader2, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, Linkedin, AlertCircle, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
@@ -32,14 +35,44 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setStatusMessage('');
+
+    // EmailJS service configuration
+    // You need to create an account at https://www.emailjs.com/
+    // Then create a service, email template, and get your user ID
+    const serviceId = 'service_dkfihg6'; // Replace with your EmailJS service ID
+    const templateId = 'template_n9fk2lp'; // Replace with your EmailJS template ID
+    const publicKey = 'Mmt9mocsntCTZeTMT'; // Replace with your EmailJS public key
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      console.log('Form submitted:', formData);
+      if (!formRef.current) {
+        throw new Error('Form reference is not available');
+      }
+
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setStatusMessage(t('contact.form.success') || 'Message sent successfully!');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
+      setStatusMessage(t('contact.form.error') || 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -141,8 +174,26 @@ const Contact: React.FC = () => {
             className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}
           >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
+                  {/* Status Message */}
+                  {submitStatus !== 'idle' && statusMessage && (
+                    <div 
+                      className={`p-4 rounded-lg flex items-center space-x-3 ${
+                        submitStatus === 'success' 
+                          ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
+                          : 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
+                      }`}
+                    >
+                      {submitStatus === 'success' ? (
+                        <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                      ) : (
+                        <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                      )}
+                      <span>{statusMessage}</span>
+                    </div>
+                  )}
+                  
                   {[
                     { name: 'name', type: 'text', label: t('contact.form.name') },
                     { name: 'email', type: 'email', label: t('contact.form.email') },

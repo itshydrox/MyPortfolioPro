@@ -30,7 +30,6 @@ const Footer: React.FC = () => {
     { href: '#skills', label: t('nav.skills') },
     { href: '#experience', label: t('nav.experience') },
     { href: '#studies', label: t('nav.studies') },
-    { href: '#projects', label: t('nav.projects') },
     { href: '#contact', label: t('nav.contact') }
   ];
 

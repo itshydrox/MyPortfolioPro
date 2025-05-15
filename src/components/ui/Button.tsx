@@ -9,6 +9,7 @@ interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   isLoading?: boolean;
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
   isLoading = false,
+  disabled = false,
 }) => {
   // Base classes
   const baseClasses = 'select-none relative inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-60 disabled:cursor-not-allowed overflow-hidden group';
@@ -78,7 +80,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type} 
       className={buttonClasses} 
       onClick={onClick}
-      disabled={isLoading}
+      disabled={isLoading || disabled}
     >
       {renderContent()}
     </button>
@@ -86,3 +88,5 @@ const Button: React.FC<ButtonProps> = ({
 };
 
 export default Button;
+
+export type { ButtonProps };
