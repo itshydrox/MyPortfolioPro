@@ -166,15 +166,15 @@ const Hero: React.FC = () => {
       className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 via-blue-50/30 to-white dark:from-gray-950 dark:via-blue-950/10 dark:to-gray-900 transition-all duration-700"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col-reverse md:flex-row items-center">
+        <div className="flex flex-col-reverse md:flex-row items-center md:space-x-8 lg:space-x-12">
           {/* Text Content */}
-          <div className={`w-full md:w-1/2 md:pr-12 text-center md:text-left transform transition-all duration-1000 mt-12 md:mt-0 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 mb-4">
+          <div className={`w-full md:w-1/2 md:pr-12 text-center md:text-left transform transition-all duration-1000 mt-16 sm:mt-20 md:mt-0 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 mb-3 sm:mb-4">
               {t('hero.greeting')} <span className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">Mouad Idrissi</span>
             </h1>
             
-            <div className="h-8 md:h-10 mb-4 mt-4 md:mt-6">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300">
+            <div className="h-6 sm:h-8 md:h-10 mb-3 sm:mb-4 mt-3 sm:mt-4 md:mt-6">
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-700 dark:text-gray-300">
                 {t('hero.im')}{' '}
                 <span className="text-blue-600 dark:text-blue-400 inline-block">
                   {typedText}
@@ -183,16 +183,16 @@ const Hero: React.FC = () => {
               </h2>
             </div>
             
-            <p className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 md:mb-8 max-w-lg mx-auto md:mx-0 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <p className={`text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-5 sm:mb-6 md:mb-8 max-w-lg mx-auto md:mx-0 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('hero.description')}
             </p>
             
-            <div className={`flex flex-row items-center justify-center md:justify-start space-x-4 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <div className={`flex flex-row items-center justify-center md:justify-start space-x-3 sm:space-x-4 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <Button 
                 href="/MouadIdrissiCV.pdf" 
                 variant="primary" 
                 size="lg"
-                className="min-w-[130px] sm:min-w-[160px] whitespace-nowrap text-sm sm:text-base py-2 px-4 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
+                className="min-w-[120px] sm:min-w-[130px] md:min-w-[160px] whitespace-nowrap text-xs sm:text-sm md:text-base py-2 px-3 sm:px-4 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
                 onClick={(e: React.MouseEvent<HTMLElement>) => {
                   e.preventDefault();
                   const link = document.createElement('a');
@@ -203,10 +203,10 @@ const Hero: React.FC = () => {
                   document.body.removeChild(link);
                 }}
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-1 sm:gap-2">
                   {t('about.cta.resume')}
                   <svg 
-                    className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-y-1" 
+                    className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 transform group-hover:translate-y-1" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -224,13 +224,13 @@ const Hero: React.FC = () => {
                 href="#contact" 
                 variant="outline" 
                 size="lg"
-                className="min-w-[130px] sm:min-w-[160px] whitespace-nowrap text-sm sm:text-base py-2 px-4 hover:scale-105 hover:shadow-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-300"
+                className="min-w-[120px] sm:min-w-[130px] md:min-w-[160px] whitespace-nowrap text-xs sm:text-sm md:text-base py-2 px-3 sm:px-4 hover:scale-105 hover:shadow-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-300"
               >
                 {t('hero.cta.contact')}
               </Button>
             </div>
             
-            <div className={`mt-6 md:mt-8 flex items-center justify-center md:justify-start space-x-6 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <div className={`mt-5 sm:mt-6 md:mt-8 flex items-center justify-center md:justify-start space-x-4 sm:space-x-6 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <a 
                 href="https://github.com/itshydrox" 
                 target="_blank" 
@@ -238,7 +238,7 @@ const Hero: React.FC = () => {
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
                 aria-label="GitHub"
               >
-                <Github size={22} />
+                <Github size={20} className="sm:w-[22px] sm:h-[22px]" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/mouad-idrissi/" 
@@ -247,14 +247,14 @@ const Hero: React.FC = () => {
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={22} />
+                <Linkedin size={20} className="sm:w-[22px] sm:h-[22px]" />
               </a>
               <a 
                 href="mailto:idrissimou3ad@gmail.com"
                 className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
                 aria-label="Email"
               >
-                <Mail size={22} />
+                <Mail size={20} className="sm:w-[22px] sm:h-[22px]" />
               </a>
             </div>
           </div>
