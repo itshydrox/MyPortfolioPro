@@ -111,7 +111,7 @@ const Header: React.FC = () => {
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
-                    {t(link.key)}
+                    <span className="font-heading">{t(link.key)}</span>
                   </motion.a>
                 ))}
               </motion.div>

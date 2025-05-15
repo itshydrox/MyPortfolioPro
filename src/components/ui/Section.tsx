@@ -22,7 +22,7 @@ const Section: React.FC<SectionProps> = ({
     >
       <div className="container mx-auto px-4 md:px-6 max-w-[100vw]">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
             {title}
           </h2>
           {subtitle && (

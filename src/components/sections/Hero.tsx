@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
     }
     // For desktop (≥ 1024px)
     else {
-      const centerX = 350;
+      const centerX = 220;
       const centerY = 170;
       const radius = 250;
       const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
@@ -168,13 +168,13 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col-reverse md:flex-row items-center md:space-x-8 lg:space-x-12">
           {/* Text Content */}
-          <div className={`w-full md:w-1/2 md:pr-12 text-center md:text-left transform transition-all duration-1000 mt-16 sm:mt-20 md:mt-0 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 mb-3 sm:mb-4">
+          <div className={`w-full md:w-1/1 md:pr-12 text-center md:text-left transform transition-all duration-1000 mt-16 sm:mt-20 md:mt-0 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 mb-3 sm:mb-4">
               {t('hero.greeting')} <span className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">Mouad Idrissi</span>
             </h1>
             
             <div className="h-6 sm:h-8 md:h-10 mb-3 sm:mb-4 mt-3 sm:mt-4 md:mt-6">
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-700 dark:text-gray-300">
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-heading font-medium text-gray-700 dark:text-gray-300">
                 {t('hero.im')}{' '}
                 <span className="text-blue-600 dark:text-blue-400 inline-block">
                   {typedText}
@@ -314,11 +314,11 @@ const Hero: React.FC = () => {
           </div>
         </div>
         
-        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} hidden md:block`}>
           <a 
             href="#about" 
             aria-label="Scroll to About section"
-            className="animate-bounce-slow hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+            className="animate-bounce-soft hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
           >
             <ArrowDown className="text-gray-600 dark:text-gray-400" />
           </a>
