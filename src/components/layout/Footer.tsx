@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Mail, ArrowUp, MapPin, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp, MapPin, Phone } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -9,6 +10,7 @@ const Footer: React.FC = () => {
     threshold: 0.1,
     triggerOnce: true
   });
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (inView) {
@@ -17,19 +19,19 @@ const Footer: React.FC = () => {
   }, [inView]);
 
   const socialLinks = [
-    { icon: <Github size={20} />, href: 'https://github.com', label: 'GitHub', gradient: 'from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600' },
-    { icon: <Linkedin size={20} />, href: 'https://linkedin.com', label: 'LinkedIn', gradient: 'from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600' },
-    { icon: <Twitter size={20} />, href: 'https://twitter.com', label: 'Twitter', gradient: 'from-sky-500 to-sky-700 dark:from-sky-400 dark:to-sky-600' },
-    { icon: <Mail size={20} />, href: 'mailto:contact@example.com', label: 'Email', gradient: 'from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-600' }
+    { icon: <Github size={20} />, href: 'https://github.com/itshydrox', label: 'GitHub', gradient: 'from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600' },
+    { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/mouad-idrissi', label: 'LinkedIn', gradient: 'from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600' },
+    { icon: <Mail size={20} />, href: 'mailto:idrissimou3ad@gmail.com', label: 'Email', gradient: 'from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-600' }
   ];
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#home', label: t('nav.home') },
+    { href: '#about', label: t('nav.about') },
+    { href: '#skills', label: t('nav.skills') },
+    { href: '#experience', label: t('nav.experience') },
+    { href: '#studies', label: t('nav.studies') },
+    { href: '#projects', label: t('nav.projects') },
+    { href: '#contact', label: t('nav.contact') }
   ];
 
   return (
@@ -44,7 +46,7 @@ const Footer: React.FC = () => {
               className="h-12 w-auto object-contain"
             />
             <p className="text-gray-600 dark:text-gray-400 max-w-xs leading-relaxed">
-              Building innovative web solutions with a passion for clean code and elegant user experiences.
+              {t('footer.tagline')}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -68,7 +70,7 @@ const Footer: React.FC = () => {
           {/* Site Navigation */}
           <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">
-              Navigation
+              {t('footer.navigation')}
             </h4>
             <nav className="grid grid-cols-2 gap-4">
               {navLinks.map((link, index) => (
@@ -90,7 +92,7 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">
-              Contact
+              {t('footer.contact')}
             </h4>
             <address className="not-italic space-y-4">
               <div className={`flex items-center space-x-3 text-gray-600 dark:text-gray-400 transform transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
@@ -121,7 +123,7 @@ const Footer: React.FC = () => {
 
         <div className={`mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-700/50 text-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
           <p className="text-gray-600 dark:text-gray-400">
-            © {currentYear} MouadPortfolio. All rights reserved.
+            {t('footer.copyright').replace('{year}', currentYear.toString())}
           </p>
         </div>
 

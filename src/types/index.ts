@@ -29,6 +29,11 @@ export interface ExperienceType {
   technologies: string[];
 }
 
+export interface ExperienceData {
+  en: ExperienceType[];
+  es: ExperienceType[];
+}
+
 export interface StudyType {
   id: number;
   degree: string;

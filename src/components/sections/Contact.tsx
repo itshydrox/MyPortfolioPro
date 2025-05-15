@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, Linkedin } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useInView } from 'react-intersection-observer';
 
@@ -59,6 +59,13 @@ const Contact: React.FC = () => {
       gradient: 'from-blue-600 to-cyan-500'
     },
     {
+      icon: <Linkedin className="w-6 h-6" />,
+      title: t('contact.linkedin'),
+      value: 'mouad-idrissi',
+      href: 'https://www.linkedin.com/in/mouad-idrissi/',
+      gradient: 'from-blue-500 to-blue-700'
+    },
+    {
       icon: <Phone className="w-6 h-6" />,
       title: t('contact.phone'),
       value: '+34 643 753 339',
@@ -85,9 +92,15 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 mb-8">
+              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 mb-4">
                 {t('contact.info')}
               </h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                {t('contact.description')}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 font-medium mb-6">
+                {t('contact.available')}
+              </p>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div 

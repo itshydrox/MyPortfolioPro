@@ -6,7 +6,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useInView } from 'react-intersection-observer';
 
 const Projects: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -19,8 +19,9 @@ const Projects: React.FC = () => {
     }
   }, [inView]);
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  const projectsData = projects[language as keyof typeof projects] || projects.en;
+  const featuredProjects = projectsData.filter(project => project.featured);
+  const otherProjects = projectsData.filter(project => !project.featured);
 
   return (
     <Section

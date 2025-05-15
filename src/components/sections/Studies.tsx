@@ -6,7 +6,8 @@ import { useLanguage } from '../../context/LanguageContext';
 import { motion } from 'framer-motion';
 
 const Studies: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const studiesData = studies[language as keyof typeof studies] || studies.en;
 
   return (
     <Section
@@ -19,7 +20,7 @@ const Studies: React.FC = () => {
         {/* Timeline line */}
         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500 via-indigo-500/50 to-transparent transform md:-translate-x-1/2" />
         
-        {studies.map((study, index) => (
+        {studiesData.map((study, index) => (
           <motion.div
             key={study.id}
             initial={{ opacity: 0, y: 20 }}

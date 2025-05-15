@@ -6,7 +6,8 @@ import { useLanguage } from '../../context/LanguageContext';
 import { motion } from 'framer-motion';
 
 const Experience: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const localizedExperiences = experiences[language as keyof typeof experiences];
 
   return (
     <Section
@@ -19,7 +20,7 @@ const Experience: React.FC = () => {
         {/* Timeline line */}
         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-blue-500/50 to-transparent transform md:-translate-x-1/2" />
         
-        {experiences.map((experience, index) => (
+        {localizedExperiences.map((experience, index) => (
           <motion.div
             key={experience.id}
             initial={{ opacity: 0, y: 20 }}

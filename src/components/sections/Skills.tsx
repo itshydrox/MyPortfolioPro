@@ -5,12 +5,14 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useInView } from 'react-intersection-observer';
 
 const Skills: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
   });
+  
+  const skillsData = skillCategories[language as keyof typeof skillCategories] || skillCategories.en;
 
   useEffect(() => {
     if (inView) {
@@ -29,7 +31,7 @@ const Skills: React.FC = () => {
         ref={ref}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        {skillCategories.map((category, categoryIndex) => (
+        {skillsData.map((category, categoryIndex) => (
           <div 
             key={category.name}
             className="opacity-0 animate-fade-in"

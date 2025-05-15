@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
-import { Menu, X, Sun, Moon, Github, Linkedin, Languages } from 'lucide-react';
+import { Menu, X, Sun, Moon, Github, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavLink {
@@ -13,9 +13,9 @@ const navLinks: NavLink[] = [
   { key: 'nav.home', href: '#home' },
   { key: 'nav.about', href: '#about' },
   { key: 'nav.skills', href: '#skills' },
-  { key: 'nav.projects', href: '#projects' },
-  { key: 'nav.studies', href: '#studies' },
   { key: 'nav.experience', href: '#experience' },
+  { key: 'nav.studies', href: '#studies' },
+  { key: 'nav.projects', href: '#projects' },
   { key: 'nav.contact', href: '#contact' },
 ];
 
@@ -24,7 +24,14 @@ const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, t, setLanguage } = useLanguage();
+  
+  // Flag URLs for each language
+  const flagUrls = {
+    en: "https://flagcdn.com/w40/gb.png",
+    es: "https://flagcdn.com/w40/es.png",
+    fr: "https://flagcdn.com/w40/fr.png"
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -114,18 +121,95 @@ const Header: React.FC = () => {
             {/* Actions */}
             <div className="hidden md:flex items-center space-x-2 md:absolute md:right-0">
               {/* Language Toggle */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={toggleLanguage}
-                className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 hover:bg-white/60 dark:hover:bg-gray-800/60 transition-all duration-300 flex items-center gap-1"
-                aria-label="Switch language"
+              <motion.div
+                className="relative group"
               >
-                <Languages size={18} className="text-gray-700 dark:text-gray-200" />
-                <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                  {language.toUpperCase()}
-                </span>
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 flex items-center gap-2"
+                  aria-label="Select language"
+                >
+                  <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                    <img 
+                      src={flagUrls[language]} 
+                      alt={`${language} flag`}
+                      className="w-full h-full object-cover"
+                    />
+                  </span>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
+                    {language.toUpperCase()}
+                  </span>
+                </motion.button>
+                
+                {/* Language Dropdown */}
+                <motion.div 
+                  className="absolute right-0 mt-2 w-40 rounded-xl overflow-hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl backdrop-saturate-150 shadow-lg border border-gray-200/50 dark:border-gray-700/50 z-50 transform opacity-0 -translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300"
+                >
+                  <div className="py-2">
+                    <button
+                      onClick={() => setLanguage('en')}
+                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                        ${language === 'en' 
+                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
+                        } transition-colors duration-200`}
+                    >
+                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                        <img 
+                          src={flagUrls['en']} 
+                          alt="UK flag" 
+                          className="w-full h-full object-cover"
+                        />
+                      </span>
+                      <span className="font-medium">English</span>
+                      {language === 'en' && (
+                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                      )}
+                    </button>
+                    <button
+                      onClick={() => setLanguage('es')}
+                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                        ${language === 'es' 
+                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
+                        } transition-colors duration-200`}
+                    >
+                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                        <img 
+                          src={flagUrls['es']} 
+                          alt="Spain flag" 
+                          className="w-full h-full object-cover"
+                        />
+                      </span>
+                      <span className="font-medium">Español</span>
+                      {language === 'es' && (
+                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                      )}
+                    </button>
+                    <button
+                      onClick={() => setLanguage('fr')}
+                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                        ${language === 'fr' 
+                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
+                        } transition-colors duration-200`}
+                    >
+                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                        <img 
+                          src={flagUrls['fr']} 
+                          alt="France flag" 
+                          className="w-full h-full object-cover"
+                        />
+                      </span>
+                      <span className="font-medium">Français</span>
+                      {language === 'fr' && (
+                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                      )}
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
 
               {/* Theme Toggle */}
               <motion.button
@@ -186,18 +270,95 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={toggleLanguage}
-                className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 flex items-center gap-1"
-                aria-label="Switch language"
+              <motion.div
+                className="relative group"
               >
-                <Languages size={18} className="text-gray-700 dark:text-gray-200" />
-                <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                  {language.toUpperCase()}
-                </span>
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 flex items-center gap-2"
+                  aria-label="Select language"
+                >
+                  <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                    <img 
+                      src={flagUrls[language]} 
+                      alt={`${language} flag`}
+                      className="w-full h-full object-cover"
+                    />
+                  </span>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
+                    {language.toUpperCase()}
+                  </span>
+                </motion.button>
+                
+                {/* Language Dropdown */}
+                <motion.div 
+                  className="absolute right-0 mt-2 w-40 rounded-xl overflow-hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl backdrop-saturate-150 shadow-lg border border-gray-200/50 dark:border-gray-700/50 z-50 transform opacity-0 -translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300"
+                >
+                  <div className="py-2">
+                    <button
+                      onClick={() => setLanguage('en')}
+                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                        ${language === 'en' 
+                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
+                        } transition-colors duration-200`}
+                    >
+                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                        <img 
+                          src={flagUrls['en']} 
+                          alt="UK flag" 
+                          className="w-full h-full object-cover"
+                        />
+                      </span>
+                      <span className="font-medium">English</span>
+                      {language === 'en' && (
+                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                      )}
+                    </button>
+                    <button
+                      onClick={() => setLanguage('es')}
+                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                        ${language === 'es' 
+                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
+                        } transition-colors duration-200`}
+                    >
+                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                        <img 
+                          src={flagUrls['es']} 
+                          alt="Spain flag" 
+                          className="w-full h-full object-cover"
+                        />
+                      </span>
+                      <span className="font-medium">Español</span>
+                      {language === 'es' && (
+                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                      )}
+                    </button>
+                    <button
+                      onClick={() => setLanguage('fr')}
+                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                        ${language === 'fr' 
+                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
+                        } transition-colors duration-200`}
+                    >
+                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
+                        <img 
+                          src={flagUrls['fr']} 
+                          alt="France flag" 
+                          className="w-full h-full object-cover"
+                        />
+                      </span>
+                      <span className="font-medium">Français</span>
+                      {language === 'fr' && (
+                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                      )}
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
