@@ -281,7 +281,7 @@ export const skillCategories: SkillTranslations = {
     },
   ],
   fr: [
-    {
+  {
       name: "Développement Frontend",
     skills: [
         { 
@@ -409,7 +409,7 @@ export const skillCategories: SkillTranslations = {
           level: 85, 
           iconUrl: "https://api.iconify.design/mdi:database.svg?color=%234169e1"
         },
-      ],
-    },
+    ],
+  },
   ]
 };

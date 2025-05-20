@@ -39,10 +39,10 @@ const Skills: React.FC = () => {
           >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-500 group">
               <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-4">
-                {category.name}
-              </h3>
+              {category.name}
+            </h3>
               
-              <div className="space-y-4">
+            <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skill.name}
@@ -87,7 +87,7 @@ const Skills: React.FC = () => {
                         }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-shimmer-slow"></div>
-                      </div>
+                  </div>
                       <div 
                         className="absolute h-full w-full rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"
                         style={{
@@ -95,10 +95,10 @@ const Skills: React.FC = () => {
                           transform: 'translateX(-100%)',
                           animation: 'shimmer 2s infinite'
                         }}
-                      ></div>
-                    </div>
+                    ></div>
                   </div>
-                ))}
+                </div>
+              ))}
               </div>
             </div>
           </div>

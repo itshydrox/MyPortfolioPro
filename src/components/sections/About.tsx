@@ -81,16 +81,16 @@ const About: React.FC = () => {
             
             <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('about.description2')}
-            </p>
-            
+          </p>
+          
             <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('about.description3')}
             </p>
 
             <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('about.description4')}
-            </p>
-
+          </p>
+          
             <p className={`text-gray-700 dark:text-gray-300 leading-relaxed transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               {t('about.description5')}
             </p>
@@ -155,7 +155,7 @@ const About: React.FC = () => {
             >
               <div className={`inline-flex items-center justify-center p-3 rounded-lg mb-4 transform transition-transform duration-300 group-hover:scale-110 bg-gradient-to-br ${item.gradient} bg-opacity-10 dark:bg-opacity-20`}>
                 <div className="text-white">
-                  {item.icon}
+                {item.icon}
                 </div>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
