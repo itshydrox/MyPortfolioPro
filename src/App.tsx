@@ -10,6 +10,7 @@ import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 import Studies from './components/sections/Studies';
 import Projects from './components/sections/Projects';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <div className="min-h-screen overflow-x-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
           <Header />
           <main className="overflow-x-hidden">
+          <SpeedInsights />
         <Hero />
         <About />
         <Skills />
