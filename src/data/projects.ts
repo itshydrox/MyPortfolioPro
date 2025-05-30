@@ -47,6 +47,51 @@ This project showcases my ability to build a complete full-stack web application
   },
   {
     id: 2,
+  
+    title: 'Ayoubs Family Gallery & Booking Platform Barber Shop Website',
+  
+    description: 'Ayoubs Family is a modern web platform designed for a barber shop, showcasing services, a founder blog, and real-time reservation notifications via email. Built with React, TypeScript, Supabase, and PostgreSQL.',
+  
+    longDescription: `Ayoubs Family is a dynamic and visually engaging web platform tailored for a local barber shop. The application functions as a digital storefront, enabling users to explore barbering services, view the gallery, read the founder’s blog, and make online reservations with instant email notifications for the barber.
+  
+  The frontend is crafted using React and TypeScript, styled with Tailwind CSS for a clean and responsive user interface across all devices. Visitors can easily browse service offerings, check out the gallery, and stay connected with the barber’s journey through the integrated blog section.
+  
+  On the backend, Supabase and PostgreSQL handle authentication, real-time data management, and database operations efficiently. When a client submits a reservation, the system automatically sends an email notification to the barber, ensuring fast and reliable communication.
+  
+  • Clean service presentation with gallery and blog  
+  • Online reservation system with form validation  
+  • Instant email notifications sent to the barber on booking  
+  • Responsive and accessible design built with Tailwind CSS  
+  • Secure user authentication powered by Supabase  
+  • Blog functionality to share updates and stories  
+  • PostgreSQL database for structured and scalable data storage
+  
+  This project demonstrates my ability to build full-featured, real-world web applications with modern tools like React and Supabase, implement dynamic user experiences, and integrate third-party APIs for enhanced functionality.`,
+  
+    tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+  
+    images: [
+      'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
+      'https://i.postimg.cc/nh4R5JqS/Screenshot-2025-05-30-133728.png',
+      'https://i.postimg.cc/Z5LkN3sq/Screenshot-2025-05-30-133921.png',
+      'https://i.postimg.cc/BvwV5CTJ/Screenshot-2025-05-30-133949.png',
+      'https://i.postimg.cc/QCcY3GRM/Screenshot-2025-05-30-134006.png',
+      'https://i.postimg.cc/dtKS93yZ/Screenshot-2025-05-30-134018.png',
+      'https://i.postimg.cc/rwVnvHg8/Screenshot-2025-05-30-134113.png',
+      'https://i.postimg.cc/k4bfQPMy/Screenshot-2025-05-30-134143.png',
+      'https://i.postimg.cc/zDTx3Ncz/Screenshot-2025-05-30-134156.png',
+      'https://i.postimg.cc/fRRCH9Ty/Screenshot-2025-05-30-134027.png',
+      'https://i.postimg.cc/Hnt0zpqb/Screenshot-2025-05-30-134049.png',
+      'https://i.postimg.cc/YqbfmCfH/Screenshot-2025-05-30-134100.png'
+    ],
+  
+    demoUrl: 'https://ayoubs-family.vercel.app/',
+    githubUrl: 'https://github.com/itshydrox/AyoubsFamily',
+  
+    featured: true,
+  },
+  {
+    id: 3,
     title: 'Admin Dashboard for Mouad Shop',
     description: 'A powerful admin dashboard for the Mouad Shop e-commerce platform, built modern technologies. It allows administrators to manage products and orders efficiently with full CRUD capabilities.',
     longDescription: `The Admin Dashboard for Mouad Shop is a custom-built management panel designed to give administrators full control over the e-commerce platforms content and operations. Developed using React for the frontend, Node.js , Express and MongoDB for the backend, and styled with Tailwind CSS, the dashboard ensures performance, security, and usability.
@@ -92,7 +137,7 @@ This dashboard is a crucial component of the Mouad Shop platform, showcasing my 
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     title: 'Portfolio Website',
     description: 'A fast and responsive portfolio website developed with Vue.js, Tailwind CSS, and Vite, designed to showcase my projects, skills, and contact information with a clean and modern user experience.',
     longDescription: `This Portfolio Website is a personal web application crafted to present my work, technical skills, and professional background in a visually appealing and performance-optimized format. Built using Vue.js for a reactive and modular frontend, Tailwind CSS for rapid and consistent styling, and Vite for blazing-fast development and build processes.
@@ -170,6 +215,48 @@ Este proyecto demuestra mi capacidad para construir una aplicación web full-sta
     },
     {
       id: 2,
+      title: 'Ayoubs Family Galeria y Reservas Barber Shop Web',
+      description: 'Una plataforma web moderna diseñada para un barber shop, que muestra servicios, un blog del fundador y un sistema de reservas en tiempo real con notificaciones por correo electrónico. Desarrollado con React, TypeScript, Supabase y PostgreSQL.',
+      longDescription: `Ayoubs Family es una plataforma web moderna diseñada para un barber shop. La aplicación funciona como una tienda digital, permitiendo a los usuarios explorar los servicios, ver la galería, leer el blog del fundador y hacer reservas en línea con notificaciones instantáneas por correo electrónico para el barbero.
+
+El frontend está desarrollado con React y TypeScript, estilizado con Tailwind CSS para una interfaz de usuario limpia y responsive en todos los dispositivos. Los visitantes pueden navegar fácilmente por las ofertas, ver la galería y mantenerse conectados con el viaje del fundador a través de la sección de blog integrada.
+
+El backend está impulsado por Node.js y Express, manejando solicitudes API, autenticación de usuarios, gestión de productos y procesamiento de pedidos de manera eficiente. Los datos se almacenan y gestionan utilizando Supabase, asegurando operaciones de base de datos flexibles y escalables.
+
+El procesamiento seguro de pagos está integrado utilizando Stripe, permitiendo a los usuarios completar compras de forma segura y confiable.
+
+Características Principales:
+
+• Galería de servicios con presentación clara
+• Sistema de reservas en línea con validación de formulario
+• Notificaciones instantáneas por correo electrónico para el barbero
+• Diseño responsive con Tailwind CSS
+• Autenticación de usuarios con Supabase
+• Blog funcional para compartir actualizaciones y historias
+• Base de datos PostgreSQL para almacenamiento de datos estructurados y escalables
+
+Este proyecto demuestra mi capacidad para construir una aplicación web full-stack completa desde cero utilizando tecnologías modernas, implementar APIs RESTful, gestionar el estado en React e integrar servicios de terceros como Stripe para pagos.`,
+      tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+      images: [
+        'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
+        'https://i.postimg.cc/nh4R5JqS/Screenshot-2025-05-30-133728.png',
+        'https://i.postimg.cc/Z5LkN3sq/Screenshot-2025-05-30-133921.png',
+        'https://i.postimg.cc/BvwV5CTJ/Screenshot-2025-05-30-133949.png',
+        'https://i.postimg.cc/QCcY3GRM/Screenshot-2025-05-30-134006.png',
+        'https://i.postimg.cc/dtKS93yZ/Screenshot-2025-05-30-134018.png',
+        'https://i.postimg.cc/rwVnvHg8/Screenshot-2025-05-30-134113.png',
+        'https://i.postimg.cc/k4bfQPMy/Screenshot-2025-05-30-134143.png',
+        'https://i.postimg.cc/zDTx3Ncz/Screenshot-2025-05-30-134156.png',
+        'https://i.postimg.cc/fRRCH9Ty/Screenshot-2025-05-30-134027.png',
+        'https://i.postimg.cc/Hnt0zpqb/Screenshot-2025-05-30-134049.png',
+        'https://i.postimg.cc/YqbfmCfH/Screenshot-2025-05-30-134100.png'
+      ],
+      demoUrl: 'https://ayoubs-family.vercel.app/',
+      githubUrl: 'https://github.com/itshydrox/AyoubsFamily',
+      featured: true,
+    },
+    {
+      id: 3,
       title: 'Panel de Administración para Mouad Shop',
       description: 'Un potente panel de administración para la plataforma e-commerce Mouad Shop, construido con tecnologías modernas. Permite a los administradores gestionar productos y pedidos eficientemente con capacidades CRUD completas.',
       longDescription: `El Panel de Administración para Mouad Shop es un panel de gestión personalizado diseñado para dar a los administradores control total sobre el contenido y las operaciones de la plataforma e-commerce. Desarrollado utilizando React para el frontend, Node.js, Express y MongoDB para el backend, y estilizado con Tailwind CSS, el panel garantiza rendimiento, seguridad y usabilidad.
@@ -206,7 +293,7 @@ Este panel es un componente crucial de la plataforma Mouad Shop, demostrando mis
       featured: true,
     },
     {
-      id: 3,
+      id: 4,
       title: 'Sitio Web Portfolio',
       description: 'Un sitio web portfolio rápido y responsive desarrollado con Vue.js, Tailwind CSS y Vite, diseñado para mostrar mis proyectos, habilidades e información de contacto con una experiencia de usuario limpia y moderna.',
       longDescription: `Este Sitio Web Portfolio es una aplicación web personal diseñada para presentar mi trabajo, habilidades técnicas y experiencia profesional en un formato visualmente atractivo y optimizado para el rendimiento. Construido utilizando Vue.js para un frontend reactivo y modular, Tailwind CSS para un estilizado rápido y consistente, y Vite para procesos de desarrollo y construcción ultrarrápidos.
@@ -279,6 +366,51 @@ Ce projet démontre ma capacité à construire une application web full-stack co
     },
     {
       id: 2,
+    
+      title: 'Ayoubs Family Galerie et Plateforme de Réservation Barber Shop Site Web',
+    
+      description: 'Ayoubs Family est une plateforme web moderne conçue pour un salon de coiffure, mettant en avant les services, un blog du fondateur, et des notifications de réservation en temps réel par email.',
+    
+      longDescription: `Ayoubs Family est une plateforme web dynamique et visuellement attrayante, conçue pour un salon de coiffure local. L’application sert de vitrine numérique, permettant aux utilisateurs d’explorer les services, de consulter la galerie, de lire le blog du fondateur et d’effectuer des réservations en ligne avec notifications instantanées par email pour le coiffeur.
+    
+    Le frontend est développé avec React et TypeScript, et stylisé avec Tailwind CSS pour une interface propre, réactive et adaptée à tous les appareils. Les visiteurs peuvent facilement parcourir les services, consulter la galerie et suivre l’actualité du coiffeur grâce à la section blog intégrée.
+    
+    Le backend repose sur Supabase et PostgreSQL pour la gestion de l’authentification, des données en temps réel et des opérations sur la base de données. Lorsqu’un client effectue une réservation, le système envoie automatiquement une notification par email au coiffeur, garantissant une communication rapide et fiable.
+    
+    • Présentation claire des services avec galerie et blog  
+    • Système de réservation en ligne avec validation de formulaire  
+    • Notifications instantanées par email envoyées au coiffeur lors d’une réservation  
+    • Design réactif et accessible conçu avec Tailwind CSS  
+    • Authentification sécurisée des utilisateurs grâce à Supabase  
+    • Fonctionnalité de blog pour partager des actualités et histoires  
+    • Base de données PostgreSQL pour un stockage structuré et évolutif des données
+    
+    Ce projet démontre ma capacité à créer des applications web complètes et réelles avec des outils modernes tels que React et Supabase, à implémenter des expériences utilisateurs dynamiques et à intégrer des APIs tierces pour des fonctionnalités enrichies.`,
+    
+      tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+    
+      images: [
+        'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
+        'https://i.postimg.cc/nh4R5JqS/Screenshot-2025-05-30-133728.png',
+        'https://i.postimg.cc/Z5LkN3sq/Screenshot-2025-05-30-133921.png',
+        'https://i.postimg.cc/BvwV5CTJ/Screenshot-2025-05-30-133949.png',
+        'https://i.postimg.cc/QCcY3GRM/Screenshot-2025-05-30-134006.png',
+        'https://i.postimg.cc/dtKS93yZ/Screenshot-2025-05-30-134018.png',
+        'https://i.postimg.cc/rwVnvHg8/Screenshot-2025-05-30-134113.png',
+        'https://i.postimg.cc/k4bfQPMy/Screenshot-2025-05-30-134143.png',
+        'https://i.postimg.cc/zDTx3Ncz/Screenshot-2025-05-30-134156.png',
+        'https://i.postimg.cc/fRRCH9Ty/Screenshot-2025-05-30-134027.png',
+        'https://i.postimg.cc/Hnt0zpqb/Screenshot-2025-05-30-134049.png',
+        'https://i.postimg.cc/YqbfmCfH/Screenshot-2025-05-30-134100.png'
+      ],
+    
+      demoUrl: 'https://ayoubs-family.vercel.app/',
+      githubUrl: 'https://github.com/itshydrox/AyoubsFamily',
+    
+      featured: true,
+    },    
+    {
+      id: 3,
       title: 'Tableau de Bord Administrateur pour Mouad Shop',
       description: 'Un puissant tableau de bord administrateur pour la plateforme e-commerce Mouad Shop, construit avec des technologies modernes. Il permet aux administrateurs de gérer efficacement les produits et les commandes avec des capacités CRUD complètes.',
       longDescription: `Le Tableau de Bord Administrateur pour Mouad Shop est un panel de gestion personnalisé conçu pour donner aux administrateurs un contrôle total sur le contenu et les opérations de la plateforme e-commerce. Développé en utilisant React pour le frontend, Node.js, Express et MongoDB pour le backend, et stylisé avec Tailwind CSS, le tableau de bord assure performance, sécurité et utilisabilité.
@@ -315,7 +447,7 @@ Ce tableau de bord est un composant crucial de la plateforme Mouad Shop, démont
       featured: true,
     },
     {
-      id: 3,
+      id: 4,
       title: 'Site Web Portfolio',
       description: 'Un site web portfolio rapide et responsive développé avec Vue.js, Tailwind CSS et Vite, conçu pour présenter mes projets, compétences et informations de contact avec une expérience utilisateur propre et moderne.',
       longDescription: `Ce Site Web Portfolio est une application web personnelle conçue pour présenter mon travail, mes compétences techniques et mon parcours professionnel dans un format visuellement attrayant et optimisé pour les performances. Construit en utilisant Vue.js pour un frontend réactif et modulaire, Tailwind CSS pour un style rapide et cohérent, et Vite pour des processus de développement et de build ultra-rapides.
