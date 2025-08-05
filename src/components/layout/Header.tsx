@@ -14,8 +14,8 @@ const navLinks: NavLink[] = [
   { key: 'nav.about', href: '#about' },
   { key: 'nav.skills', href: '#skills' },
   { key: 'nav.experience', href: '#experience' },
+  { key: 'nav.projects', href: '#company-projects' },
   { key: 'nav.studies', href: '#studies' },
-  { key: 'nav.projects', href: '#projects' },
   { key: 'nav.contact', href: '#contact' },
 ];
 
