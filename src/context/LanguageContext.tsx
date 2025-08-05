@@ -69,6 +69,10 @@ const translations = {
     'projects.live': 'Live Demo',
     'projects.source': 'Source Code',
 
+    // Company Projects Section
+    'companyProjects.title': 'Company Projects',
+    'companyProjects.subtitle': 'A selection of my work for various companies',
+
     // Experience Section
     'experience.title': 'Work Experience',
     'experience.subtitle': 'My professional journey and key achievements',
@@ -163,6 +167,10 @@ const translations = {
     'projects.live': 'Demo en Vivo',
     'projects.source': 'Código Fuente',
 
+    // Company Projects Section
+    'companyProjects.title': 'Proyectos de Empresa',
+    'companyProjects.subtitle': 'Una selección de mis trabajos para diversas empresas',
+
     // Experience Section
     'experience.title': 'Experiencia Laboral',
     'experience.subtitle': 'Mi trayectoria profesional y logros principales',
@@ -256,6 +264,10 @@ const translations = {
     'projects.other': 'Autres Projets Notables',
     'projects.live': 'Démo en Direct',
     'projects.source': 'Code Source',
+
+    // Company Projects Section
+    'companyProjects.title': 'Projets d\'Entreprise',
+    'companyProjects.subtitle': 'Une sélection de mes travaux pour diverses entreprises',
 
     // Experience Section
     'experience.title': 'Expérience Professionnelle',
