@@ -37,12 +37,9 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
     setStatusMessage('');
 
-    // EmailJS service configuration
-    // You need to create an account at https://www.emailjs.com/
-    // Then create a service, email template, and get your user ID
-    const serviceId = 'service_dkfihg6'; // Replace with your EmailJS service ID
-    const templateId = 'template_n9fk2lp'; // Replace with your EmailJS template ID
-    const publicKey = 'Mmt9mocsntCTZeTMT'; // Replace with your EmailJS public key
+    const serviceId = 'service_dkfihg6';
+    const templateId = 'template_n9fk2lp';
+    const publicKey = 'Mmt9mocsntCTZeTMT'; 
 
     try {
       if (!formRef.current) {
@@ -59,7 +56,6 @@ const Contact: React.FC = () => {
       if (result.status === 200) {
         setSubmitStatus('success');
         setStatusMessage(t('contact.form.success') || 'Message sent successfully!');
-        // Reset form
         setFormData({
           name: '',
           email: '',
