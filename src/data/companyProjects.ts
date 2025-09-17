@@ -23,6 +23,7 @@ Key Features:
 This project demonstrates my ability to collaborate on enterprise-level software, use Vue.js in production environments, and build visually clean and functional UIs with live data integration.`,
     tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'API Integration'],
     images: [
+      'https://i.postimg.cc/5t72Tczw/Tourist-8.png',
       'https://i.postimg.cc/P5PnbZKk/Screenshot-2025-02-27-105406.png',
       'https://i.postimg.cc/PqJJwPvL/Screenshot-2025-02-28-102640.png',
       'https://i.postimg.cc/9Mj3jk2W/Screenshot-2025-02-25-091128.png'
@@ -54,6 +55,7 @@ The system includes full user and machine management modules with features like:
 This project demonstrates my experience in building professional interfaces with real-time data, user access control, and clean visual dashboards.`,
     tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'REST API'],
     images: [
+      'https://i.postimg.cc/Rhj3YkjP/Tourist-9.png',
       'https://i.postimg.cc/hPkPjc9n/Screenshot-2025-05-06-140700.png',
       'https://i.postimg.cc/mkx1GC2x/Screenshot-2025-05-06-121612.png',
       'https://i.postimg.cc/nc2r367f/Screenshot-2025-03-27-134158.png',
@@ -90,6 +92,7 @@ Características principales:
 Este proyecto demuestra mi capacidad para colaborar en desarrollos de software a nivel empresarial, utilizar Vue.js en entornos de producción y construir interfaces limpias y funcionales con integración de datos en tiempo real.`,
     tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'Integración de APIs'],
     images: [
+      'https://i.postimg.cc/5t72Tczw/Tourist-8.png',
       'https://i.postimg.cc/P5PnbZKk/Screenshot-2025-02-27-105406.png',
       'https://i.postimg.cc/PqJJwPvL/Screenshot-2025-02-28-102640.png',
       'https://i.postimg.cc/9Mj3jk2W/Screenshot-2025-02-25-091128.png'
@@ -121,6 +124,7 @@ El sistema incluye módulos completos de gestión de usuarios y máquinas con fu
 Este proyecto demuestra mi experiencia en la construcción de interfaces profesionales con datos en tiempo real, control de usuarios y paneles visuales claros.`,
     tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'API REST'],
     images: [
+      'https://i.postimg.cc/Rhj3YkjP/Tourist-9.png',
       'https://i.postimg.cc/hPkPjc9n/Screenshot-2025-05-06-140700.png',
       'https://i.postimg.cc/mkx1GC2x/Screenshot-2025-05-06-121612.png',
       'https://i.postimg.cc/nc2r367f/Screenshot-2025-03-27-134158.png',
@@ -157,6 +161,7 @@ Fonctionnalités principales :
 Ce projet met en valeur ma capacité à collaborer sur des logiciels de niveau entreprise, à utiliser Vue.js en production et à créer des interfaces claires et fonctionnelles avec des données en temps réel.`,
     tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'Intégration d’API'],
     images: [
+      'https://i.postimg.cc/5t72Tczw/Tourist-8.png',
       'https://i.postimg.cc/P5PnbZKk/Screenshot-2025-02-27-105406.png',
       'https://i.postimg.cc/PqJJwPvL/Screenshot-2025-02-28-102640.png',
       'https://i.postimg.cc/9Mj3jk2W/Screenshot-2025-02-25-091128.png'
@@ -188,6 +193,7 @@ Le système comprend des modules complets de gestion des utilisateurs et des mac
 Ce projet met en valeur mon expérience dans la création d'interfaces professionnelles avec des données en direct, la gestion des utilisateurs et des tableaux de bord clairs.`,
     tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'API REST'],
     images: [
+      'https://i.postimg.cc/Rhj3YkjP/Tourist-9.png',
       'https://i.postimg.cc/hPkPjc9n/Screenshot-2025-05-06-140700.png',
       'https://i.postimg.cc/mkx1GC2x/Screenshot-2025-05-06-121612.png',
       'https://i.postimg.cc/nc2r367f/Screenshot-2025-03-27-134158.png',

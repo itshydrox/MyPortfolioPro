@@ -32,6 +32,7 @@ This project showcases my ability to build a complete full-stack web application
 `,
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'Tailwind CSS'],
     images: [
+      'https://i.postimg.cc/Hn9B2tJP/Tourist-7.png',
       'https://i.postimg.cc/TYrxLc8X/Screenshot-2025-05-26-095515.png',
       'https://i.postimg.cc/xTR0pP63/Screenshot-2025-05-26-105035.png',
       'https://i.postimg.cc/wv88jtWB/Screenshot-2025-05-26-105222.png',
@@ -71,6 +72,7 @@ This project showcases my ability to build a complete full-stack web application
     tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
   
     images: [
+      'https://i.postimg.cc/j5kNjXcV/Tourist-6.png',
       'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
       'https://i.postimg.cc/nh4R5JqS/Screenshot-2025-05-30-133728.png',
       'https://i.postimg.cc/Z5LkN3sq/Screenshot-2025-05-30-133921.png',
@@ -90,6 +92,90 @@ This project showcases my ability to build a complete full-stack web application
   
     featured: true,
   },
+  {
+  id: 5,
+  title: 'Conociendo Santa Cruz Bolivia – Travel Booking Website',
+  description: 'A modern travel booking website for a Spanish tourism company in Bolivia. Conociendo Santa Cruz Bolivia offers personalized travel plans, activities, and cultural experiences in Santa Cruz.',
+  longDescription: `Conociendo Santa Cruz Bolivia is a modern web application designed to promote and manage travel experiences in Santa Cruz, Bolivia. Built with React JS, TypeScript, and Tailwind CSS, the platform delivers a smooth and interactive booking experience for tourists.
+
+The frontend, developed with React and styled using Tailwind CSS, ensures a clean and mobile-friendly interface, allowing users to explore services, book activities, and access essential information easily.
+
+The platform highlights unique travel experiences in Santa Cruz, including cultural tours, nature adventures, and local activities, all presented with engaging visuals and user-friendly navigation.
+
+Key Features:
+
+• Travel package browsing with detailed activity descriptions  
+• Booking system for tours and activities  
+• Contact information and inquiry forms  
+• Responsive and mobile-first design  
+• Multilingual support (Spanish and English planned)  
+• Clear presentation of company services  
+
+This project demonstrates my ability to design and build a professional travel booking website using React, TypeScript, and Tailwind CSS, with a focus on user experience and accessibility.`,
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  images: [
+    'https://i.postimg.cc/SQ8CtzcQ/Tourist-3.png',
+    'https://i.postimg.cc/L6HHcnJF/Screenshot-2025-09-17-161940.png',
+'https://i.postimg.cc/xjGfpKTP/Screenshot-2025-09-17-161952.png',
+'https://i.postimg.cc/4dVfgcvs/Screenshot-2025-09-17-162021.png',
+'https://i.postimg.cc/j2hRWrk1/Screenshot-2025-09-17-162041.png',
+'https://i.postimg.cc/QdCjMwg6/Screenshot-2025-09-17-170532.png',
+'https://i.postimg.cc/wT06ggNy/Screenshot-2025-09-17-170549.png',
+'https://i.postimg.cc/wjrgR209/Screenshot-2025-09-17-170609.png',
+'https://i.postimg.cc/ZqyZ8NMp/Screenshot-2025-09-17-170640.png',
+'https://i.postimg.cc/XJSWQvRh/Screenshot-2025-09-17-170701.png',
+'https://i.postimg.cc/8cwVpm7Q/Screenshot-2025-09-17-170714.png',
+'https://i.postimg.cc/BbJ0fVQB/Screenshot-2025-09-17-170728.png',
+'https://i.postimg.cc/9MdhShVf/Screenshot-2025-09-17-170743.png'
+
+  ],
+  demoUrl: 'https://conociendosantacruzbolivia.com',
+  githubUrl: 'https://github.com/itshydrox/conociendo-santa-cruz',
+  featured: true,
+},
+{
+  id: 6,
+  title: 'ALSAQR Aluminium & Glass Elegance – Company Website',
+  description: 'A modern corporate website for ALSAQR, a UAE-based company specializing in aluminium and glass solutions. The website showcases the company’s services, projects, and contact information.',
+  longDescription: `ALSAQR Aluminium & Glass Elegance is a professional company website created to introduce the brand, highlight its expertise, and present completed projects. Built using React JS, TypeScript, and Tailwind CSS, the platform provides an elegant and user-friendly interface for clients and partners.
+
+The frontend, developed with React and styled with Tailwind CSS, ensures a responsive, clean, and modern design optimized for both desktop and mobile devices. Visitors can explore the company’s portfolio, review services, and easily connect with ALSAQR through the contact section.
+
+The platform is designed to reflect the company’s core values of quality, innovation, and reliability in aluminium and glass solutions for residential, commercial, and corporate projects across the UAE.
+
+Key Features:
+
+• Company introduction and mission statement  
+• Services overview (aluminium, glass, façades, windows, doors, interiors, etc.)  
+• Portfolio and project showcase with images and descriptions  
+• Contact section with inquiry forms and company details  
+• Responsive and mobile-first design  
+• Modern UI/UX with a focus on clarity and elegance  
+
+This project demonstrates my ability to design and build a corporate website using React, TypeScript, and Tailwind CSS, with a focus on presenting company identity, showcasing projects, and providing accessible contact channels.`,
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  images: [
+    'https://i.postimg.cc/DzynSZV3/Tourist-4.png',
+    'https://i.postimg.cc/HnJD1ZJr/Screenshot-2025-09-17-180844.png',
+    'https://i.postimg.cc/wjDzBGwJ/Screenshot-2025-09-17-182923.png',
+    'https://i.postimg.cc/5NY1h0vs/Screenshot-2025-09-17-182931.png',
+    'https://i.postimg.cc/mrwGYFfg/Screenshot-2025-09-17-182940.png',
+    'https://i.postimg.cc/q7Q9hVyt/Screenshot-2025-09-17-182952.png',
+    'https://i.postimg.cc/Gmn06jbp/Screenshot-2025-09-17-183009.png',
+    'https://i.postimg.cc/nhK8xQLG/Screenshot-2025-09-17-183017.png',
+    'https://i.postimg.cc/2jqSD2Nd/Screenshot-2025-09-17-183024.png',
+    'https://i.postimg.cc/3JmryNRd/Screenshot-2025-09-17-183032.png',
+    'https://i.postimg.cc/0N29HCCw/Screenshot-2025-09-17-183042.png',
+    'https://i.postimg.cc/ydDs7Yt6/Screenshot-2025-09-17-183057.png',
+    'https://i.postimg.cc/PJmGqL4H/Screenshot-2025-09-17-183107.png',
+    'https://i.postimg.cc/3R05Pf0d/Screenshot-2025-09-17-183128.png',
+    'https://i.postimg.cc/ZqMzszRG/Screenshot-2025-09-17-183137.png'
+
+  ],
+  demoUrl: 'https://alsaqr-phi.vercel.app/', 
+  githubUrl: 'https://github.com/itshydrox/ALSAQR',
+  featured: true,
+},
   {
     id: 3,
     title: 'Admin Dashboard for Mouad Shop',
@@ -173,6 +259,7 @@ This project demonstrates my frontend development skills and ability to deliver 
     githubUrl: 'https://github.com/itshydrox/myportfolio',
     featured: true,
   },
+  
   ],
   es: [
     {
@@ -200,6 +287,7 @@ Características Principales:
 Este proyecto demuestra mi capacidad para construir una aplicación web full-stack completa desde cero utilizando tecnologías modernas, implementar APIs RESTful, gestionar el estado en React e integrar servicios de terceros como Stripe para pagos.`,
       tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'Tailwind CSS'],
       images: [
+         'https://i.postimg.cc/Hn9B2tJP/Tourist-7.png',
         'https://i.postimg.cc/TYrxLc8X/Screenshot-2025-05-26-095515.png',
         'https://i.postimg.cc/xTR0pP63/Screenshot-2025-05-26-105035.png',
         'https://i.postimg.cc/wv88jtWB/Screenshot-2025-05-26-105222.png',
@@ -238,6 +326,7 @@ Características Principales:
 Este proyecto demuestra mi capacidad para construir una aplicación web full-stack completa desde cero utilizando tecnologías modernas, implementar APIs RESTful, gestionar el estado en React e integrar servicios de terceros como Stripe para pagos.`,
       tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
       images: [
+        'https://i.postimg.cc/j5kNjXcV/Tourist-6.png',
         'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
         'https://i.postimg.cc/nh4R5JqS/Screenshot-2025-05-30-133728.png',
         'https://i.postimg.cc/Z5LkN3sq/Screenshot-2025-05-30-133921.png',
@@ -255,6 +344,89 @@ Este proyecto demuestra mi capacidad para construir una aplicación web full-sta
       githubUrl: 'https://github.com/itshydrox/AyoubsFamily',
       featured: true,
     },
+     {
+  id: 5,
+  title: 'Conociendo Santa Cruz Bolivia – Sitio Web de Reservas de Viajes',
+description: 'Un sitio web moderno de reservas de viajes para una empresa de turismo española en Bolivia. Conociendo Santa Cruz Bolivia ofrece planes de viaje personalizados, actividades y experiencias culturales en Santa Cruz.',
+longDescription: `Conociendo Santa Cruz Bolivia es una aplicación web moderna diseñada para promocionar y gestionar experiencias de viaje en Santa Cruz, Bolivia. Construida con React JS, TypeScript y Tailwind CSS, la plataforma ofrece una experiencia de reservas fluida e interactiva para los turistas.
+
+El frontend, desarrollado con React y estilizado con Tailwind CSS, garantiza una interfaz limpia y adaptada a móviles, permitiendo a los usuarios explorar servicios, reservar actividades y acceder fácilmente a la información esencial.
+
+La plataforma resalta experiencias únicas de viaje en Santa Cruz, incluyendo recorridos culturales, aventuras en la naturaleza y actividades locales, todas presentadas con imágenes atractivas y una navegación intuitiva.
+
+Características principales:
+
+• Exploración de paquetes turísticos con descripciones detalladas de actividades  
+• Sistema de reservas para tours y actividades  
+• Información de contacto y formularios de consulta  
+• Diseño responsive y mobile-first  
+• Soporte multilingüe (español e inglés previsto)  
+• Presentación clara de los servicios de la empresa  
+
+Este proyecto demuestra mi capacidad para diseñar y construir un sitio web profesional de reservas de viajes utilizando React, TypeScript y Tailwind CSS, con un enfoque en la experiencia del usuario y la accesibilidad.`,
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  images: [
+    'https://i.postimg.cc/SQ8CtzcQ/Tourist-3.png',
+    'https://i.postimg.cc/L6HHcnJF/Screenshot-2025-09-17-161940.png',
+'https://i.postimg.cc/xjGfpKTP/Screenshot-2025-09-17-161952.png',
+'https://i.postimg.cc/4dVfgcvs/Screenshot-2025-09-17-162021.png',
+'https://i.postimg.cc/j2hRWrk1/Screenshot-2025-09-17-162041.png',
+'https://i.postimg.cc/QdCjMwg6/Screenshot-2025-09-17-170532.png',
+'https://i.postimg.cc/wT06ggNy/Screenshot-2025-09-17-170549.png',
+'https://i.postimg.cc/wjrgR209/Screenshot-2025-09-17-170609.png',
+'https://i.postimg.cc/ZqyZ8NMp/Screenshot-2025-09-17-170640.png',
+'https://i.postimg.cc/XJSWQvRh/Screenshot-2025-09-17-170701.png',
+'https://i.postimg.cc/8cwVpm7Q/Screenshot-2025-09-17-170714.png',
+'https://i.postimg.cc/BbJ0fVQB/Screenshot-2025-09-17-170728.png',
+'https://i.postimg.cc/9MdhShVf/Screenshot-2025-09-17-170743.png'
+
+  ],
+  demoUrl: 'https://conociendosantacruzbolivia.com',
+  githubUrl: 'https://github.com/itshydrox/conociendo-santa-cruz',
+  featured: true,
+},
+{
+  id: 6,
+ title: 'ALSAQR Aluminium & Glass Elegance – Sitio Web Corporativo',
+description: 'Un sitio web corporativo moderno para ALSAQR, una empresa con sede en los Emiratos Árabes Unidos especializada en soluciones de aluminio y vidrio. El sitio web muestra los servicios de la empresa, sus proyectos y la información de contacto.',
+longDescription: `ALSAQR Aluminium & Glass Elegance es un sitio web corporativo profesional creado para presentar la marca, resaltar su experiencia y mostrar proyectos realizados. Construido con React JS, TypeScript y Tailwind CSS, la plataforma ofrece una interfaz elegante y fácil de usar para clientes y socios.
+
+El frontend, desarrollado con React y estilizado con Tailwind CSS, garantiza un diseño moderno, limpio y responsive, optimizado tanto para dispositivos de escritorio como móviles. Los visitantes pueden explorar el portafolio de la empresa, revisar los servicios y conectarse fácilmente con ALSAQR a través de la sección de contacto.
+
+La plataforma está diseñada para reflejar los valores fundamentales de la empresa: calidad, innovación y fiabilidad en soluciones de aluminio y vidrio para proyectos residenciales, comerciales y corporativos en los Emiratos Árabes Unidos.
+
+Características principales:
+
+• Presentación de la empresa y declaración de misión  
+• Descripción de servicios (aluminio, vidrio, fachadas, ventanas, puertas, interiores, etc.)  
+• Portafolio y galería de proyectos con imágenes y descripciones  
+• Sección de contacto con formularios e información de la empresa  
+• Diseño responsive y mobile-first  
+• UI/UX moderna con enfoque en claridad y elegancia  
+
+Este proyecto demuestra mi capacidad para diseñar y construir un sitio web corporativo utilizando React, TypeScript y Tailwind CSS, con un enfoque en la presentación de la identidad de la empresa, la exhibición de proyectos y la accesibilidad en los canales de contacto.`,
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  images: [
+     'https://i.postimg.cc/DzynSZV3/Tourist-4.png',
+    'https://i.postimg.cc/HnJD1ZJr/Screenshot-2025-09-17-180844.png',
+    'https://i.postimg.cc/wjDzBGwJ/Screenshot-2025-09-17-182923.png',
+    'https://i.postimg.cc/5NY1h0vs/Screenshot-2025-09-17-182931.png',
+    'https://i.postimg.cc/mrwGYFfg/Screenshot-2025-09-17-182940.png',
+    'https://i.postimg.cc/q7Q9hVyt/Screenshot-2025-09-17-182952.png',
+    'https://i.postimg.cc/Gmn06jbp/Screenshot-2025-09-17-183009.png',
+    'https://i.postimg.cc/nhK8xQLG/Screenshot-2025-09-17-183017.png',
+    'https://i.postimg.cc/2jqSD2Nd/Screenshot-2025-09-17-183024.png',
+    'https://i.postimg.cc/3JmryNRd/Screenshot-2025-09-17-183032.png',
+    'https://i.postimg.cc/0N29HCCw/Screenshot-2025-09-17-183042.png',
+    'https://i.postimg.cc/ydDs7Yt6/Screenshot-2025-09-17-183057.png',
+    'https://i.postimg.cc/PJmGqL4H/Screenshot-2025-09-17-183107.png',
+    'https://i.postimg.cc/3R05Pf0d/Screenshot-2025-09-17-183128.png',
+    'https://i.postimg.cc/ZqMzszRG/Screenshot-2025-09-17-183137.png'
+  ],
+  demoUrl: 'https://alsaqr-phi.vercel.app/', 
+  githubUrl: 'https://github.com/itshydrox/ALSAQR',
+  featured: true,
+},
     {
       id: 3,
       title: 'Panel de Administración para Mouad Shop',
@@ -351,6 +523,7 @@ Fonctionnalités Clés:
 Ce projet démontre ma capacité à construire une application web full-stack complète à partir de zéro en utilisant des technologies modernes, à implémenter des APIs RESTful, à gérer l'état dans React et à intégrer des services tiers comme Stripe pour les paiements.`,
       tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'Tailwind CSS'],
       images: [
+         'https://i.postimg.cc/Hn9B2tJP/Tourist-7.png',
         'https://i.postimg.cc/TYrxLc8X/Screenshot-2025-05-26-095515.png',
         'https://i.postimg.cc/xTR0pP63/Screenshot-2025-05-26-105035.png',
         'https://i.postimg.cc/wv88jtWB/Screenshot-2025-05-26-105222.png',
@@ -390,6 +563,7 @@ Ce projet démontre ma capacité à construire une application web full-stack co
       tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
     
       images: [
+        'https://i.postimg.cc/j5kNjXcV/Tourist-6.png',
         'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
         'https://i.postimg.cc/nh4R5JqS/Screenshot-2025-05-30-133728.png',
         'https://i.postimg.cc/Z5LkN3sq/Screenshot-2025-05-30-133921.png',
@@ -408,7 +582,93 @@ Ce projet démontre ma capacité à construire une application web full-stack co
       githubUrl: 'https://github.com/itshydrox/AyoubsFamily',
     
       featured: true,
-    },    
+    },
+    {
+  id: 5,
+ title: 'Conociendo Santa Cruz Bolivia – Site Web de Réservation de Voyages',
+description: 'Un site moderne de réservation de voyages pour une entreprise de tourisme espagnole en Bolivie. Conociendo Santa Cruz Bolivia propose des plans de voyage personnalisés, des activités et des expériences culturelles à Santa Cruz.',
+longDescription: `Conociendo Santa Cruz Bolivia est une application web moderne conçue pour promouvoir et gérer des expériences de voyage à Santa Cruz, Bolivie. Construite avec React JS, TypeScript et Tailwind CSS, la plateforme offre une expérience de réservation fluide et interactive pour les touristes.
+
+Le frontend, développé avec React et stylisé avec Tailwind CSS, garantit une interface claire et adaptée aux mobiles, permettant aux utilisateurs d'explorer les services, de réserver des activités et d'accéder facilement aux informations essentielles.
+
+La plateforme met en valeur des expériences de voyage uniques à Santa Cruz, notamment des visites culturelles, des aventures dans la nature et des activités locales, toutes présentées avec des visuels attrayants et une navigation intuitive.
+
+Caractéristiques principales :
+
+• Consultation des forfaits de voyage avec descriptions détaillées des activités  
+• Système de réservation pour les circuits et activités  
+• Informations de contact et formulaires de demande  
+• Design responsive et optimisé pour mobile  
+• Support multilingue (espagnol et anglais prévu)  
+• Présentation claire des services de l’entreprise  
+
+Ce projet démontre ma capacité à concevoir et à développer un site web professionnel de réservation de voyages en utilisant React, TypeScript et Tailwind CSS, avec un accent mis sur l’expérience utilisateur et l’accessibilité.`,
+
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  images: [
+    'https://i.postimg.cc/SQ8CtzcQ/Tourist-3.png',
+    'https://i.postimg.cc/L6HHcnJF/Screenshot-2025-09-17-161940.png',
+'https://i.postimg.cc/xjGfpKTP/Screenshot-2025-09-17-161952.png',
+'https://i.postimg.cc/4dVfgcvs/Screenshot-2025-09-17-162021.png',
+'https://i.postimg.cc/j2hRWrk1/Screenshot-2025-09-17-162041.png',
+'https://i.postimg.cc/QdCjMwg6/Screenshot-2025-09-17-170532.png',
+'https://i.postimg.cc/wT06ggNy/Screenshot-2025-09-17-170549.png',
+'https://i.postimg.cc/wjrgR209/Screenshot-2025-09-17-170609.png',
+'https://i.postimg.cc/ZqyZ8NMp/Screenshot-2025-09-17-170640.png',
+'https://i.postimg.cc/XJSWQvRh/Screenshot-2025-09-17-170701.png',
+'https://i.postimg.cc/8cwVpm7Q/Screenshot-2025-09-17-170714.png',
+'https://i.postimg.cc/BbJ0fVQB/Screenshot-2025-09-17-170728.png',
+'https://i.postimg.cc/9MdhShVf/Screenshot-2025-09-17-170743.png'
+
+  ],
+  demoUrl: 'https://conociendosantacruzbolivia.com',
+  githubUrl: 'https://github.com/itshydrox/conociendo-santa-cruz',
+  featured: true,
+},    
+{
+  id: 6,
+  title: 'ALSAQR Aluminium & Glass Elegance – Site Web d’Entreprise',
+description: 'Un site web d’entreprise moderne pour ALSAQR, une société basée aux Émirats Arabes Unis spécialisée dans les solutions en aluminium et en verre. Le site présente les services de l’entreprise, ses projets et ses informations de contact.',
+longDescription: `ALSAQR Aluminium & Glass Elegance est un site web d’entreprise professionnel créé pour présenter la marque, mettre en avant son expertise et exposer les projets réalisés. Construit avec React JS, TypeScript et Tailwind CSS, la plateforme offre une interface élégante et conviviale pour les clients et les partenaires.
+
+Le frontend, développé avec React et stylisé avec Tailwind CSS, garantit un design moderne, clair et responsive, optimisé pour les ordinateurs de bureau et les appareils mobiles. Les visiteurs peuvent explorer le portfolio de l’entreprise, consulter les services et contacter facilement ALSAQR via la section de contact.
+
+La plateforme est conçue pour refléter les valeurs fondamentales de l’entreprise : qualité, innovation et fiabilité dans les solutions en aluminium et en verre pour les projets résidentiels, commerciaux et corporatifs à travers les Émirats Arabes Unis.
+
+Caractéristiques principales :
+
+• Présentation de l’entreprise et déclaration de mission  
+• Aperçu des services (aluminium, verre, façades, fenêtres, portes, intérieurs, etc.)  
+• Portfolio et galerie de projets avec images et descriptions  
+• Section contact avec formulaires et coordonnées de l’entreprise  
+• Design responsive et mobile-first  
+• UI/UX moderne axée sur la clarté et l’élégance  
+
+Ce projet démontre ma capacité à concevoir et à développer un site web d’entreprise en utilisant React, TypeScript et Tailwind CSS, en mettant l’accent sur la présentation de l’identité de l’entreprise, la mise en valeur des projets et l’accessibilité des canaux de contact.`,
+
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  images: [
+     'https://i.postimg.cc/DzynSZV3/Tourist-4.png',
+    'https://i.postimg.cc/HnJD1ZJr/Screenshot-2025-09-17-180844.png',
+    'https://i.postimg.cc/wjDzBGwJ/Screenshot-2025-09-17-182923.png',
+    'https://i.postimg.cc/5NY1h0vs/Screenshot-2025-09-17-182931.png',
+    'https://i.postimg.cc/mrwGYFfg/Screenshot-2025-09-17-182940.png',
+    'https://i.postimg.cc/q7Q9hVyt/Screenshot-2025-09-17-182952.png',
+    'https://i.postimg.cc/Gmn06jbp/Screenshot-2025-09-17-183009.png',
+    'https://i.postimg.cc/nhK8xQLG/Screenshot-2025-09-17-183017.png',
+    'https://i.postimg.cc/2jqSD2Nd/Screenshot-2025-09-17-183024.png',
+    'https://i.postimg.cc/3JmryNRd/Screenshot-2025-09-17-183032.png',
+    'https://i.postimg.cc/0N29HCCw/Screenshot-2025-09-17-183042.png',
+    'https://i.postimg.cc/ydDs7Yt6/Screenshot-2025-09-17-183057.png',
+    'https://i.postimg.cc/PJmGqL4H/Screenshot-2025-09-17-183107.png',
+    'https://i.postimg.cc/3R05Pf0d/Screenshot-2025-09-17-183128.png',
+    'https://i.postimg.cc/ZqMzszRG/Screenshot-2025-09-17-183137.png'
+
+  ],
+  demoUrl: 'https://alsaqr-phi.vercel.app/', 
+  githubUrl: 'https://github.com/itshydrox/ALSAQR',
+  featured: true,
+},
     {
       id: 3,
       title: 'Tableau de Bord Administrateur pour Mouad Shop',
