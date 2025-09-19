@@ -213,6 +213,7 @@ This dashboard is a crucial component of the Mouad Shop platform, showcasing my 
   `,
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Cloudinary',],
     images: [
+      'https://i.postimg.cc/HL1VVZHJ/Tourist-10.png',
       'https://i.postimg.cc/2SSB0y73/Screenshot-2025-05-26-105643.png',
       'https://i.postimg.cc/JzLp0N8v/Screenshot-2025-05-26-105651.png',
       'https://i.postimg.cc/hvRds02q/Screenshot-2025-05-26-105703.png',
@@ -248,6 +249,7 @@ The site includes interactive components, smooth transitions, and a responsive l
 This project demonstrates my frontend development skills and ability to deliver a polished and professional online presence using modern tools like Vue 3, Tailwind CSS, and Vite.`,
     tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
     images: [
+      'https://i.postimg.cc/ht2Mbdy1/Tourist-11.png', 
       'https://i.postimg.cc/Y0p5Q6NX/Screenshot-2025-05-26-102852.png',
       'https://i.postimg.cc/2SGgfcW2/Screenshot-2025-05-26-105948.png',
       'https://i.postimg.cc/FHrnGy6c/Screenshot-2025-05-26-110010.png',
@@ -456,6 +458,7 @@ Interfaz Amigable:
 Este panel es un componente crucial de la plataforma Mouad Shop, demostrando mis habilidades en la construcción de sistemas administrativos escalables con operaciones CRUD completas, integración segura de backend y actualizaciones dinámicas de UI utilizando React Hooks y APIs RESTful.`,
       tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Cloudinary'],
       images: [
+        'https://i.postimg.cc/HL1VVZHJ/Tourist-10.png',
         'https://i.postimg.cc/2SSB0y73/Screenshot-2025-05-26-105643.png',
         'https://i.postimg.cc/JzLp0N8v/Screenshot-2025-05-26-105651.png',
         'https://i.postimg.cc/hvRds02q/Screenshot-2025-05-26-105703.png',
@@ -485,6 +488,7 @@ Características:
 Este proyecto demuestra mis habilidades en desarrollo frontend y mi capacidad para entregar una presencia online pulida y profesional utilizando herramientas modernas como Vue 3, Tailwind CSS y Vite.`,
       tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
       images: [
+        'https://i.postimg.cc/ht2Mbdy1/Tourist-11.png', 
         'https://i.postimg.cc/Y0p5Q6NX/Screenshot-2025-05-26-102852.png',
         'https://i.postimg.cc/2SGgfcW2/Screenshot-2025-05-26-105948.png',
         'https://i.postimg.cc/FHrnGy6c/Screenshot-2025-05-26-110010.png',
@@ -698,6 +702,7 @@ Interface Utilisateur:
 Ce tableau de bord est un composant crucial de la plateforme Mouad Shop, démontrant mes compétences dans la construction de systèmes administratifs évolutifs avec des opérations CRUD complètes, une intégration sécurisée du backend et des mises à jour dynamiques de l'interface utilisateur utilisant React Hooks et des APIs RESTful.`,
       tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Cloudinary'],
       images: [
+        'https://i.postimg.cc/HL1VVZHJ/Tourist-10.png',
         'https://i.postimg.cc/2SSB0y73/Screenshot-2025-05-26-105643.png',
         'https://i.postimg.cc/JzLp0N8v/Screenshot-2025-05-26-105651.png',
         'https://i.postimg.cc/hvRds02q/Screenshot-2025-05-26-105703.png',
@@ -727,6 +732,7 @@ Caractéristiques:
 Ce projet démontre mes compétences en développement frontend et ma capacité à délivrer une présence en ligne soignée et professionnelle en utilisant des outils modernes comme Vue 3, Tailwind CSS et Vite.`,
       tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
       images: [
+        'https://i.postimg.cc/ht2Mbdy1/Tourist-11.png',
         'https://i.postimg.cc/Y0p5Q6NX/Screenshot-2025-05-26-102852.png',
         'https://i.postimg.cc/2SGgfcW2/Screenshot-2025-05-26-105948.png',
         'https://i.postimg.cc/FHrnGy6c/Screenshot-2025-05-26-110010.png',
