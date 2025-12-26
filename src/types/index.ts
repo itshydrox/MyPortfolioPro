@@ -2,8 +2,9 @@ export interface ProjectType {
   id: number;
   title: string;
   description: string;
-  tags: string[];
-  imageUrl: string;
+  longDescription: string;
+  tags: { name: string; icon: string; }[];
+  images: string[];
   demoUrl: string;
   githubUrl: string;
   featured: boolean;

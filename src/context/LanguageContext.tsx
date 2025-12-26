@@ -61,6 +61,11 @@ const translations = {
     // Skills Section
     'skills.title': 'Languages & Frameworks',
     'skills.subtitle': 'A comprehensive overview of my technical skills and proficiency levels',
+    'skills.proficiency.expert': 'Expert',
+    'skills.proficiency.advanced': 'Advanced',
+    'skills.proficiency.proficient': 'Proficient',
+    'skills.proficiency.intermediate': 'Intermediate',
+    'skills.proficiency.familiar': 'Familiar',
 
     // Projects Section
     'projects.title': 'Featured Projects',
@@ -159,6 +164,11 @@ const translations = {
     // Skills Section
     'skills.title': 'Lenguajes y Frameworks',
     'skills.subtitle': 'Una visión completa de mis habilidades técnicas y niveles de competencia',
+    'skills.proficiency.expert': 'Experto',
+    'skills.proficiency.advanced': 'Avanzado',
+    'skills.proficiency.proficient': 'Competente',
+    'skills.proficiency.intermediate': 'Intermedio',
+    'skills.proficiency.familiar': 'Familiarizado',
 
     // Projects Section
     'projects.title': 'Proyectos Destacados',
@@ -257,6 +267,11 @@ const translations = {
     // Skills Section
     'skills.title': 'Langages et Frameworks',
     'skills.subtitle': 'Une vue d\'ensemble de mes compétences techniques et niveaux de maîtrise',
+    'skills.proficiency.expert': 'Expert',
+    'skills.proficiency.advanced': 'Avancé',
+    'skills.proficiency.proficient': 'Compétent',
+    'skills.proficiency.intermediate': 'Intermédiaire',
+    'skills.proficiency.familiar': 'Familier',
 
     // Projects Section
     'projects.title': 'Projets en Vedette',

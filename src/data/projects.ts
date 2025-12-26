@@ -1,3 +1,22 @@
+// Technology icon mapping
+const techIcons: { [key: string]: string } = {
+  'React': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
+  'Vue.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg',
+  'Node.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg',
+  'JavaScript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+  'TypeScript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg',
+  'MongoDB': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg',
+  'Express': 'https://cdn.worldvectorlogo.com/logos/express-109.svg',
+  'Stripe': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/stripe/stripe-original.svg',
+  'Tailwind CSS': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg',
+  'Supabase': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg',
+  'PostgreSQL': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg',
+  'HTML': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg',
+  'CSS': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg',
+  'Cloudinary': 'https://api.iconify.design/simple-icons:cloudinary.svg?color=%233448c5',
+  'Vite': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg',
+};
+
 export const projects = {
   en: [
   {
@@ -30,7 +49,14 @@ Order history and confirmation
 
 This project showcases my ability to build a complete full-stack web application from scratch using modern technologies, implement RESTful APIs, manage state in React, and integrate third-party services like Stripe for payments. 
 `,
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'Tailwind CSS'],
+    tags: [
+      { name: 'React', icon: techIcons['React'] },
+      { name: 'Node.js', icon: techIcons['Node.js'] },
+      { name: 'MongoDB', icon: techIcons['MongoDB'] },
+      { name: 'Express', icon: techIcons['Express'] },
+      { name: 'Stripe', icon: techIcons['Stripe'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] }
+    ],
     images: [
       'https://i.postimg.cc/Hn9B2tJP/Tourist-7.png',
       'https://i.postimg.cc/TYrxLc8X/Screenshot-2025-05-26-095515.png',
@@ -69,7 +95,15 @@ This project showcases my ability to build a complete full-stack web application
   
   This project demonstrates my ability to build full-featured, real-world web applications with modern tools like React and Supabase, implement dynamic user experiences, and integrate third-party APIs for enhanced functionality.`,
   
-    tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+    tags: [
+      { name: 'React', icon: techIcons['React'] },
+      { name: 'Node.js', icon: techIcons['Node.js'] },
+      { name: 'Express', icon: techIcons['Express'] },
+      { name: 'TypeScript', icon: techIcons['TypeScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'Supabase', icon: techIcons['Supabase'] },
+      { name: 'PostgreSQL', icon: techIcons['PostgreSQL'] }
+    ],
   
     images: [
       'https://i.postimg.cc/j5kNjXcV/Tourist-6.png',
@@ -112,7 +146,13 @@ Key Features:
 • Clear presentation of company services  
 
 This project demonstrates my ability to design and build a professional travel booking website using React, TypeScript, and Tailwind CSS, with a focus on user experience and accessibility.`,
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  tags: [
+    { name: 'React', icon: techIcons['React'] },
+    { name: 'TypeScript', icon: techIcons['TypeScript'] },
+    { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+    { name: 'HTML', icon: techIcons['HTML'] },
+    { name: 'CSS', icon: techIcons['CSS'] }
+  ],
   images: [
     'https://i.postimg.cc/SQ8CtzcQ/Tourist-3.png',
     'https://i.postimg.cc/L6HHcnJF/Screenshot-2025-09-17-161940.png',
@@ -153,7 +193,13 @@ Key Features:
 • Modern UI/UX with a focus on clarity and elegance  
 
 This project demonstrates my ability to design and build a corporate website using React, TypeScript, and Tailwind CSS, with a focus on presenting company identity, showcasing projects, and providing accessible contact channels.`,
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  tags: [
+    { name: 'React', icon: techIcons['React'] },
+    { name: 'TypeScript', icon: techIcons['TypeScript'] },
+    { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+    { name: 'HTML', icon: techIcons['HTML'] },
+    { name: 'CSS', icon: techIcons['CSS'] }
+  ],
   images: [
     'https://i.postimg.cc/DzynSZV3/Tourist-4.png',
     'https://i.postimg.cc/HnJD1ZJr/Screenshot-2025-09-17-180844.png',
@@ -211,7 +257,14 @@ User-Friendly Interface:
 
 This dashboard is a crucial component of the Mouad Shop platform, showcasing my skills in building scalable admin systems with full CRUD operations, secure backend integration, and dynamic UI updates using React Hooks and RESTful APIs.
   `,
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Cloudinary',],
+    tags: [
+      { name: 'React', icon: techIcons['React'] },
+      { name: 'Node.js', icon: techIcons['Node.js'] },
+      { name: 'MongoDB', icon: techIcons['MongoDB'] },
+      { name: 'Express', icon: techIcons['Express'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'Cloudinary', icon: techIcons['Cloudinary'] }
+    ],
     images: [
       'https://i.postimg.cc/HL1VVZHJ/Tourist-10.png',
       'https://i.postimg.cc/2SSB0y73/Screenshot-2025-05-26-105643.png',
@@ -247,7 +300,11 @@ The site includes interactive components, smooth transitions, and a responsive l
 • SEO-friendly structure and meta tags
 
 This project demonstrates my frontend development skills and ability to deliver a polished and professional online presence using modern tools like Vue 3, Tailwind CSS, and Vite.`,
-    tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'Vite', icon: techIcons['Vite'] }
+    ],
     images: [
       'https://i.postimg.cc/ht2Mbdy1/Tourist-11.png', 
       'https://i.postimg.cc/Y0p5Q6NX/Screenshot-2025-05-26-102852.png',
@@ -287,7 +344,14 @@ Características Principales:
 • Historial de pedidos y confirmaciones
 
 Este proyecto demuestra mi capacidad para construir una aplicación web full-stack completa desde cero utilizando tecnologías modernas, implementar APIs RESTful, gestionar el estado en React e integrar servicios de terceros como Stripe para pagos.`,
-      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'Tailwind CSS'],
+      tags: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Stripe', icon: techIcons['Stripe'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] }
+      ],
       images: [
          'https://i.postimg.cc/Hn9B2tJP/Tourist-7.png',
         'https://i.postimg.cc/TYrxLc8X/Screenshot-2025-05-26-095515.png',
@@ -326,7 +390,15 @@ Características Principales:
 • Base de datos PostgreSQL para almacenamiento de datos estructurados y escalables
 
 Este proyecto demuestra mi capacidad para construir una aplicación web full-stack completa desde cero utilizando tecnologías modernas, implementar APIs RESTful, gestionar el estado en React e integrar servicios de terceros como Stripe para pagos.`,
-      tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+      tags: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'TypeScript', icon: techIcons['TypeScript'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+        { name: 'Supabase', icon: techIcons['Supabase'] },
+        { name: 'PostgreSQL', icon: techIcons['PostgreSQL'] }
+      ],
       images: [
         'https://i.postimg.cc/j5kNjXcV/Tourist-6.png',
         'https://i.postimg.cc/1RWZCpyV/Screenshot-2025-05-30-133717.png',
@@ -366,7 +438,13 @@ Características principales:
 • Presentación clara de los servicios de la empresa  
 
 Este proyecto demuestra mi capacidad para diseñar y construir un sitio web profesional de reservas de viajes utilizando React, TypeScript y Tailwind CSS, con un enfoque en la experiencia del usuario y la accesibilidad.`,
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  tags: [
+    { name: 'React', icon: techIcons['React'] },
+    { name: 'TypeScript', icon: techIcons['TypeScript'] },
+    { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+    { name: 'HTML', icon: techIcons['HTML'] },
+    { name: 'CSS', icon: techIcons['CSS'] }
+  ],
   images: [
     'https://i.postimg.cc/SQ8CtzcQ/Tourist-3.png',
     'https://i.postimg.cc/L6HHcnJF/Screenshot-2025-09-17-161940.png',
@@ -407,7 +485,13 @@ Características principales:
 • UI/UX moderna con enfoque en claridad y elegancia  
 
 Este proyecto demuestra mi capacidad para diseñar y construir un sitio web corporativo utilizando React, TypeScript y Tailwind CSS, con un enfoque en la presentación de la identidad de la empresa, la exhibición de proyectos y la accesibilidad en los canales de contacto.`,
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  tags: [
+    { name: 'React', icon: techIcons['React'] },
+    { name: 'TypeScript', icon: techIcons['TypeScript'] },
+    { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+    { name: 'HTML', icon: techIcons['HTML'] },
+    { name: 'CSS', icon: techIcons['CSS'] }
+  ],
   images: [
      'https://i.postimg.cc/DzynSZV3/Tourist-4.png',
     'https://i.postimg.cc/HnJD1ZJr/Screenshot-2025-09-17-180844.png',
@@ -456,7 +540,14 @@ Interfaz Amigable:
 • Optimizada para uso administrativo en dispositivos de escritorio y tabletas
 
 Este panel es un componente crucial de la plataforma Mouad Shop, demostrando mis habilidades en la construcción de sistemas administrativos escalables con operaciones CRUD completas, integración segura de backend y actualizaciones dinámicas de UI utilizando React Hooks y APIs RESTful.`,
-      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Cloudinary'],
+      tags: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+        { name: 'Cloudinary', icon: techIcons['Cloudinary'] }
+      ],
       images: [
         'https://i.postimg.cc/HL1VVZHJ/Tourist-10.png',
         'https://i.postimg.cc/2SSB0y73/Screenshot-2025-05-26-105643.png',
@@ -486,7 +577,11 @@ Características:
 • Estructura y meta tags optimizados para SEO
 
 Este proyecto demuestra mis habilidades en desarrollo frontend y mi capacidad para entregar una presencia online pulida y profesional utilizando herramientas modernas como Vue 3, Tailwind CSS y Vite.`,
-      tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
+      tags: [
+        { name: 'Vue.js', icon: techIcons['Vue.js'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+        { name: 'Vite', icon: techIcons['Vite'] }
+      ],
       images: [
         'https://i.postimg.cc/ht2Mbdy1/Tourist-11.png', 
         'https://i.postimg.cc/Y0p5Q6NX/Screenshot-2025-05-26-102852.png',
@@ -525,7 +620,14 @@ Fonctionnalités Clés:
 • Historique des commandes et confirmations
 
 Ce projet démontre ma capacité à construire une application web full-stack complète à partir de zéro en utilisant des technologies modernes, à implémenter des APIs RESTful, à gérer l'état dans React et à intégrer des services tiers comme Stripe pour les paiements.`,
-      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'Tailwind CSS'],
+      tags: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Stripe', icon: techIcons['Stripe'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] }
+      ],
       images: [
          'https://i.postimg.cc/Hn9B2tJP/Tourist-7.png',
         'https://i.postimg.cc/TYrxLc8X/Screenshot-2025-05-26-095515.png',
@@ -564,7 +666,15 @@ Ce projet démontre ma capacité à construire une application web full-stack co
     
     Ce projet démontre ma capacité à créer des applications web complètes et réelles avec des outils modernes tels que React et Supabase, à implémenter des expériences utilisateurs dynamiques et à intégrer des APIs tierces pour des fonctionnalités enrichies.`,
     
-      tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+      tags: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'TypeScript', icon: techIcons['TypeScript'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+        { name: 'Supabase', icon: techIcons['Supabase'] },
+        { name: 'PostgreSQL', icon: techIcons['PostgreSQL'] }
+      ],
     
       images: [
         'https://i.postimg.cc/j5kNjXcV/Tourist-6.png',
@@ -608,7 +718,13 @@ Caractéristiques principales :
 
 Ce projet démontre ma capacité à concevoir et à développer un site web professionnel de réservation de voyages en utilisant React, TypeScript et Tailwind CSS, avec un accent mis sur l’expérience utilisateur et l’accessibilité.`,
 
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  tags: [
+    { name: 'React', icon: techIcons['React'] },
+    { name: 'TypeScript', icon: techIcons['TypeScript'] },
+    { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+    { name: 'HTML', icon: techIcons['HTML'] },
+    { name: 'CSS', icon: techIcons['CSS'] }
+  ],
   images: [
     'https://i.postimg.cc/SQ8CtzcQ/Tourist-3.png',
     'https://i.postimg.cc/L6HHcnJF/Screenshot-2025-09-17-161940.png',
@@ -650,7 +766,13 @@ Caractéristiques principales :
 
 Ce projet démontre ma capacité à concevoir et à développer un site web d’entreprise en utilisant React, TypeScript et Tailwind CSS, en mettant l’accent sur la présentation de l’identité de l’entreprise, la mise en valeur des projets et l’accessibilité des canaux de contact.`,
 
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
+  tags: [
+    { name: 'React', icon: techIcons['React'] },
+    { name: 'TypeScript', icon: techIcons['TypeScript'] },
+    { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+    { name: 'HTML', icon: techIcons['HTML'] },
+    { name: 'CSS', icon: techIcons['CSS'] }
+  ],
   images: [
      'https://i.postimg.cc/DzynSZV3/Tourist-4.png',
     'https://i.postimg.cc/HnJD1ZJr/Screenshot-2025-09-17-180844.png',
@@ -700,7 +822,14 @@ Interface Utilisateur:
 • Optimisée pour l'utilisation administrative sur les appareils de bureau et tablettes
 
 Ce tableau de bord est un composant crucial de la plateforme Mouad Shop, démontrant mes compétences dans la construction de systèmes administratifs évolutifs avec des opérations CRUD complètes, une intégration sécurisée du backend et des mises à jour dynamiques de l'interface utilisateur utilisant React Hooks et des APIs RESTful.`,
-      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Cloudinary'],
+      tags: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+        { name: 'Cloudinary', icon: techIcons['Cloudinary'] }
+      ],
       images: [
         'https://i.postimg.cc/HL1VVZHJ/Tourist-10.png',
         'https://i.postimg.cc/2SSB0y73/Screenshot-2025-05-26-105643.png',
@@ -730,7 +859,11 @@ Caractéristiques:
 • Structure et meta tags optimisés pour le SEO
 
 Ce projet démontre mes compétences en développement frontend et ma capacité à délivrer une présence en ligne soignée et professionnelle en utilisant des outils modernes comme Vue 3, Tailwind CSS et Vite.`,
-      tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
+      tags: [
+        { name: 'Vue.js', icon: techIcons['Vue.js'] },
+        { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+        { name: 'Vite', icon: techIcons['Vite'] }
+      ],
       images: [
         'https://i.postimg.cc/ht2Mbdy1/Tourist-11.png',
         'https://i.postimg.cc/Y0p5Q6NX/Screenshot-2025-05-26-102852.png',

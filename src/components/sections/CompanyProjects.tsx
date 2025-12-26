@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../ui/Section';
 import { companyProjects } from '../../data/companyProjects';
-import { Github, ExternalLink, ChevronRight } from 'lucide-react';
+import { GithubIcon, ExternalLink, ChevronRight, Terminal, Code2 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useInView } from 'react-intersection-observer';
 import CompanyProjectModal from '../ui/CompanyProjectModal';
@@ -30,83 +30,156 @@ const CompanyProjects: React.FC = () => {
       id="company-projects"
       title={t('companyProjects.title')}
       subtitle={t('companyProjects.subtitle')}
-      className="bg-white dark:bg-gray-800 overflow-hidden"
+      className="bg-gradient-to-br from-blue-50 via-slate-50 to-cyan-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black"
     >
-      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {featuredProjects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="group"
           >
+            {/* Terminal Card */}
             <div 
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 overflow-hidden hover:shadow-xl transition-all duration-500"
+              className="bg-slate-100/80 dark:bg-black/80 backdrop-blur-sm rounded-lg border border-cyan-500/40 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-cyan-500/20"
             >
-              <div className="relative overflow-hidden bg-white dark:bg-gray-800">
-                <div className="w-full">
-                  <img
-                    src={project.images[0]}
-                    alt={project.title}
-                    className="w-full h-auto max-h-[500px] object-contain transform transition-transform duration-700 group-hover:scale-105"
-                  />
+              {/* Terminal header */}
+              <div className="border-b border-cyan-500/20 px-4 py-2 flex items-center justify-between bg-slate-200/50 dark:bg-black/50">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                  </div>
+                  <Terminal size={12} className="text-cyan-500 dark:text-cyan-400" />
+                  <span className="text-[10px] font-mono text-cyan-500 dark:text-cyan-400">
+                    company_project_{index + 1}.tsx
+                  </span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-                    <span className="text-white font-medium text-lg">View Project Details</span>
-                    <div className="flex space-x-4">
+                <Code2 size={12} className="text-cyan-500/70 dark:text-cyan-400/70" />
+              </div>
+              {/* Project Image */}
+              <div className="relative overflow-hidden bg-slate-200 dark:bg-slate-900 aspect-video">
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                    <span className="text-white font-mono text-sm">{'<View />'}</span>
+                    <div className="flex space-x-3">
                       <a
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2.5 bg-white/90 rounded-lg text-gray-900 hover:scale-110 hover:bg-white transition-all duration-300"
+                        className="p-2 bg-white/90 rounded-lg text-gray-900 hover:scale-110 hover:bg-white transition-all duration-300"
                         aria-label={t('projects.live')}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <ExternalLink size={22} />
+                        <ExternalLink size={18} />
                       </a>
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2.5 bg-white/90 rounded-lg text-gray-900 hover:scale-110 hover:bg-white transition-all duration-300"
+                        className="p-2 bg-white/90 rounded-lg text-gray-900 hover:scale-110 hover:bg-white transition-all duration-300"
                         aria-label={t('projects.source')}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <Github size={22} />
+                        <GithubIcon size={18} />
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2 group-hover:scale-[1.02] transition-transform duration-300">
-                  {project.title}
-                </h3>
-                <h4 className="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-4">{project.company}</h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
+
+              {/* Card Content */}
+              <div className="p-6">
+                {/* Title - code syntax */}
+                <motion.h3 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="text-lg font-mono font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2"
+                >
+                  <span className="text-cyan-500 dark:text-cyan-400">{'const'}</span>
+                  <span className="text-blue-500 dark:text-blue-400">project</span>
+                  <span className="text-cyan-500 dark:text-cyan-400">{'='}</span>
+                  <span className="text-purple-500 dark:text-purple-400">{'{'}</span>
+                </motion.h3>
+                
+                {/* Project Name & Description */}
+                <div className="space-y-3 pl-5 border-l-2 border-cyan-500/30 dark:border-cyan-400/30 mb-4">
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="text-base font-mono font-semibold text-slate-700 dark:text-gray-200"
+                  >
+                    <span className="text-cyan-500/70 dark:text-cyan-400/70">// </span>
+                    {project.title}
+                  </motion.p>
+                  
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="text-sm font-mono text-slate-600 dark:text-gray-300 leading-relaxed"
+                  >
+                    {project.description}
+                  </motion.p>
+                </div>
+                
+                <div className="text-base font-mono font-bold text-purple-500 dark:text-purple-400 mb-4">
+                  {'};'}
+                </div>
+                
+                {/* Tags - code style */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="flex flex-wrap gap-2 mb-4"
+                >
                   {project.tags.map((tag, tagIndex) => (
                     <motion.span
-                      key={tag}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.3, delay: (index * 0.1) + (tagIndex * 0.05) }}
-                      className="px-3 py-1.5 text-sm font-medium bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg"
+                      key={tag.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.02 * tagIndex }}
+                      className="px-3 py-1 text-xs font-mono rounded bg-white/50 dark:bg-slate-900/50 
+                        text-cyan-600 dark:text-cyan-400 border border-cyan-500/30
+                        hover:border-cyan-500 dark:hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-500/20 transition-all duration-300
+                        flex items-center gap-2"
                     >
-                      {tag}
+                      <img 
+                        src={tag.icon} 
+                        alt={tag.name}
+                        className="w-4 h-4"
+                        width={16}
+                        height={16}
+                      />
+                      {'<'}{tag.name}{' />'}
                     </motion.span>
                   ))}
-                </div>
+                </motion.div>
+                
+                {/* View Details Button */}
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 
+                    bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 
+                    text-white rounded-lg font-mono text-sm font-medium transition-all duration-300 
+                    hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-[1.02]"
                 >
-                  View Full Project Details
-                  <ChevronRight size={20} />
+                  <Code2 size={16} />
+                  View Details
+                  <ChevronRight size={16} />
                 </button>
               </div>
             </div>
@@ -117,7 +190,7 @@ const CompanyProjects: React.FC = () => {
       <CompanyProjectModal
         isOpen={!!selectedProject}
         onClose={() => setSelectedProject(null)}
-        project={selectedProject || featuredProjects[0]}
+       project={selectedProject || featuredProjects[0]}
       />
     </Section>
   );

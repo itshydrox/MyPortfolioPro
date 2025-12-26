@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
-import { Menu, X, Sun, Moon, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Sun, Moon, Github, Linkedin, Terminal, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavLink {
   key: string;
   href: string;
+  icon?: string;
 }
 
 const navLinks: NavLink[] = [
-  { key: 'nav.home', href: '#home' },
-  { key: 'nav.about', href: '#about' },
-  { key: 'nav.skills', href: '#skills' },
-  { key: 'nav.experience', href: '#experience' },
-  { key: 'nav.projects', href: '#company-projects' },
-  { key: 'nav.studies', href: '#studies' },
-  { key: 'nav.contact', href: '#contact' },
+  { key: 'nav.home', href: '#home', icon: '~/' },
+  { key: 'nav.about', href: '#about', icon: 'fn' },
+  { key: 'nav.skills', href: '#skills', icon: '<>' },
+  { key: 'nav.experience', href: '#experience', icon: '{}' },
+  { key: 'nav.projects', href: '#company-projects', icon: '[]' },
+  { key: 'nav.studies', href: '#studies', icon: '//' },
+  { key: 'nav.contact', href: '#contact', icon: '=>' },
 ];
 
 const Header: React.FC = () => {
@@ -25,13 +26,6 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { language, t, setLanguage } = useLanguage();
-  
-  // Flag URLs for each language
-  const flagUrls = {
-    en: "https://flagcdn.com/w40/gb.png",
-    es: "https://flagcdn.com/w40/es.png",
-    fr: "https://flagcdn.com/w40/fr.png"
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,155 +50,159 @@ const Header: React.FC = () => {
   return (
     <>
       <motion.header 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        className={`fixed w-full md:w-[96%] left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`fixed w-full md:w-[96%] md:left-[2%] z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'top-0 md:top-3 bg-[#1e1e1e]/90 dark:bg-[#0d1117]/90 backdrop-blur-[12px] backdrop-saturate-[1.8] border border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.15)] md:rounded-xl neon-border' 
-            : 'top-0 bg-transparent border-transparent'
+            ? 'top-0 md:top-2 bg-blue-50/80 dark:bg-black/50 backdrop-blur-xl border border-cyan-500/30 shadow-[0_8px_32px_rgba(6,182,212,0.2)] md:rounded-lg' 
+            : 'top-0 bg-blue-50/80 dark:bg-black/50 backdrop-blur-md border border-cyan-500/30'
         }`}
       >
-        <div className={`mx-auto px-4 ${isScrolled ? 'py-2.5' : 'py-3'} transition-all duration-300`}>
+
+        {/* Terminal-style top bar */}
+        <div className="border-b border-cyan-500/20 px-4 py-1.5 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+            </div>
+            <span className="text-[10px] font-mono text-cyan-500 dark:text-cyan-400 ml-2 hidden sm:block">
+              portfolio.tsx
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Terminal size={12} className="text-cyan-500 dark:text-cyan-400" />
+            <span className="text-[10px] font-mono text-cyan-500 dark:text-cyan-400 hidden sm:block">v1.0.0</span>
+          </div>
+        </div>
+
+        <div className={`mx-auto px-4 ${isScrolled ? 'py-2' : 'py-2.5'} transition-all duration-300`}>
           <nav className="flex items-center justify-between md:justify-center relative">
-            {/* Logo */}
+            {/* Logo with Terminal Icon */}
             <motion.a 
               href="#home" 
-              className="flex items-center md:absolute md:left-0"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 md:absolute md:left-0 group"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               aria-label="Go to homepage"
             >
-              <div className="relative w-auto h-8 md:h-9">
-                <img 
-                  src="/logo.png"
-                  alt="Logo" 
-                  className="h-full w-auto object-contain"
-                />
+              <div className="flex items-center gap-2 px-2 py-1 rounded bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40">
+                <Code2 size={18} className="text-cyan-500 dark:text-cyan-400" />
+                <span className="font-mono text-sm font-bold text-cyan-500 dark:text-cyan-400 hidden sm:block">
+                  {'<Mouad Portfolio/>'}
+                </span>
               </div>
             </motion.a>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Code Style */}
             <div className="hidden md:flex items-center">
               <motion.div 
-                className="flex items-center bg-[#2d2d30]/80 dark:bg-[#161b22]/80 backdrop-blur-md backdrop-saturate-150 rounded-lg p-1.5 border border-gray-700/30"
-                initial={{ scale: 0.9, opacity: 0 }}
+                className="flex items-center gap-1 bg-slate-100/80 dark:bg-black/80 backdrop-blur-md border border-cyan-500/40 rounded-md p-1"
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4 }}
               >
                 {navLinks.map((link, index) => (
                   <motion.a
                     key={link.key}
                     href={link.href}
-                    initial={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                    className={`px-4 py-1.5 text-[13px] font-medium transition-all duration-300 relative font-mono ${
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                    className={`group relative px-3 py-1.5 text-[12px] font-mono font-medium transition-all duration-300 rounded ${
                       activeSection === link.href.substring(1)
-                        ? 'text-white neon-text'
-                        : 'text-gray-400 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-400'
+                        ? 'text-slate-900 dark:text-slate-900'
+                        : 'text-slate-600 dark:text-gray-400 hover:text-cyan-500 dark:hover:text-cyan-400'
                     }`}
                   >
                     {activeSection === link.href.substring(1) && (
                       <motion.span
                         layoutId="activeSection"
-                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 backdrop-blur-sm rounded-md -z-10 neon-border"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        className="absolute inset-0 bg-cyan-400 rounded shadow-[0_0_15px_rgba(6,182,212,0.5)]"
+                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
                       />
                     )}
-                    <span className="font-heading">{t(link.key)}</span>
+                    <span className="relative flex items-center gap-1.5">
+                      <span className="text-[10px] opacity-60">{link.icon}</span>
+                      <span className="tracking-wide">{t(link.key)}</span>
+                    </span>
+                    {/* Hover effect */}
+                    {activeSection !== link.href.substring(1) && (
+                      <motion.span
+                        className="absolute bottom-0 left-0 h-[1px] bg-cyan-400"
+                        initial={{ width: 0 }}
+                        whileHover={{ width: '100%' }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
                   </motion.a>
                 ))}
               </motion.div>
             </div>
 
-            {/* Actions */}
-            <div className="hidden md:flex items-center space-x-2 md:absolute md:right-0">
+            {/* Actions - Terminal Style */}
+            <div className="hidden md:flex items-center gap-1.5 md:absolute md:right-0">
               {/* Language Toggle */}
-              <motion.div
-                className="relative group"
-              >
+              <motion.div className="relative group z-[60]">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 flex items-center gap-2"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-2.5 py-1.5 rounded bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 flex items-center gap-2 hover:border-cyan-400 transition-all duration-300"
                   aria-label="Select language"
                 >
-                  <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                    <img 
-                      src={flagUrls[language]} 
-                      alt={`${language} flag`}
-                      className="w-full h-full object-cover"
-                    />
-                  </span>
-                  <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
+                  <span className="text-[10px] font-mono text-cyan-500/70 dark:text-cyan-400/70">lang:</span>
+                  <span className="text-xs font-mono font-bold text-cyan-500 dark:text-cyan-400">
                     {language.toUpperCase()}
                   </span>
                 </motion.button>
                 
-                {/* Language Dropdown */}
+                {/* Language Dropdown - Terminal Style */}
                 <motion.div 
-                  className="absolute right-0 mt-2 w-40 rounded-xl overflow-hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl backdrop-saturate-150 shadow-lg border border-gray-200/50 dark:border-gray-700/50 z-50 transform opacity-0 -translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300"
+                  className="absolute right-0 mt-2 w-44 rounded-md overflow-visible bg-slate-100/98 dark:bg-black/98 backdrop-blur-xl border border-cyan-500/40 shadow-[0_8px_32px_rgba(6,182,212,0.3)] z-[70] transform opacity-0 -translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300"
                 >
-                  <div className="py-2">
+                  <div className="py-1">
                     <button
                       onClick={() => setLanguage('en')}
-                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                      className={`w-full text-left px-3 py-2 text-xs font-mono flex items-center gap-2 
                         ${language === 'en' 
-                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
-                        } transition-colors duration-200`}
+                          ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400' 
+                          : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
+                        } transition-all duration-200`}
                     >
-                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                        <img 
-                          src={flagUrls['en']} 
-                          alt="UK flag" 
-                          className="w-full h-full object-cover"
-                        />
-                      </span>
-                      <span className="font-medium">English</span>
+                      <span className="opacity-60">{'>'}</span>
+                      <span>English</span>
                       {language === 'en' && (
-                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                        <span className="ml-auto text-[10px]">✓</span>
                       )}
                     </button>
                     <button
                       onClick={() => setLanguage('es')}
-                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                      className={`w-full text-left px-3 py-2 text-xs font-mono flex items-center gap-2 
                         ${language === 'es' 
-                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
-                        } transition-colors duration-200`}
+                          ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400' 
+                          : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
+                        } transition-all duration-200`}
                     >
-                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                        <img 
-                          src={flagUrls['es']} 
-                          alt="Spain flag" 
-                          className="w-full h-full object-cover"
-                        />
-                      </span>
-                      <span className="font-medium">Español</span>
+                      <span className="opacity-60">{'>'}</span>
+                      <span>Español</span>
                       {language === 'es' && (
-                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                        <span className="ml-auto text-[10px]">✓</span>
                       )}
                     </button>
                     <button
                       onClick={() => setLanguage('fr')}
-                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
+                      className={`w-full text-left px-3 py-2 text-xs font-mono flex items-center gap-2 
                         ${language === 'fr' 
-                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
-                        } transition-colors duration-200`}
+                          ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400' 
+                          : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
+                        } transition-all duration-200`}
                     >
-                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                        <img 
-                          src={flagUrls['fr']} 
-                          alt="France flag" 
-                          className="w-full h-full object-cover"
-                        />
-                      </span>
-                      <span className="font-medium">Français</span>
+                      <span className="opacity-60">{'>'}</span>
+                      <span>Français</span>
                       {language === 'fr' && (
-                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                        <span className="ml-auto text-[10px]">✓</span>
                       )}
                     </button>
                   </div>
@@ -213,24 +211,24 @@ const Header: React.FC = () => {
 
               {/* Theme Toggle */}
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 hover:bg-white/60 dark:hover:bg-gray-800/60 transition-all duration-300"
+                className="p-1.5 rounded bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 hover:border-cyan-400 transition-all duration-300"
                 aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={theme}
-                    initial={{ rotate: -180, opacity: 0 }}
+                    initial={{ rotate: -90, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 180, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {theme === 'dark' ? (
-                      <Sun size={18} className="text-gray-700 dark:text-gray-200" />
+                      <Sun size={16} className="text-cyan-400" />
                     ) : (
-                      <Moon size={18} className="text-gray-700 dark:text-gray-200" />
+                      <Moon size={16} className="text-cyan-500 dark:text-cyan-400" />
                     )}
                   </motion.div>
                 </AnimatePresence>
@@ -238,8 +236,8 @@ const Header: React.FC = () => {
 
               {/* Social Links */}
               <motion.div 
-                className="flex items-center space-x-1 bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 rounded-lg p-1.5"
-                initial={{ scale: 0.9, opacity: 0 }}
+                className="flex items-center gap-1 bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 rounded p-1"
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
@@ -247,160 +245,71 @@ const Header: React.FC = () => {
                   href="https://github.com/itshydrox" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-1.5 rounded-md hover:bg-white/60 dark:hover:bg-gray-800/60 transition-all duration-300"
+                  className="p-1 rounded hover:bg-cyan-400/20 transition-all duration-300 group"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label="GitHub"
                 >
-                  <Github size={18} className="text-gray-700 dark:text-gray-200" />
+                  <Github size={16} className="text-slate-600 dark:text-gray-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-400" />
                 </motion.a>
                 <motion.a 
                   href="https://www.linkedin.com/in/mouad-idrissi/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-1.5 rounded-md hover:bg-white/60 dark:hover:bg-gray-800/60 transition-all duration-300"
+                  className="p-1 rounded hover:bg-cyan-400/20 transition-all duration-300 group"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={18} className="text-gray-700 dark:text-gray-200" />
+                  <Linkedin size={16} className="text-slate-600 dark:text-gray-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-400" />
                 </motion.a>
               </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center space-x-2">
-              <motion.div
-                className="relative group"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 flex items-center gap-2"
-                  aria-label="Select language"
-                >
-                  <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                    <img 
-                      src={flagUrls[language]} 
-                      alt={`${language} flag`}
-                      className="w-full h-full object-cover"
-                    />
-                  </span>
-                  <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                    {language.toUpperCase()}
-                  </span>
-                </motion.button>
-                
-                {/* Language Dropdown */}
-                <motion.div 
-                  className="absolute right-0 mt-2 w-40 rounded-xl overflow-hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl backdrop-saturate-150 shadow-lg border border-gray-200/50 dark:border-gray-700/50 z-50 transform opacity-0 -translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300"
-                >
-                  <div className="py-2">
-                    <button
-                      onClick={() => setLanguage('en')}
-                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
-                        ${language === 'en' 
-                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
-                        } transition-colors duration-200`}
-                    >
-                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                        <img 
-                          src={flagUrls['en']} 
-                          alt="UK flag" 
-                          className="w-full h-full object-cover"
-                        />
-                      </span>
-                      <span className="font-medium">English</span>
-                      {language === 'en' && (
-                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
-                      )}
-                    </button>
-                    <button
-                      onClick={() => setLanguage('es')}
-                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
-                        ${language === 'es' 
-                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
-                        } transition-colors duration-200`}
-                    >
-                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                        <img 
-                          src={flagUrls['es']} 
-                          alt="Spain flag" 
-                          className="w-full h-full object-cover"
-                        />
-                      </span>
-                      <span className="font-medium">Español</span>
-                      {language === 'es' && (
-                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
-                      )}
-                    </button>
-                    <button
-                      onClick={() => setLanguage('fr')}
-                      className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2.5 
-                        ${language === 'fr' 
-                          ? 'bg-blue-50/80 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100/80 dark:hover:bg-gray-700/50'
-                        } transition-colors duration-200`}
-                    >
-                      <span className="w-5 h-5 rounded-full overflow-hidden shadow-sm flex-shrink-0 ring-1 ring-gray-200 dark:ring-gray-700">
-                        <img 
-                          src={flagUrls['fr']} 
-                          alt="France flag" 
-                          className="w-full h-full object-cover"
-                        />
-                      </span>
-                      <span className="font-medium">Français</span>
-                      {language === 'fr' && (
-                        <span className="absolute right-4 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
-                      )}
-                    </button>
-                  </div>
-                </motion.div>
-              </motion.div>
+            <div className="md:hidden flex items-center gap-1.5">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150"
+                className="p-1.5 rounded bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40"
                 aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={theme}
-                    initial={{ rotate: -180, opacity: 0 }}
+                    initial={{ rotate: -90, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 180, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {theme === 'dark' ? (
-                      <Sun size={18} className="text-gray-800 dark:text-gray-200" />
+                      <Sun size={16} className="text-cyan-400" />
                     ) : (
-                      <Moon size={18} className="text-gray-800 dark:text-gray-200" />
+                      <Moon size={16} className="text-cyan-500" />
                     )}
                   </motion.div>
                 </AnimatePresence>
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150"
+                className="p-1.5 rounded bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40"
                 aria-label="Toggle menu"
               >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={isOpen ? 'close' : 'open'}
-                    initial={{ rotate: -180, opacity: 0 }}
+                    initial={{ rotate: -90, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 180, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {isOpen ? (
-                      <X size={18} className="text-gray-800 dark:text-gray-200" />
+                      <X size={16} className="text-cyan-400" />
                     ) : (
-                      <Menu size={18} className="text-gray-800 dark:text-gray-200" />
+                      <Menu size={16} className="text-cyan-400" />
                     )}
                   </motion.div>
                 </AnimatePresence>
@@ -410,7 +319,7 @@ const Header: React.FC = () => {
         </div>
       </motion.header>
 
-      {/* Mobile Menu - Outside header */}
+      {/* Mobile Menu - Terminal Style */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -419,7 +328,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm z-[998]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[998]"
               onClick={() => setIsOpen(false)}
             />
             <motion.div 
@@ -427,34 +336,35 @@ const Header: React.FC = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: '100%', opacity: 0 }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 h-[100dvh] w-[85%] sm:w-[380px] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl backdrop-saturate-150 
-                shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] 
-                border-l border-white/[0.15] dark:border-gray-800/[0.15] z-[999] overflow-hidden"
+              className="fixed top-0 right-0 h-[100dvh] w-[85%] sm:w-[380px] bg-slate-100/98 dark:bg-black/98 backdrop-blur-xl 
+                shadow-[0_8px_32px_rgba(6,182,212,0.3)] 
+                border-l border-cyan-500/30 z-[999] overflow-hidden"
             >
               <div className="h-full flex flex-col">
-                {/* Header */}
-                <div className="sticky top-0 flex items-center justify-between p-5 border-b border-gray-200/50 dark:border-gray-800/50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl">
-                  <motion.a 
-                    href="#home"
-                    className="flex items-center gap-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
-                  </motion.a>
+                {/* Terminal Header */}
+                <div className="border-b border-cyan-500/20 px-4 py-2 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                    </div>
+                    <span className="text-[10px] font-mono text-cyan-400 ml-2">menu.tsx</span>
+                  </div>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors duration-300"
+                    className="p-1 rounded hover:bg-slate-800/50 dark:hover:bg-slate-900/50 transition-colors duration-300"
                     aria-label="Close menu"
                   >
-                    <X size={24} className="text-gray-700 dark:text-gray-300" />
+                    <X size={18} className="text-cyan-400" />
                   </motion.button>
                 </div>
 
                 {/* Navigation Links */}
-                <nav className="flex-1 overflow-y-auto py-6 px-4">
-                  <div className="space-y-2">
+                <nav className="flex-1 overflow-y-auto py-4 px-3">
+                  <div className="space-y-1">
                     {navLinks.map((link, index) => (
                       <motion.a
                         key={link.key}
@@ -462,47 +372,94 @@ const Header: React.FC = () => {
                         onClick={() => setIsOpen(false)}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className={`block px-5 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-300 
+                        transition={{ delay: index * 0.05 }}
+                        className={`block px-3 py-2.5 rounded text-xs font-mono transition-all duration-300 
                           ${activeSection === link.href.substring(1)
-                            ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-sm'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/50'
+                            ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400'
+                            : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
                           }`}
                       >
-                        {t(link.key)}
+                        <span className="flex items-center gap-2">
+                          <span className="opacity-60">{link.icon}</span>
+                          <span>{t(link.key)}</span>
+                        </span>
                       </motion.a>
                     ))}
+                  </div>
+
+                  {/* Language Selector */}
+                  <div className="mt-6 pt-4 border-t border-cyan-500/20">
+                    <div className="text-[10px] font-mono text-cyan-400/70 mb-2 px-3">// Language</div>
+                    <div className="space-y-1">
+                      <button
+                        onClick={() => setLanguage('en')}
+                        className={`w-full text-left px-3 py-2 rounded text-xs font-mono flex items-center gap-2 
+                          ${language === 'en' 
+                            ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400' 
+                            : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
+                          } transition-all duration-200`}
+                      >
+                        <span className="opacity-60">{'>'}</span>
+                        <span>English</span>
+                        {language === 'en' && <span className="ml-auto text-[10px]">✓</span>}
+                      </button>
+                      <button
+                        onClick={() => setLanguage('es')}
+                        className={`w-full text-left px-3 py-2 rounded text-xs font-mono flex items-center gap-2 
+                          ${language === 'es' 
+                            ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400' 
+                            : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
+                          } transition-all duration-200`}
+                      >
+                        <span className="opacity-60">{'>'}</span>
+                        <span>Español</span>
+                        {language === 'es' && <span className="ml-auto text-[10px]">✓</span>}
+                      </button>
+                      <button
+                        onClick={() => setLanguage('fr')}
+                        className={`w-full text-left px-3 py-2 rounded text-xs font-mono flex items-center gap-2 
+                          ${language === 'fr' 
+                            ? 'bg-cyan-400/20 text-cyan-400 border-l-2 border-cyan-400' 
+                            : 'text-gray-400 hover:bg-slate-800/50 dark:hover:bg-slate-900/50 hover:text-cyan-400'
+                          } transition-all duration-200`}
+                      >
+                        <span className="opacity-60">{'>'}</span>
+                        <span>Français</span>
+                        {language === 'fr' && <span className="ml-auto text-[10px]">✓</span>}
+                      </button>
+                    </div>
                   </div>
                 </nav>
 
                 {/* Footer Actions */}
-                <div className="sticky bottom-0 p-5 border-t border-gray-200/50 dark:border-gray-800/50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl">
-                  <div className="grid grid-cols-2 gap-3">
+                <div className="border-t border-cyan-500/20 p-3">
+                  <div className="text-[10px] font-mono text-cyan-400/70 mb-2">// Social Links</div>
+                  <div className="grid grid-cols-2 gap-2">
                     <motion.a
-                      href="https://github.com"
+                      href="https://github.com/itshydrox"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl 
-                        bg-gray-100 dark:bg-gray-800/50 hover:bg-gray-200 dark:hover:bg-gray-700/50 
-                        text-gray-700 dark:text-gray-300 transition-all duration-300"
+                      className="flex items-center justify-center gap-2 px-3 py-2 rounded 
+                        bg-slate-800/50 dark:bg-slate-900/50 hover:bg-cyan-400/20 
+                        text-gray-400 hover:text-cyan-400 border border-cyan-500/30 transition-all duration-300"
                     >
-                      <Github size={20} />
-                      <span className="text-sm font-medium">GitHub</span>
+                      <Github size={16} />
+                      <span className="text-xs font-mono">GitHub</span>
                     </motion.a>
                     <motion.a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/mouad-idrissi/"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl 
-                        bg-gray-100 dark:bg-gray-800/50 hover:bg-gray-200 dark:hover:bg-gray-700/50 
-                        text-gray-700 dark:text-gray-300 transition-all duration-300"
+                      className="flex items-center justify-center gap-2 px-3 py-2 rounded 
+                        bg-slate-800/50 dark:bg-slate-900/50 hover:bg-cyan-400/20 
+                        text-gray-400 hover:text-cyan-400 border border-cyan-500/30 transition-all duration-300"
                     >
-                      <Linkedin size={20} />
-                      <span className="text-sm font-medium">LinkedIn</span>
+                      <Linkedin size={16} />
+                      <span className="text-xs font-mono">LinkedIn</span>
                     </motion.a>
                   </div>
                 </div>

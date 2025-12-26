@@ -1,3 +1,20 @@
+// Technology icon mapping
+const techIcons: { [key: string]: string } = {
+  'React': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
+  'Vue.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg',
+  'Node.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg',
+  'JavaScript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+  'TypeScript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg',
+  'MongoDB': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg',
+  'Express': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg',
+  'Bootstrap': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg',
+  'TailwindCSS': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg',
+  'HTML': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg',
+  'CSS': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg',
+  'WordPress': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-plain.svg',
+  'PHP': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg',
+};
+
 export const experiences = {
   en: [
   {
@@ -11,7 +28,19 @@ export const experiences = {
         'Teamwork: Collaboration with multidisciplinary teams of Back-End and Front-End engineers in strategic project development, ensuring efficiency and quality at each process phase',
         'Customization and Adaptability: Active listening and adaptation to team and client feedback to optimize web projects and ensure they meet expectations and needs',
       ],
-      technologies: ['React', 'Vue.js', 'Node.js', 'JavaScript', 'TypeScript', 'MongoDB', 'Express', 'Bootstrap', 'TailwindCSS', 'HTML', 'CSS']
+      technologies: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Vue.js', icon: techIcons['Vue.js'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'TypeScript', icon: techIcons['TypeScript'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'TailwindCSS', icon: techIcons['TailwindCSS'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
   },
   {
     id: 2,
@@ -24,7 +53,19 @@ export const experiences = {
         'Teamwork: Collaboration with a digital designer and Android developer to ensure website and mobile app compatibility',
         'Customization: Listening and adapting to group feedback to modify a website that meets their expectations',
       ],
-      technologies: ['React', 'Node.js', 'WordPress', 'PHP', 'MongoDB', 'Express', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'HTML', 'CSS']
+      technologies: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'WordPress', icon: techIcons['WordPress'] },
+        { name: 'PHP', icon: techIcons['PHP'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'TailwindCSS', icon: techIcons['TailwindCSS'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
   },
   ],
   es: [
@@ -39,7 +80,19 @@ export const experiences = {
         'Trabajo en Equipo: Colaboración con equipos multidisciplinares de ingenieros Back-End y Front-End en el desarrollo de proyectos estratégicos, garantizando eficiencia y calidad en cada fase del proceso',
         'Personalización y Adaptabilidad: Escucha activa y adaptación a los comentarios del equipo y clientes para optimizar los proyectos web y asegurar que cumplen con sus expectativas y necesidades',
       ],
-      technologies: ['React', 'Vue.js', 'Node.js', 'JavaScript', 'TypeScript', 'MongoDB', 'Express', 'Bootstrap', 'TailwindCSS', 'HTML', 'CSS']
+      technologies: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Vue.js', icon: techIcons['Vue.js'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'TypeScript', icon: techIcons['TypeScript'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'TailwindCSS', icon: techIcons['TailwindCSS'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     },
     {
       id: 2,
@@ -52,7 +105,19 @@ export const experiences = {
         'Trabajo en equipo: Colaboración con un diseñador digital y un programador Android para hacer que el sitio web y la aplicación móvil fueran compatibles',
         'Personalización: Escucha y adaptación a los comentarios del grupo para modificar un sitio web que cumple con sus expectativas',
       ],
-      technologies: ['React', 'Node.js', 'WordPress', 'PHP', 'MongoDB', 'Express', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'HTML', 'CSS']
+      technologies: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'WordPress', icon: techIcons['WordPress'] },
+        { name: 'PHP', icon: techIcons['PHP'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'TailwindCSS', icon: techIcons['TailwindCSS'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     },
   ],
   fr: [
@@ -67,7 +132,19 @@ export const experiences = {
         'Travail d\'équipe: Collaboration avec des équipes multidisciplinaires d\'ingénieurs Back-End et Front-End dans le développement de projets stratégiques, garantissant efficacité et qualité à chaque phase du processus',
         'Personnalisation et Adaptabilité: Écoute active et adaptation aux commentaires de l\'équipe et des clients pour optimiser les projets web et s\'assurer qu\'ils répondent aux attentes et besoins',
       ],
-      technologies: ['React', 'Vue.js', 'Node.js', 'JavaScript', 'TypeScript', 'MongoDB', 'Express', 'Bootstrap', 'TailwindCSS', 'HTML', 'CSS']
+      technologies: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Vue.js', icon: techIcons['Vue.js'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'TypeScript', icon: techIcons['TypeScript'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'TailwindCSS', icon: techIcons['TailwindCSS'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     },
     {
       id: 2,
@@ -80,7 +157,19 @@ export const experiences = {
         'Travail d\'équipe: Collaboration avec un designer numérique et un développeur Android pour assurer la compatibilité du site web et de l\'application mobile',
         'Personnalisation: Écoute et adaptation aux retours du groupe pour modifier un site web qui répond à leurs attentes',
       ],
-      technologies: ['React', 'Node.js', 'WordPress', 'PHP', 'MongoDB', 'Express', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'HTML', 'CSS']
+      technologies: [
+        { name: 'React', icon: techIcons['React'] },
+        { name: 'Node.js', icon: techIcons['Node.js'] },
+        { name: 'WordPress', icon: techIcons['WordPress'] },
+        { name: 'PHP', icon: techIcons['PHP'] },
+        { name: 'MongoDB', icon: techIcons['MongoDB'] },
+        { name: 'Express', icon: techIcons['Express'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'TailwindCSS', icon: techIcons['TailwindCSS'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     },
   ]
 };

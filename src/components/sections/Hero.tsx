@@ -1,34 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Button from '../ui/Button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Terminal, Code2, Braces } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
-
-// Add random float animations for each icon
-const generateRandomFloat = (index: number) => {
-  const randomX = Math.random() * 10 - 5; // Random value between -5 and 5
-  const randomY = Math.random() * 10 - 5;
-  const randomRotate = Math.random() * 10 - 5;
-  
-  return `
-    @keyframes randomFloat${index} {
-      0% {
-        transform: translate(0px, 0px) rotate(0deg);
-      }
-      25% {
-        transform: translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg);
-      }
-      50% {
-        transform: translate(${-randomY}px, ${randomX}px) rotate(${-randomRotate}deg);
-      }
-      75% {
-        transform: translate(${-randomX}px, ${-randomY}px) rotate(${randomRotate}deg);
-      }
-      100% {
-        transform: translate(0px, 0px) rotate(0deg);
-      }
-    }
-  `;
-};
 
 const techIcons = [
   { name: 'Node.js', image: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
@@ -42,26 +15,65 @@ const techIcons = [
   { name: 'Express', image: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg' },
 ];
 
+const codeSnippets = [
+  'const code = "art";',
+  'function build() {}',
+  'npm install',
+  'git commit -m',
+  '<Component />',
+  'async/await',
+  'import React',
+  '{ useState }',
+  'export default',
+  'console.log()',
+];
+
 const Hero: React.FC = () => {
   const { t } = useLanguage();
   const [typedText, setTypedText] = useState('');
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const phrasesRef = useRef<string[]>([]);
+  const mousePosition = useRef({ x: 0, y: 0 });
+  const [floatingCode, setFloatingCode] = useState<Array<{
+    text: string;
+    x: number;
+    y: number;
+    speed: number;
+    opacity: number;
+  }>>([]);
   
-  const phrases = [
-    t('hero.roles.fullstack'),
-    t('hero.roles.react'),
-    t('hero.roles.nodejs'),
-    t('hero.roles.problem')
-  ];
+  // Update phrases ref when translations change
+  useEffect(() => {
+    phrasesRef.current = [
+      t('hero.roles.fullstack'),
+      t('hero.roles.react'),
+      t('hero.roles.nodejs'),
+      t('hero.roles.problem')
+    ];
+  }, [t]);
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Initialize floating code snippets
+    const snippets = Array.from({ length: 8 }, () => ({
+      text: codeSnippets[Math.floor(Math.random() * codeSnippets.length)],
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      speed: 0.1 + Math.random() * 0.3,
+      opacity: 0.1 + Math.random() * 0.2,
+    }));
+    setFloatingCode(snippets);
   }, []);
 
   useEffect(() => {
     let timer: number;
+    const phrases = phrasesRef.current;
+    if (phrases.length === 0) return;
+    
     const currentPhrase = phrases[currentPhraseIndex];
     
     const typingSpeed = 100;
@@ -90,109 +102,250 @@ const Hero: React.FC = () => {
     }
 
     return () => clearTimeout(timer);
-  }, [typedText, currentPhraseIndex, isDeleting, phrases]);
+  }, [typedText, currentPhraseIndex, isDeleting]);
 
-  const calculatePosition = (index: number, total: number, screenWidth: number) => {
-    // For mobile screens (< 768px)
-    if (screenWidth < 768) {
-      const centerX = 180;
-      const centerY = 90;
-      const radius = 150;
-      const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
-      
-      return {
-        top: `${Math.sin(angle) * radius + centerY}px`,
-        left: `${Math.cos(angle) * radius + centerX}px`,
-      };
-    }
-    // For tablets (768px - 1023px)
-    else if (screenWidth < 1024) {
-      const centerX = 180;
-      const centerY = 180;
-      const radius = 250;
-      const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
-      
-      return {
-        top: `${Math.sin(angle) * radius + centerY}px`,
-        left: `${Math.cos(angle) * radius + centerX}px`,
-      };
-    }
-    // For desktop (≥ 1024px)
-    else {
-      const centerX = 220;
-      const centerY = 170;
-      const radius = 250;
-      const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
-      
-      return {
-        top: `${Math.sin(angle) * radius + centerY}px`,
-        left: `${Math.cos(angle) * radius + centerX}px`,
-      };
-    }
-  };
-
-  const [positions, setPositions] = useState(
-    techIcons.map((_, i) => calculatePosition(i, techIcons.length, typeof window !== 'undefined' ? window.innerWidth : 1024))
-  );
-
+  // Canvas Animation - Developer Coding Background
   useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const isMobile = window.innerWidth < 768;
+
+    // Set canvas size
+    const setCanvasSize = () => {
+      canvas.width = canvas.offsetWidth * (isMobile ? 1 : window.devicePixelRatio);
+      canvas.height = canvas.offsetHeight * (isMobile ? 1 : window.devicePixelRatio);
+      ctx.scale(isMobile ? 1 : window.devicePixelRatio, isMobile ? 1 : window.devicePixelRatio);
+    };
+    setCanvasSize();
+
+    // Code characters for developer feel
+    const codeChars = ['<', '>', '{', '}', '/', '=', ';', '(', ')', '[', ']', '.', ','];
+    
+    // Particle system with code symbols - Fewer on mobile
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      char: string;
+      opacity: number;
+      size: number;
+    }> = [];
+
+    // Create code character particles
+    const particleCount = isMobile ? 15 : 30;
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        vx: (Math.random() - 0.5) * (isMobile ? 0.1 : 0.2),
+        vy: (Math.random() - 0.5) * (isMobile ? 0.1 : 0.2),
+        char: codeChars[Math.floor(Math.random() * codeChars.length)],
+        opacity: Math.random() * (isMobile ? 0.1 : 0.15) + 0.05,
+        size: Math.random() * (isMobile ? 6 : 8) + (isMobile ? 8 : 10),
+      });
+    }
+
+    // Animation loop
+    let animationId: number;
+    const animate = () => {
+      animationId = requestAnimationFrame(animate);
+      
+      const currentIsDark = document.documentElement.classList.contains('dark');
+      
+      // Clear canvas with faster fade effect - theme aware
+      ctx.fillStyle = currentIsDark ? 'rgba(0, 0, 0, 0.25)' : 'rgba(239, 246, 255, 0.25)';
+      ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+      // Draw cursor glow with softer edges - theme aware - Skip on mobile
+      if (!isMobile) {
+        const gradient = ctx.createRadialGradient(
+          mousePosition.current.x,
+          mousePosition.current.y,
+          0,
+          mousePosition.current.x,
+          mousePosition.current.y,
+          120
+        );
+        
+        if (currentIsDark) {
+          gradient.addColorStop(0, 'rgba(34, 211, 238, 0.04)');
+          gradient.addColorStop(0.3, 'rgba(59, 130, 246, 0.02)');
+          gradient.addColorStop(0.6, 'rgba(59, 130, 246, 0.01)');
+          gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+        } else {
+          gradient.addColorStop(0, 'rgba(6, 182, 212, 0.08)');
+          gradient.addColorStop(0.3, 'rgba(59, 130, 246, 0.04)');
+          gradient.addColorStop(0.6, 'rgba(59, 130, 246, 0.02)');
+          gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+        }
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+      }
+
+      // Update and draw code character particles - theme aware
+      particles.forEach((particle) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Wrap around edges
+        if (particle.x < -20) particle.x = canvas.offsetWidth + 20;
+        if (particle.x > canvas.offsetWidth + 20) particle.x = -20;
+        if (particle.y < -20) particle.y = canvas.offsetHeight + 20;
+        if (particle.y > canvas.offsetHeight + 20) particle.y = -20;
+
+        // Calculate distance from mouse - Skip on mobile
+        let proximityOpacity = particle.opacity;
+        if (!isMobile) {
+          const dx = mousePosition.current.x - particle.x;
+          const dy = mousePosition.current.y - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const maxDistance = 150;
+
+          // Enhance opacity near cursor
+          proximityOpacity = distance < maxDistance 
+            ? particle.opacity + (1 - distance / maxDistance) * 0.3
+            : particle.opacity;
+        }
+
+        // Draw code character with theme-aware colors
+        ctx.font = `${particle.size}px monospace`;
+        ctx.fillStyle = currentIsDark 
+          ? `rgba(34, 211, 238, ${proximityOpacity})` 
+          : `rgba(6, 182, 212, ${proximityOpacity * 1.5})`;
+        ctx.fillText(particle.char, particle.x, particle.y);
+      });
+    };
+
+    animate();
+
+    // Handle resize
     const handleResize = () => {
-      setPositions(
-        techIcons.map((_, i) => calculatePosition(i, techIcons.length, window.innerWidth))
-      );
+      setCanvasSize();
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Add style tag for random animations
-  useEffect(() => {
-    const styleSheet = document.createElement("style");
-    const animations = techIcons.map((_, index) => generateRandomFloat(index)).join("\n");
-    styleSheet.textContent = animations;
-    document.head.appendChild(styleSheet);
 
     return () => {
-      document.head.removeChild(styleSheet);
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationId);
     };
+  }, []);
+
+  // Track mouse position
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (canvasRef.current) {
+        const rect = canvasRef.current.getBoundingClientRect();
+        mousePosition.current = {
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        };
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Animate floating code
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFloatingCode(prev => 
+        prev.map(item => ({
+          ...item,
+          y: (item.y + item.speed) % 100,
+        }))
+      );
+    }, 50);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 via-blue-50/30 to-white dark:from-gray-950 dark:via-blue-950/10 dark:to-gray-900 transition-all duration-700"
+      className="min-h-screen flex items-center justify-center pt-20 pb-12 md:pt-16 md:pb-0 relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-cyan-50 dark:bg-black sticky top-0 z-0"
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col-reverse md:flex-row items-center md:space-x-8 lg:space-x-12">
-          {/* Text Content */}
-          <div className={`w-full md:w-1/1 md:pr-12 text-center md:text-left transform transition-all duration-1000 mt-16 sm:mt-20 md:mt-0 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-400 mb-3 sm:mb-4">
-              {t('hero.greeting')} <span className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">Mouad Idrissi</span>
+      {/* Solid Background Layer for Dark Mode */}
+      <div className="absolute inset-0 bg-transparent dark:bg-black" />
+      
+      {/* Minimalist Animated Canvas */}
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 w-full h-full opacity-60 md:opacity-100"
+      />
+      
+      {/* Subtle Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(34,211,238,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.015)_1px,transparent_1px)] bg-[size:40px_40px] md:bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,black,transparent)]" />
+
+      {/* Floating Code Snippets - Hidden on mobile */}
+      {floatingCode.map((code, i) => (
+        <div
+          key={i}
+          className="hidden md:block absolute text-xs md:text-sm font-mono text-cyan-500/20 dark:text-cyan-400/15 pointer-events-none whitespace-nowrap"
+          style={{
+            left: `${code.x}%`,
+            top: `${code.y}%`,
+            opacity: code.opacity,
+          }}
+        >
+          {code.text}
+        </div>
+      ))}
+
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 relative z-10 w-full">
+        <div className="flex flex-col-reverse md:flex-row items-center md:space-x-8 lg:space-x-12 gap-6 sm:gap-8 md:gap-0">
+          {/* Text Content - Terminal Style */}
+          <div className={`w-full md:w-1/2 md:pr-12 text-center md:text-left transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
+            {/* Terminal Header */}
+            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 rounded-lg backdrop-blur-sm">
+              <Terminal className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-500 dark:text-cyan-400" />
+              <span className="text-[10px] sm:text-xs font-mono text-cyan-500 dark:text-cyan-400">~/portfolio</span>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-mono font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
+              <span className="text-cyan-500 dark:text-cyan-400">{'> '}</span>
+              <span className="text-slate-900 dark:text-white">{t('hero.greeting')}</span>
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient break-words">
+                Mouad Idrissi
+              </span>
             </h1>
             
-            <div className="h-6 sm:h-8 md:h-10 mb-3 sm:mb-4 mt-3 sm:mt-4 md:mt-6">
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-heading font-medium text-gray-700 dark:text-gray-300">
-                {t('hero.im')}{' '}
-                <span className="text-blue-600 dark:text-blue-400 inline-block">
-                  {typedText}
-                  <span className="animate-blink">|</span>
-                </span>
+            {/* Typing Animation */}
+            <div className="h-auto min-h-[1.2rem] sm:min-h-[1.5rem] md:min-h-[2.5rem] mb-3 sm:mb-4 mt-2 sm:mt-3 md:mt-6">
+              <h2 className="text-xs sm:text-sm md:text-lg lg:text-xl font-mono text-slate-700 dark:text-gray-300 break-words leading-relaxed">
+                <span className="text-purple-500 dark:text-purple-400">const</span>{' '}
+                <span className="text-blue-500 dark:text-blue-400">role</span>{' '}
+                <span className="text-cyan-500 dark:text-cyan-400">=</span>{' '}
+                <span className="text-green-600 dark:text-green-400">"{typedText}"</span>
+                <span className="animate-blink text-cyan-500 dark:text-cyan-400">|</span>
               </h2>
             </div>
             
-            <p className={`text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-5 sm:mb-6 md:mb-8 max-w-lg mx-auto md:mx-0 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            {/* Description */}
+            <p className={`text-[11px] leading-relaxed sm:text-xs md:text-base lg:text-lg text-slate-600 dark:text-gray-400 mb-4 sm:mb-5 md:mb-8 max-w-lg mx-auto md:mx-0 font-mono transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+              <span className="text-slate-400 dark:text-gray-600">// </span>
               {t('hero.description')}
             </p>
             
-            <div className={`flex flex-row items-center justify-center md:justify-start space-x-3 sm:space-x-4 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            {/* Buttons */}
+            <div className={`flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-2.5 sm:gap-3 md:gap-4 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <Button 
                 href="/MouadIdrissiCV.pdf" 
                 variant="primary" 
                 size="lg"
-                className="min-w-[120px] sm:min-w-[130px] md:min-w-[160px] whitespace-nowrap text-xs sm:text-sm md:text-base py-2 px-3 sm:px-4 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
+                className="w-full sm:w-auto sm:min-w-[130px] md:min-w-[160px] whitespace-nowrap text-[11px] sm:text-xs md:text-base py-2 sm:py-2.5 px-3 sm:px-4 
+                  bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 
+                  border-0 font-mono hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 group"
                 onClick={(e: React.MouseEvent<HTMLElement>) => {
                   e.preventDefault();
                   const link = document.createElement('a');
@@ -203,127 +356,162 @@ const Hero: React.FC = () => {
                   document.body.removeChild(link);
                 }}
               >
-                <span className="flex items-center gap-1 sm:gap-2">
+                <span className="flex items-center justify-center gap-1.5 sm:gap-2">
+                  <Code2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   {t('about.cta.resume')}
-                  <svg 
-                    className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 transform group-hover:translate-y-1" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" 
-                    />
-                  </svg>
                 </span>
               </Button>
               <Button 
                 href="#contact" 
                 variant="outline" 
                 size="lg"
-                className="min-w-[120px] sm:min-w-[130px] md:min-w-[160px] whitespace-nowrap text-xs sm:text-sm md:text-base py-2 px-3 sm:px-4 hover:scale-105 hover:shadow-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-300"
+                className="w-full sm:w-auto sm:min-w-[130px] md:min-w-[160px] whitespace-nowrap text-[11px] sm:text-xs md:text-base py-2 sm:py-2.5 px-3 sm:px-4 
+                  border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 font-mono
+                  hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
               >
-                {t('hero.cta.contact')}
+                <span className="flex items-center justify-center gap-1.5 sm:gap-2">
+                  <Braces className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  {t('hero.cta.contact')}
+                </span>
               </Button>
             </div>
             
-            <div className={`mt-5 sm:mt-6 md:mt-8 flex items-center justify-center md:justify-start space-x-4 sm:space-x-6 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            {/* Social Links */}
+            <div className={`mt-4 sm:mt-5 md:mt-8 flex items-center justify-center md:justify-start space-x-3 sm:space-x-4 md:space-x-6 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <a 
                 href="https://github.com/itshydrox" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
+                className="p-1.5 sm:p-2 rounded-lg bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-400 hover:bg-slate-200/80 dark:hover:bg-slate-900/50 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
                 aria-label="GitHub"
               >
-                <Github size={20} className="sm:w-[22px] sm:h-[22px]" />
+                <Github className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/mouad-idrissi/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
+                className="p-1.5 sm:p-2 rounded-lg bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-400 hover:bg-slate-200/80 dark:hover:bg-slate-900/50 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} className="sm:w-[22px] sm:h-[22px]" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a 
                 href="mailto:idrissimou3ad@gmail.com"
-                className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
+                className="p-1.5 sm:p-2 rounded-lg bg-slate-100/80 dark:bg-black/80 border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:border-cyan-500 dark:hover:border-cyan-400 hover:bg-slate-200/80 dark:hover:bg-slate-900/50 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
                 aria-label="Email"
               >
-                <Mail size={20} className="sm:w-[22px] sm:h-[22px]" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>
           
-          {/* Image Content */}
+          {/* Image Content - Clean Design */}
           <div className={`w-full md:w-1/2 relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
-            <div className="relative">
-              <div className="w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-blue-600/20 to-blue-400/10 dark:from-blue-500/20 dark:to-blue-300/10 rounded-full mx-auto flex items-center justify-center animate-pulse-slow">
-                <img 
-                  src="/mypic.png" 
-                  alt="Developer Portrait" 
-                  className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[350px] md:h-[350px] rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500"
-                />
-              </div>
+            <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] mx-auto">
               
-              <div className="absolute inset-0">
-                {techIcons.map((icon, index) => (
-                  <div
-                    key={icon.name}
-                    className="absolute w-8 h-8 sm:w-9 sm:h-9 md:w-11 md:h-11 rounded-xl bg-white/90 dark:bg-gray-800/90 p-1.5 sm:p-2 
-                      transform hover:scale-110 transition-all duration-500 backdrop-blur-md
-                      hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)]
-                      border border-white/20 dark:border-gray-700/30
-                      before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/10 before:to-purple-500/10 
-                      before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500
-                      hover:before:opacity-100 group z-10"
-                    style={{
-                      ...positions[index],
-                      animation: `randomFloat${index} ${3 + index * 0.5}s infinite ease-in-out`,
-                      animationDelay: `${index * 0.2}s`,
-                      transform: `perspective(1000px) rotateX(10deg) rotateY(10deg)`,
-                      backfaceVisibility: 'hidden',
-                    }}
-                  >
-                    <div className="relative w-full h-full">
-                      <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 
-                        group-hover:opacity-100 blur-sm transition-opacity duration-500" />
+              {/* Main Image Container */}
+              <div className="absolute inset-0 flex items-center justify-center p-10 sm:p-12 md:p-16">
+                <div className="relative w-full h-full">
+                  
+                  {/* Subtle Glow */}
+                  <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-xl sm:blur-2xl" />
+                  
+                  {/* Image */}
+                  <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl group">
+                    <img 
+                      src="/mypic.png" 
+                      alt="Developer Portrait" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Tech Stack Icons - Small Clean Circles */}
+              <div className="absolute inset-0 pointer-events-none">
+                {techIcons.map((icon, index) => {
+                  const angle = (index / techIcons.length) * Math.PI * 2 - Math.PI / 2;
+                  const radiusPercent = 50;
+                  const x = Math.cos(angle) * radiusPercent;
+                  const y = Math.sin(angle) * radiusPercent;
+                  
+                  return (
+                    <div
+                      key={icon.name}
+                      className="absolute w-7 h-7 sm:w-8 sm:h-8 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full 
+                        bg-white/95 dark:bg-slate-900/95 p-1 sm:p-1.5 md:p-2
+                        backdrop-blur-sm hover:scale-110
+                        transition-all duration-300 group cursor-pointer pointer-events-auto
+                        shadow-lg hover:shadow-xl"
+                      style={{
+                        left: `calc(50% + ${x}%)`,
+                        top: `calc(50% + ${y}%)`,
+                        transform: 'translate(-50%, -50%)',
+                        animation: `floatBubble ${3 + index * 0.3}s ease-in-out infinite`,
+                        animationDelay: `${index * 0.2}s`,
+                      }}
+                    >
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <img
+                          src={icon.image}
+                          alt={icon.name}
+                          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </div>
                       
-                      <img
-                        src={icon.image}
-                        alt={icon.name}
-                        className="w-full h-full object-contain relative z-10 transition-transform duration-500 
-                          group-hover:scale-110 group-hover:rotate-3 drop-shadow-lg"
-                      />
-                      
-                      <div className="absolute -bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-white/90 dark:bg-gray-800/90 
-                        rounded-md text-[8px] sm:text-[10px] md:text-xs font-medium text-gray-700 dark:text-gray-300 opacity-0 group-hover:opacity-100 
-                        transition-opacity duration-300 whitespace-nowrap backdrop-blur-sm border border-gray-200/50 
-                        dark:border-gray-700/50 shadow-lg transform scale-90 group-hover:scale-100 min-w-max">
+                      {/* Tooltip - Hidden on mobile */}
+                      <div className="hidden md:block absolute -bottom-7 left-1/2 -translate-x-1/2 px-2 py-0.5 
+                        bg-slate-900/90 dark:bg-black/90 rounded text-[10px] font-medium text-cyan-400 
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-30">
                         {icon.name}
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
         </div>
         
+        {/* Scroll Indicator */}
         <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} hidden md:block`}>
           <a 
             href="#about" 
             aria-label="Scroll to About section"
-            className="animate-bounce-soft hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+            className="flex flex-col items-center gap-2 text-cyan-500 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors duration-300 group"
           >
-            <ArrowDown className="text-gray-600 dark:text-gray-400" />
+            <span className="text-xs font-mono">scroll</span>
+            <ArrowDown className="animate-bounce-soft group-hover:translate-y-1 transition-transform" />
           </a>
         </div>
       </div>
+
+      <style>{`
+        @keyframes floatBubble {
+          0%, 100% { 
+            transform: translate(-50%, -50%) translateY(0px);
+          }
+          50% { 
+            transform: translate(-50%, -50%) translateY(-12px);
+          }
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% auto;
+          animation: gradient 3s ease infinite;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 30s linear infinite;
+        }
+      }`}</style>
     </section>
   );
 };

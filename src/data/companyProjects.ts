@@ -1,8 +1,22 @@
+﻿// Technology icon mapping
+const techIcons: { [key: string]: string } = {
+  'Vue.js': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg',
+  'JavaScript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+  'Tailwind CSS': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg',
+  'HTML': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg',
+  'API Integration': 'https://api.iconify.design/mdi:api.svg?color=%234285f4',
+  'REST API': 'https://api.iconify.design/mdi:api.svg?color=%234285f4',
+  'Integración de APIs': 'https://api.iconify.design/mdi:api.svg?color=%234285f4',
+  'API REST': 'https://api.iconify.design/mdi:api.svg?color=%234285f4',
+  'Intégration d\'API': 'https://api.iconify.design/mdi:api.svg?color=%234285f4',
+};
+
 export const companyProjects = {
   en: [
      {
     id: 1,
     title: 'Train Monitoring System for Renfe (Freight Division)',
+    company: 'D&A Innovative Systems',
     description: 'A professional-grade monitoring dashboard built for Renfe Mercancías in collaboration with D&A Innovative Systems, providing real-time tracking and telemetry data for freight trains.',
     longDescription: `This project was developed in collaboration with D&A Innovative Systems for Renfe Mercancías (Freight Division), focusing on real-time monitoring and data visualization of freight train activity. The system helps Renfe track temperature, humidity, speed, and geographic location through a modern web dashboard.
 
@@ -21,7 +35,13 @@ Key Features:
 • Responsive design optimized for desktop use
 
 This project demonstrates my ability to collaborate on enterprise-level software, use Vue.js in production environments, and build visually clean and functional UIs with live data integration.`,
-    tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'API Integration'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'API Integration', icon: techIcons['API Integration'] }
+    ],
     images: [
       'https://i.postimg.cc/5t72Tczw/Tourist-8.png',
       'https://i.postimg.cc/P5PnbZKk/Screenshot-2025-02-27-105406.png',
@@ -35,6 +55,7 @@ This project demonstrates my ability to collaborate on enterprise-level software
   {
     id: 2,
     title: 'Industrial Machine Monitoring Dashboard for Fresmak',
+    company: 'D&A Innovative Systems',
     description: 'A full-featured dashboard and monitoring system for Fresmak’s industrial equipment, built during my time at D&A Innovative Systems.',
     longDescription: `This project was developed for Fresmak in collaboration with D&A Innovative Systems. It is a modern web application for monitoring the state and performance of Fresmak's industrial clamping systems, including PMAK, BLOCK, VICE, and other devices.
 
@@ -53,7 +74,13 @@ The system includes full user and machine management modules with features like:
 • Responsive layout for desktop use
 
 This project demonstrates my experience in building professional interfaces with real-time data, user access control, and clean visual dashboards.`,
-    tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'REST API'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'REST API', icon: techIcons['REST API'] }
+    ],
     images: [
       'https://i.postimg.cc/Rhj3YkjP/Tourist-9.png',
       'https://i.postimg.cc/hPkPjc9n/Screenshot-2025-05-06-140700.png',
@@ -72,6 +99,7 @@ This project demonstrates my experience in building professional interfaces with
      {
     id: 1,
     title: 'Sistema de Monitoreo de Trenes para Renfe (División de Mercancías)',
+    company: 'D&A Innovative Systems',
     description: 'Panel de control profesional desarrollado para Renfe Mercancías en colaboración con D&A Innovative Systems, con seguimiento en tiempo real y datos telemétricos de trenes de mercancías.',
     longDescription: `Este proyecto fue desarrollado en colaboración con D&A Innovative Systems para Renfe Mercancías (División de Mercancías), con el objetivo de monitorear en tiempo real y visualizar los datos de actividad de los trenes de mercancías. El sistema permite a Renfe supervisar temperatura, humedad, velocidad y localización geográfica a través de un panel web moderno.
 
@@ -90,7 +118,13 @@ Características principales:
 • Diseño responsive optimizado para su uso en escritorio
 
 Este proyecto demuestra mi capacidad para colaborar en desarrollos de software a nivel empresarial, utilizar Vue.js en entornos de producción y construir interfaces limpias y funcionales con integración de datos en tiempo real.`,
-    tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'Integración de APIs'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'Integración de APIs', icon: techIcons['Integración de APIs'] }
+    ],
     images: [
       'https://i.postimg.cc/5t72Tczw/Tourist-8.png',
       'https://i.postimg.cc/P5PnbZKk/Screenshot-2025-02-27-105406.png',
@@ -104,6 +138,7 @@ Este proyecto demuestra mi capacidad para colaborar en desarrollos de software a
   {
     id: 2,
     title: 'Dashboard de Monitoreo de Máquinas Industriales para Fresmak',
+    company: 'D&A Innovative Systems',
     description: 'Sistema completo de monitorización y gestión para equipos industriales de Fresmak, desarrollado durante mi trabajo en D&A Innovative Systems.',
     longDescription: `Este proyecto fue desarrollado para Fresmak en colaboración con D&A Innovative Systems. Es una aplicación web moderna para supervisar el estado y rendimiento de sistemas de sujeción industriales como PMAK, BLOCK, VICE y otros dispositivos de la empresa.
 
@@ -122,7 +157,13 @@ El sistema incluye módulos completos de gestión de usuarios y máquinas con fu
 • Diseño responsive optimizado para escritorio
 
 Este proyecto demuestra mi experiencia en la construcción de interfaces profesionales con datos en tiempo real, control de usuarios y paneles visuales claros.`,
-    tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'API REST'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'API REST', icon: techIcons['API REST'] }
+    ],
     images: [
       'https://i.postimg.cc/Rhj3YkjP/Tourist-9.png',
       'https://i.postimg.cc/hPkPjc9n/Screenshot-2025-05-06-140700.png',
@@ -141,6 +182,7 @@ fr: [
      {
     id: 1,
     title: 'Système de Suivi des Trains pour Renfe (Fret)',
+    company: 'D&A Innovative Systems',
     description: 'Tableau de bord professionnel conçu pour Renfe Mercancías en collaboration avec D&A Innovative Systems, permettant le suivi en temps réel et la visualisation des données télémétriques des trains de marchandises.',
     longDescription: `Ce projet a été réalisé en collaboration avec D&A Innovative Systems pour Renfe Mercancías (division fret), avec pour objectif de surveiller en temps réel l’activité des trains de marchandises et d’en visualiser les données. Le système permet à Renfe de suivre la température, l’humidité, la vitesse et la position géographique via un tableau de bord web moderne.
 
@@ -159,7 +201,13 @@ Fonctionnalités principales :
 • Design responsive optimisé pour les postes de travail
 
 Ce projet met en valeur ma capacité à collaborer sur des logiciels de niveau entreprise, à utiliser Vue.js en production et à créer des interfaces claires et fonctionnelles avec des données en temps réel.`,
-    tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'Intégration d’API'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'Intégration d\'API', icon: techIcons['Intégration d\'API'] }
+    ],
     images: [
       'https://i.postimg.cc/5t72Tczw/Tourist-8.png',
       'https://i.postimg.cc/P5PnbZKk/Screenshot-2025-02-27-105406.png',
@@ -173,6 +221,7 @@ Ce projet met en valeur ma capacité à collaborer sur des logiciels de niveau e
   {
     id: 2,
     title: 'Tableau de Suivi des Machines Industrielles pour Fresmak',
+    company: 'D&A Innovative Systems',
     description: 'Système complet de surveillance et de gestion des équipements industriels de Fresmak, développé pendant mon poste chez D&A Innovative Systems.',
     longDescription: `Ce projet a été réalisé pour Fresmak en collaboration avec D&A Innovative Systems. Il s'agit d'une application web moderne permettant de surveiller l'état et les performances des systèmes de serrage industriels de Fresmak (PMAK, BLOCK, VICE...).
 
@@ -191,7 +240,13 @@ Le système comprend des modules complets de gestion des utilisateurs et des mac
 • Design responsive pour les postes de travail
 
 Ce projet met en valeur mon expérience dans la création d'interfaces professionnelles avec des données en direct, la gestion des utilisateurs et des tableaux de bord clairs.`,
-    tags: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML', 'API REST'],
+    tags: [
+      { name: 'Vue.js', icon: techIcons['Vue.js'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'API REST', icon: techIcons['API REST'] }
+    ],
     images: [
       'https://i.postimg.cc/Rhj3YkjP/Tourist-9.png',
       'https://i.postimg.cc/hPkPjc9n/Screenshot-2025-05-06-140700.png',
@@ -207,3 +262,4 @@ Ce projet met en valeur mon expérience dans la création d'interfaces professio
   },
   ],
 };
+

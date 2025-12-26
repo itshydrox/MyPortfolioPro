@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Terminal, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface CompanyProjectModalProps {
@@ -10,7 +10,7 @@ interface CompanyProjectModalProps {
     company: string;
     description: string;
     longDescription: string;
-    tags: string[];
+    tags: { name: string; icon: string; }[];
     images: string[];
     demoUrl: string;
     githubUrl: string;
@@ -36,29 +36,48 @@ const CompanyProjectModal: React.FC<CompanyProjectModalProps> = ({ isOpen, onClo
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm overflow-y-auto"
+        className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-md flex items-center justify-center p-2 pt-20 pb-4 sm:p-4 sm:pt-40 sm:pb-20"
         onClick={onClose}
+        style={{ overflow: 'hidden' }}
       >
-        <div className="min-h-screen w-full flex items-start justify-center p-4">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: -20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: -20 }}
-            className="relative w-full max-w-6xl my-8 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden"
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors z-10"
-            >
-              <X size={24} className="text-gray-600 dark:text-gray-300" />
-            </button>
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0, y: -20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.9, opacity: 0, y: -20 }}
+          className="relative w-full max-w-6xl max-h-[90vh] sm:max-h-[85vh] bg-slate-100 dark:bg-black rounded-lg border border-cyan-500/40 shadow-2xl shadow-cyan-500/20 overflow-y-auto overflow-x-hidden scrollbar-hide"
+          onClick={e => e.stopPropagation()}
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+            {/* Terminal Header */}
+            <div className="border-b border-cyan-500/20 px-4 py-3 flex items-center justify-between bg-slate-200/50 dark:bg-black/50 sticky top-0 z-10">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 cursor-pointer transition-colors"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 cursor-pointer transition-colors"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 cursor-pointer transition-colors"></div>
+                </div>
+                <Terminal size={14} className="text-cyan-500 dark:text-cyan-400" />
+                <span className="text-xs font-mono text-cyan-500 dark:text-cyan-400">
+                  company_project_details.tsx
+                </span>
+              </div>
+              <button
+                onClick={onClose}
+                className="p-1.5 rounded-lg bg-slate-300/50 dark:bg-gray-800/50 hover:bg-red-500 hover:text-white transition-all duration-300"
+                aria-label="Close modal"
+              >
+                <X size={18} className="transition-transform hover:rotate-90 duration-300" />
+              </button>
+            </div>
 
-            <div className="relative bg-white dark:bg-gray-800">
+            <div className="relative bg-slate-200 dark:bg-slate-900">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
-                  className="w-full flex justify-center items-center bg-white dark:bg-gray-800"
+                  className="w-full flex justify-center items-center bg-slate-200 dark:bg-slate-900"
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
@@ -76,13 +95,13 @@ const CompanyProjectModal: React.FC<CompanyProjectModalProps> = ({ isOpen, onClo
               <div className="absolute inset-0 flex items-center justify-between p-4">
                 <button
                   onClick={previousImage}
-                  className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                  className="p-2 rounded-lg bg-cyan-500/80 hover:bg-cyan-500 text-white transition-all duration-300 hover:scale-110"
                 >
                   <ChevronLeft size={24} />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                  className="p-2 rounded-lg bg-cyan-500/80 hover:bg-cyan-500 text-white transition-all duration-300 hover:scale-110"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -94,34 +113,58 @@ const CompanyProjectModal: React.FC<CompanyProjectModalProps> = ({ isOpen, onClo
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                       index === currentImageIndex
-                        ? 'bg-white'
-                        : 'bg-white/50 hover:bg-white/75'
+                        ? 'bg-cyan-500 w-8'
+                        : 'bg-cyan-500/50 hover:bg-cyan-500/75'
                     }`}
                   />
                 ))}
               </div>
             </div>
 
-            <div className="p-8">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">
-                {project.title}
-              </h2>
-              <h3 className="text-xl font-semibold text-gray-500 dark:text-gray-400 mb-4">{project.company}</h3>
-              
-              <div className="space-y-6">
-                <p className="text-gray-600 dark:text-gray-300 text-lg">
-                  {project.description}
-                </p>
-
-                <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    Detailed Features
+            <div className="p-8 bg-slate-100 dark:bg-black">
+              {/* Code-style title */}
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3 font-mono text-sm">
+                  <span className="text-cyan-500 dark:text-cyan-400">const</span>
+                  <span className="text-blue-500 dark:text-blue-400">companyProject</span>
+                  <span className="text-cyan-500 dark:text-cyan-400">=</span>
+                  <span className="text-purple-500 dark:text-purple-400">{'{'}</span>
+                </div>
+                
+                <div className="pl-6 border-l-2 border-cyan-500/30 dark:border-cyan-400/30">
+                  <h2 className="text-3xl font-bold font-mono text-slate-900 dark:text-white mb-2">
+                    <span className="text-cyan-500/70 dark:text-cyan-400/70 text-sm">// </span>
+                    {project.title}
+                  </h2>
+                  <h3 className="text-lg font-semibold font-mono text-blue-600 dark:text-blue-400 mt-2">
+                    <span className="text-cyan-500/70 dark:text-cyan-400/70 text-sm">// </span>
+                    @{project.company}
                   </h3>
-                  <div className="prose dark:prose-invert max-w-none">
+                </div>
+              </div>
+              
+              <div className="space-y-6 pl-6">
+                <div className="bg-white/50 dark:bg-slate-900/50 rounded-lg p-4 border border-cyan-500/20">
+                  <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed font-mono">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="bg-white/50 dark:bg-slate-900/50 rounded-lg p-6 border border-cyan-500/20">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Code2 size={20} className="text-cyan-500 dark:text-cyan-400" />
+                    <h3 className="text-lg font-semibold font-mono text-slate-900 dark:text-white">
+                      <span className="text-cyan-500 dark:text-cyan-400">{'<'}</span>
+                      Detailed Features
+                      <span className="text-cyan-500 dark:text-cyan-400">{' />'}</span>
+                    </h3>
+                  </div>
+                  <div className="space-y-2 font-mono text-sm">
                     {project.longDescription.split('\n').map((line, index) => (
-                      <p key={index} className="text-gray-600 dark:text-gray-300 mb-2">
+                      <p key={index} className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {line && <span className="text-cyan-500/50 dark:text-cyan-400/50 mr-2">//</span>}
                         {line}
                       </p>
                     ))}
@@ -129,38 +172,57 @@ const CompanyProjectModal: React.FC<CompanyProjectModalProps> = ({ isOpen, onClo
                 </div>
               </div>
 
+              <div className="flex items-center gap-2 mt-4 mb-2 font-mono text-sm pl-6">
+                <span className="text-purple-500 dark:text-purple-400">{'};'}</span>
+              </div>
+
               <div className="flex flex-wrap gap-2 my-6">
                 {project.tags.map((tag) => (
                   <span
-                    key={tag}
-                    className="px-3 py-1.5 text-sm bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg"
+                    key={tag.name}
+                    className="px-3 py-1.5 text-xs font-mono rounded bg-white/50 dark:bg-slate-900/50 
+                      text-cyan-600 dark:text-cyan-400 border border-cyan-500/30
+                      hover:border-cyan-500 dark:hover:border-cyan-400 hover:shadow-md hover:shadow-cyan-500/20 
+                      transition-all duration-300 flex items-center gap-2"
                   >
-                    {tag}
+                    <img 
+                      src={tag.icon} 
+                      alt={tag.name}
+                      className="w-4 h-4"
+                      width={16}
+                      height={16}
+                    />
+                    {'<'}{tag.name}{' />'}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 mt-6">
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center font-medium transition-colors"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 
+                    text-white rounded-lg text-center font-mono font-medium transition-all duration-300 
+                    hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center gap-2"
                 >
+                  <Code2 size={18} />
                   View Live Website
                 </a>
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg text-center font-medium transition-colors"
+                  className="flex-1 px-6 py-3 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 
+                    text-slate-900 dark:text-white rounded-lg text-center font-mono font-medium transition-all duration-300
+                    border border-cyan-500/30 hover:border-cyan-500 flex items-center justify-center gap-2"
                 >
+                  <Terminal size={18} />
                   View Source Code
                 </a>
               </div>
             </div>
           </motion.div>
-        </div>
       </motion.div>
     </AnimatePresence>
   );

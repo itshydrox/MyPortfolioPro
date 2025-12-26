@@ -1,3 +1,36 @@
+// Technology icon mapping
+const techIcons: { [key: string]: string } = {
+  'Java': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg',
+  'Kotlin': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg',
+  'Android Studio': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg',
+  'Oracle Database': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg',
+  'MySQL': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg',
+  'XML': 'https://api.iconify.design/mdi:xml.svg?color=%23ff6600',
+  'Firebase': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg',
+  'Python': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
+  'Machine Learning': 'https://api.iconify.design/carbon:machine-learning.svg?color=%234169e1',
+  'Virtual Machines': 'https://api.iconify.design/mdi:server.svg?color=%23666666',
+  'HTML': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg',
+  'CSS': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg',
+  'JavaScript': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+  'JPA': 'https://api.iconify.design/simple-icons:spring.svg?color=%236db33f',
+  'JDBC': 'https://api.iconify.design/mdi:database-sync.svg?color=%23f89820',
+  'Servlets': 'https://api.iconify.design/mdi:coffee.svg?color=%23007396',
+  'JSP': 'https://api.iconify.design/mdi:language-java.svg?color=%23007396',
+  'jQuery': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-original.svg',
+  'Bootstrap': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg',
+  'PHP': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg',
+  'SQL': 'https://api.iconify.design/mdi:database.svg?color=%234169e1',
+  'WordPress': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-plain.svg',
+  'Elementor Pro': 'https://api.iconify.design/simple-icons:elementor.svg?color=%2392003b',
+  'WooCommerce': 'https://api.iconify.design/simple-icons:woocommerce.svg?color=%2396588a',
+  'Software Architecture': 'https://api.iconify.design/mdi:sitemap.svg?color=%234169e1',
+  'Eclipse': 'https://api.iconify.design/simple-icons:eclipseide.svg?color=%232c2255',
+  'MySQL Workbench': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg',
+  'Git': 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg',
+  'SCRUM': 'https://api.iconify.design/mdi:account-group.svg?color=%2300a8e1',
+};
+
 export const studies = {
   en: [
     {
@@ -12,7 +45,25 @@ export const studies = {
         'Web site programming with HTML, CSS, Java, Servlets, JSP, JPA, JDBC, and MySQL.',
         'Management of Linux, Virtual Machines, and Python.',
       ],
-      technologies: ['Java', 'Kotlin', 'Android Studio', 'Oracle Database', 'MySQL', 'XML', 'Firebase', 'Python', 'Machine Learning', 'Virtual Machines', 'HTML', 'CSS', 'JavaScript', 'JPA', 'JDBC', 'Servlets', 'JSP']
+      technologies: [
+        { name: 'Java', icon: techIcons['Java'] },
+        { name: 'Kotlin', icon: techIcons['Kotlin'] },
+        { name: 'Android Studio', icon: techIcons['Android Studio'] },
+        { name: 'Oracle Database', icon: techIcons['Oracle Database'] },
+        { name: 'MySQL', icon: techIcons['MySQL'] },
+        { name: 'XML', icon: techIcons['XML'] },
+        { name: 'Firebase', icon: techIcons['Firebase'] },
+        { name: 'Python', icon: techIcons['Python'] },
+        { name: 'Machine Learning', icon: techIcons['Machine Learning'] },
+        { name: 'Virtual Machines', icon: techIcons['Virtual Machines'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'JPA', icon: techIcons['JPA'] },
+        { name: 'JDBC', icon: techIcons['JDBC'] },
+        { name: 'Servlets', icon: techIcons['Servlets'] },
+        { name: 'JSP', icon: techIcons['JSP'] }
+      ]
     },
     {
       id: 2,
@@ -26,7 +77,24 @@ export const studies = {
         'Management of development tools such as Eclipse, MySQL Workbench, and Git.',
         'Project management using agile methodologies (SCRUM).'
       ],
-      technologies: ['JavaScript', 'Java', 'jQuery', 'Bootstrap', 'PHP', 'SQL', 'WordPress', 'Elementor Pro', 'WooCommerce', 'Software Architecture', 'Eclipse', 'MySQL Workbench', 'Git', 'SCRUM', 'HTML', 'CSS']
+      technologies: [
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'Java', icon: techIcons['Java'] },
+        { name: 'jQuery', icon: techIcons['jQuery'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'PHP', icon: techIcons['PHP'] },
+        { name: 'SQL', icon: techIcons['SQL'] },
+        { name: 'WordPress', icon: techIcons['WordPress'] },
+        { name: 'Elementor Pro', icon: techIcons['Elementor Pro'] },
+        { name: 'WooCommerce', icon: techIcons['WooCommerce'] },
+        { name: 'Software Architecture', icon: techIcons['Software Architecture'] },
+        { name: 'Eclipse', icon: techIcons['Eclipse'] },
+        { name: 'MySQL Workbench', icon: techIcons['MySQL Workbench'] },
+        { name: 'Git', icon: techIcons['Git'] },
+        { name: 'SCRUM', icon: techIcons['SCRUM'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     }
   ],
   es: [
@@ -42,7 +110,25 @@ export const studies = {
         'Programación de sitios web con HTML, CSS, Java, Servlets, JSP, JPA, JDBC, y MySQL.',
         'Manejo de Linux, Máquinas Virtuales y Python.',
       ],
-      technologies: ['Java', 'Kotlin', 'Android Studio', 'Oracle Database', 'MySQL', 'XML', 'Firebase', 'Python', 'Machine Learning', 'Virtual Machines', 'HTML', 'CSS', 'JavaScript', 'JPA', 'JDBC', 'Servlets', 'JSP']
+      technologies: [
+        { name: 'Java', icon: techIcons['Java'] },
+        { name: 'Kotlin', icon: techIcons['Kotlin'] },
+        { name: 'Android Studio', icon: techIcons['Android Studio'] },
+        { name: 'Oracle Database', icon: techIcons['Oracle Database'] },
+        { name: 'MySQL', icon: techIcons['MySQL'] },
+        { name: 'XML', icon: techIcons['XML'] },
+        { name: 'Firebase', icon: techIcons['Firebase'] },
+        { name: 'Python', icon: techIcons['Python'] },
+        { name: 'Machine Learning', icon: techIcons['Machine Learning'] },
+        { name: 'Virtual Machines', icon: techIcons['Virtual Machines'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'JPA', icon: techIcons['JPA'] },
+        { name: 'JDBC', icon: techIcons['JDBC'] },
+        { name: 'Servlets', icon: techIcons['Servlets'] },
+        { name: 'JSP', icon: techIcons['JSP'] }
+      ]
     },
     {
       id: 2,
@@ -56,7 +142,24 @@ export const studies = {
         'Manejo de herramientas de desarrollo como Eclipse, MySQL Workbench, y Git.',
         'Gestión de proyectos mediante metodologías ágiles (SCRUM).'
       ],
-      technologies: ['JavaScript', 'Java', 'jQuery', 'Bootstrap', 'PHP', 'SQL', 'WordPress', 'Elementor Pro', 'WooCommerce', 'Software Architecture', 'Eclipse', 'MySQL Workbench', 'Git', 'SCRUM', 'HTML', 'CSS']
+      technologies: [
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'Java', icon: techIcons['Java'] },
+        { name: 'jQuery', icon: techIcons['jQuery'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'PHP', icon: techIcons['PHP'] },
+        { name: 'SQL', icon: techIcons['SQL'] },
+        { name: 'WordPress', icon: techIcons['WordPress'] },
+        { name: 'Elementor Pro', icon: techIcons['Elementor Pro'] },
+        { name: 'WooCommerce', icon: techIcons['WooCommerce'] },
+        { name: 'Software Architecture', icon: techIcons['Software Architecture'] },
+        { name: 'Eclipse', icon: techIcons['Eclipse'] },
+        { name: 'MySQL Workbench', icon: techIcons['MySQL Workbench'] },
+        { name: 'Git', icon: techIcons['Git'] },
+        { name: 'SCRUM', icon: techIcons['SCRUM'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     }
   ],
   fr: [
@@ -72,7 +175,25 @@ export const studies = {
         'Programmation de sites web avec HTML, CSS, Java, Servlets, JSP, JPA, JDBC et MySQL.',
         'Gestion de Linux, Machines Virtuelles et Python.',
       ],
-      technologies: ['Java', 'Kotlin', 'Android Studio', 'Oracle Database', 'MySQL', 'XML', 'Firebase', 'Python', 'Machine Learning', 'Virtual Machines', 'HTML', 'CSS', 'JavaScript', 'JPA', 'JDBC', 'Servlets', 'JSP']
+      technologies: [
+        { name: 'Java', icon: techIcons['Java'] },
+        { name: 'Kotlin', icon: techIcons['Kotlin'] },
+        { name: 'Android Studio', icon: techIcons['Android Studio'] },
+        { name: 'Oracle Database', icon: techIcons['Oracle Database'] },
+        { name: 'MySQL', icon: techIcons['MySQL'] },
+        { name: 'XML', icon: techIcons['XML'] },
+        { name: 'Firebase', icon: techIcons['Firebase'] },
+        { name: 'Python', icon: techIcons['Python'] },
+        { name: 'Machine Learning', icon: techIcons['Machine Learning'] },
+        { name: 'Virtual Machines', icon: techIcons['Virtual Machines'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] },
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'JPA', icon: techIcons['JPA'] },
+        { name: 'JDBC', icon: techIcons['JDBC'] },
+        { name: 'Servlets', icon: techIcons['Servlets'] },
+        { name: 'JSP', icon: techIcons['JSP'] }
+      ]
     },
     {
       id: 2,
@@ -86,7 +207,24 @@ export const studies = {
         'Gestion d\'outils de développement tels que Eclipse, MySQL Workbench et Git.',
         'Gestion de projets selon les méthodologies agiles (SCRUM).'
       ],
-      technologies: ['JavaScript', 'Java', 'jQuery', 'Bootstrap', 'PHP', 'SQL', 'WordPress', 'Elementor Pro', 'WooCommerce', 'Software Architecture', 'Eclipse', 'MySQL Workbench', 'Git', 'SCRUM', 'HTML', 'CSS']
+      technologies: [
+        { name: 'JavaScript', icon: techIcons['JavaScript'] },
+        { name: 'Java', icon: techIcons['Java'] },
+        { name: 'jQuery', icon: techIcons['jQuery'] },
+        { name: 'Bootstrap', icon: techIcons['Bootstrap'] },
+        { name: 'PHP', icon: techIcons['PHP'] },
+        { name: 'SQL', icon: techIcons['SQL'] },
+        { name: 'WordPress', icon: techIcons['WordPress'] },
+        { name: 'Elementor Pro', icon: techIcons['Elementor Pro'] },
+        { name: 'WooCommerce', icon: techIcons['WooCommerce'] },
+        { name: 'Software Architecture', icon: techIcons['Software Architecture'] },
+        { name: 'Eclipse', icon: techIcons['Eclipse'] },
+        { name: 'MySQL Workbench', icon: techIcons['MySQL Workbench'] },
+        { name: 'Git', icon: techIcons['Git'] },
+        { name: 'SCRUM', icon: techIcons['SCRUM'] },
+        { name: 'HTML', icon: techIcons['HTML'] },
+        { name: 'CSS', icon: techIcons['CSS'] }
+      ]
     }
   ]
 }; 
