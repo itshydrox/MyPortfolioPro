@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer ref={ref} className="select-none relative bg-gradient-to-br from-gray-50 via-blue-50/10 to-white dark:from-gray-900 dark:via-blue-900/10 dark:to-gray-800 py-16 transition-all duration-700">
+    <footer ref={ref} className="select-none relative bg-[#1e1e1e]/80 dark:bg-[#0d1117]/80 backdrop-blur-sm border-t border-blue-500/20 py-16 transition-all duration-700">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand/Logo Section */}
@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
               alt="Logo" 
               className="h-12 w-auto object-contain"
             />
-            <p className="text-gray-600 dark:text-gray-400 max-w-xs leading-relaxed">
-              {t('footer.tagline')}
+            <p className="text-gray-400 dark:text-gray-400 max-w-xs leading-relaxed font-mono text-sm">
+              <span className="text-blue-400">{'// '}</span>{t('footer.tagline')}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
 
           {/* Site Navigation */}
           <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">
-              {t('footer.navigation')}
+            <h4 className="text-lg font-semibold mb-6 text-gray-200 dark:text-white font-mono">
+              <span className="text-blue-400">{'<nav>'}</span> {t('footer.navigation')}
             </h4>
             <nav className="grid grid-cols-2 gap-4">
               {navLinks.map((link, index) => (
@@ -91,8 +91,8 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">
-              {t('footer.contact')}
+            <h4 className="text-lg font-semibold mb-6 text-gray-200 dark:text-white font-mono">
+              <span className="text-blue-400">{'<contact>'}</span> {t('footer.contact')}
             </h4>
             <address className="not-italic space-y-4">
               <div className={`flex items-center space-x-3 text-gray-600 dark:text-gray-400 transform transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
@@ -121,8 +121,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className={`mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-700/50 text-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-          <p className="text-gray-600 dark:text-gray-400">
+        <div className={`mt-16 pt-8 border-t border-blue-500/20 text-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+          <p className="text-gray-400 dark:text-gray-400 font-mono text-sm">
+            <span className="text-blue-400">{'// '}</span>
             {t('footer.copyright').replace('{year}', currentYear.toString())}
           </p>
         </div>

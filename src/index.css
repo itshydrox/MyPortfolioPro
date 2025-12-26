@@ -5,7 +5,8 @@
 /* Custom Font Styling */
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', 'Fira Code', 'Consolas', monospace, system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -15,6 +16,8 @@
   /* Custom letter spacing for improved readability */
   body {
     letter-spacing: -0.01em;
+    background: #0a0a0a;
+    color: #e4e4e7;
   }
   
   h1, h2, h3 {
@@ -22,13 +25,166 @@
   }
 }
 
-/* Additional Typography Enhancements */
+/* IDE/Code Theme Styles */
 @layer components {
   .heading-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500;
   }
   
   .section-title {
     @apply font-heading font-bold;
   }
+
+  /* Code Editor Window Effect */
+  .code-window {
+    @apply bg-[#1e1e1e] dark:bg-[#0d1117] rounded-lg border border-gray-700/50 shadow-2xl;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
+  }
+
+  /* Terminal Effect */
+  .terminal-text {
+    @apply font-mono text-green-400;
+    text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+
+  /* Glowing Border Effect */
+  .glow-border {
+    position: relative;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #3b82f6, #06b6d4, #3b82f6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Code Syntax Highlighting Colors */
+  .syntax-keyword { @apply text-purple-400; }
+  .syntax-function { @apply text-yellow-400; }
+  .syntax-string { @apply text-green-400; }
+  .syntax-comment { @apply text-gray-500 italic; }
+  .syntax-variable { @apply text-blue-400; }
+  .syntax-number { @apply text-orange-400; }
+}
+
+/* Custom Animations */
+@layer utilities {
+  /* Scanline Animation */
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .animate-scan {
+    animation: scan 8s linear infinite;
+  }
+
+  /* Typing Cursor */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+  /* Pulse Slow */
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  /* Bounce Soft */
+  @keyframes bounce-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  /* Matrix Rain Effect */
+  @keyframes matrix-rain {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  .animate-matrix {
+    animation: matrix-rain 3s linear infinite;
+  }
+
+  /* Glitch Effect */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+
+  .animate-glitch {
+    animation: glitch 0.3s infinite;
+  }
+
+  /* Neon Glow */
+  .neon-text {
+    text-shadow: 
+      0 0 5px rgba(59, 130, 246, 0.5),
+      0 0 10px rgba(59, 130, 246, 0.3),
+      0 0 20px rgba(59, 130, 246, 0.2);
+  }
+
+  .neon-border {
+    box-shadow: 
+      0 0 5px rgba(59, 130, 246, 0.5),
+      0 0 10px rgba(59, 130, 246, 0.3),
+      inset 0 0 10px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #fff;
 }

@@ -61,7 +61,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.3 }}
         className={`fixed w-full md:w-[96%] left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'top-0 md:top-3 bg-white/[0.65] dark:bg-gray-950/[0.65] backdrop-blur-[12px] backdrop-saturate-[1.8] border-[0.5px] border-white/[0.15] dark:border-gray-800/[0.15] shadow-[0_8px_32px_rgba(0,0,0,0.03)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.2)] md:rounded-2xl' 
+            ? 'top-0 md:top-3 bg-[#1e1e1e]/90 dark:bg-[#0d1117]/90 backdrop-blur-[12px] backdrop-saturate-[1.8] border border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.15)] md:rounded-xl neon-border' 
             : 'top-0 bg-transparent border-transparent'
         }`}
       >
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center">
               <motion.div 
-                className="flex items-center bg-white/[0.45] dark:bg-gray-950/[0.45] backdrop-blur-md backdrop-saturate-150 rounded-xl p-1.5"
+                className="flex items-center bg-[#2d2d30]/80 dark:bg-[#161b22]/80 backdrop-blur-md backdrop-saturate-150 rounded-lg p-1.5 border border-gray-700/30"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
@@ -99,16 +99,16 @@ const Header: React.FC = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
-                    className={`px-4 py-1.5 text-[13px] font-medium transition-all duration-300 relative ${
+                    className={`px-4 py-1.5 text-[13px] font-medium transition-all duration-300 relative font-mono ${
                       activeSection === link.href.substring(1)
-                        ? 'text-white'
-                        : 'text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400'
+                        ? 'text-white neon-text'
+                        : 'text-gray-400 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-400'
                     }`}
                   >
                     {activeSection === link.href.substring(1) && (
                       <motion.span
                         layoutId="activeSection"
-                        className="absolute inset-0 bg-gradient-to-r from-blue-500/90 to-blue-600/90 backdrop-blur-sm rounded-md -z-10"
+                        className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 backdrop-blur-sm rounded-md -z-10 neon-border"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
